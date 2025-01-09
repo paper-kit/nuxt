@@ -19,9 +19,9 @@
 const props = defineProps<{
   name: string
   customClass?: string
-}>();
+}>()
 
-const iconClass: string[] = [];
+const iconClass: string[] = []
 
-iconClass.push(props.customClass ? props.customClass : "");
+iconClass.push(props.customClass ? props.customClass : '')
 </script>

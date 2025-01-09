@@ -1,11 +1,43 @@
 <template>
-  <div>
+  <div class="flex gap-2">
     <PUButton
-      disabled
+      flavor="outlined"
+      icon-left="arrow-down"
+    >
+      Button
+    </PUButton>
+    <PUButton
+      icon-left="arrow-down"
+    >
+      Button
+    </PUButton>
+    <PUButton>
+      Button
+    </PUButton>
+    <PUButton
       flavor="outlined"
     >
       Button
     </PUButton>
+    <PUButton
+      flavor="ghost"
+    >
+      Button
+    </PUButton>
+    <PUButton
+      disabled
+    >
+      Button
+    </PUButton>
+    <PUButtonIcon name="arrow-down" />
+    <PUButtonIcon
+      name="arrow-down"
+      flavor="outlined"
+    />
+    <PUButtonIcon
+      name="arrow-down"
+      flavor="ghost"
+    />
   </div>
 </template>
 
