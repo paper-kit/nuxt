@@ -57,17 +57,8 @@ jobs:
       - name: Install dependencies
         run: npx nypm@latest i
 
-      - name: Enter playground
-        run: cd playground
-
-      - name: See files
-        run: ls
-
-      - name: Debug
-        run: cat package.json
-
-      - name: Build
-        run: npm run generate
+      - name: Enter playground and build
+        run: cd playground && npm run generate
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
