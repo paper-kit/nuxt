@@ -58,7 +58,7 @@ jobs:
         run: npx nypm@latest i
 
       - name: Enter playground and build
-        run: cd playground && npm run generate
+        run: cd playground && npm run generate:tsconfig && npm run generate
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
