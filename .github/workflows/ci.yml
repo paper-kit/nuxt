@@ -60,6 +60,12 @@ jobs:
       - name: Enter playground
         run: cd playground
 
+      - name: See files
+        run: ls
+
+      - name: Debug
+        run: cat package.json
+
       - name: Build
         run: npm run generate
 
