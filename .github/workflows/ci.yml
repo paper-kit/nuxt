@@ -48,14 +48,20 @@ jobs:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          cd playground
-          npm install
-          npm run generate
+      - name: Install dependencies
+        run: npx nypm@latest i
+
+      - name: Enter playground
+        run: cd playground
+
+      - name: Build
+        run: npm run generate
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
