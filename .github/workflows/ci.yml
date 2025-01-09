@@ -57,8 +57,11 @@ jobs:
       - name: Install dependencies
         run: npx nypm@latest i
 
+      - name: Generate dependencies
+        run: npm run dev
+
       - name: Enter playground and build
-        run: cd playground && npm run generate:tsconfig && npm run generate
+        run: cd playground && npm run generate
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
