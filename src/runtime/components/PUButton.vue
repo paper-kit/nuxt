@@ -3,9 +3,22 @@
     :disabled="disabled"
     class="pu-button"
     :class="buttonClass"
-    @click="handleClick"
   >
+    <PUIcon
+      v-if="iconLeft"
+      :name="iconLeft"
+      :custom-class="
+        flavor == 'outlined' || flavor == 'ghost' ? 'text-black' : 'text-white'
+      "
+    />
     <slot />
+    <PUIcon
+      v-if="iconRight"
+      :name="iconRight"
+      :custom-class="
+        flavor == 'outlined' || flavor == 'ghost' ? 'text-black' : 'text-white'
+      "
+    />
   </button>
 </template>
 
@@ -17,6 +30,8 @@ const props = withDefaults(
     shape?: 'rounded' | 'circle'
     size?: 'small' | 'medium' | 'large'
     customClass?: string
+    iconLeft?: string
+    iconRight?: string
   }>(),
   {
     disabled: false,
@@ -46,7 +61,7 @@ buttonClass.push(
 
 <style lang="css" scoped>
 .pu-button {
-  @apply px-4 py-2 shadow-md transition duration-200 ease-in-out;
+  @apply  py-2 shadow-md transition duration-200 ease-in-out flex justify-center gap-1;
 }
 
 .pu-button:not(:disabled):hover {
@@ -66,7 +81,7 @@ buttonClass.push(
 }
 
 .pu-button.pu-button--ghost {
-  @apply bg-transparent text-primary-light-500 border-none;
+  @apply bg-transparent text-primary-light-500 border-transparent shadow-none;
 }
 
 .pu-button.pu-button--small {
