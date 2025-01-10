@@ -1,52 +1,31 @@
 <template>
-  <div class="flex gap-2">
-    <PUButton
-      flavor="outlined"
-      icon-left="arrow-down"
-    >
-      Button
-    </PUButton>
-    <PUButton
-      icon-left="arrow-down"
-    >
-      Button
-    </PUButton>
-    <PUButton>
-      Button
-    </PUButton>
-    <PUButton
-      flavor="outlined"
-    >
-      Button
-    </PUButton>
-    <PUButton
-      flavor="ghost"
-    >
-      Button
-    </PUButton>
-    <PUButton
-      disabled
-    >
-      Button
-    </PUButton>
-    <PUButtonIcon name="arrow-down" />
-    <PUButtonIcon
-      name="arrow-down"
-      flavor="outlined"
-    />
-    <PUButtonIcon
-      name="arrow-down"
-      flavor="ghost"
+  <div class="w-48 p-4">
+    <PUSelect
+      :options="options"
+      :model-value="selectedValue"
+      placeholder="Select an option"
+      size="large"
+      :example-option="{ value: 1, label: 'Example Item' }"
+      @update:model-value="handleModelValueUpdate"
     />
   </div>
 </template>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Patrick+Hand&display=swap");
+<script setup lang="ts">
+import PUSelect from '../src/runtime/components/PUSelect.vue'
 
-* {
-  font-family: "Patrick Hand", serif;
-  font-weight: 400;
-  font-style: normal;
+// Opções para o dropdown
+const options = [
+  { value: 1, label: 'Example Item' },
+  { value: 2, label: 'Option 2' },
+  { value: 3, label: 'Option 3' },
+]
+
+// Controle do valor selecionado
+const selectedValue = ref<string | number | null>(null)
+
+// Função para atualizar o valor selecionado
+const handleModelValueUpdate = (value: string | number | null) => {
+  selectedValue.value = value
 }
-</style>
+</script>
