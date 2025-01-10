@@ -43,27 +43,3 @@ jobs:
 
       - name: Test
         run: npm run test
-    
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npx nypm@latest i
-
-      - name: Prepare files
-        run: npm run dev:prepare
-
-      - name: Enter playground and build
-        run: cd playground && npm run generate
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: playground/dist # The folder the action should deploy.
