@@ -1,6 +1,9 @@
 <template>
   <div class="pu-badge">
-    <div :class="badgeClass" class="pu-badge--default">
+    <div
+      :class="badgeClass"
+      class="pu-badge--default"
+    >
       <span>{{ label }}</span>
       <PUIcon
         v-if="icon"

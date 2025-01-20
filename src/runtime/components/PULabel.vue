@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{ id: string }>();
+defineProps<{ id: string }>()
 </script>
 
 <style scoped>
