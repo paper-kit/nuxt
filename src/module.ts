@@ -4,7 +4,7 @@ export type ModuleOptions = object
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'paper-ui',
+    name: 'paper-ui/nuxt',
     configKey: 'myModule',
   },
   defaults: {},
