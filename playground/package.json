@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "paper-ui/nuxt-playground",
+  "name": "@paper-ui/nuxt-playground",
   "type": "module",
   "scripts": {
     "dev": "nuxi dev",

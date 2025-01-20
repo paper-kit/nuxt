@@ -1,10 +1,11 @@
 {
-  "name": "paper-ui/nuxt",
+  "name": "@paper-ui/nuxt",
   "version": "1.0.0",
   "description": "My new Nuxt module",
-  "repository": "your-org/paper-ui/nuxt",
+  "repository": "your-org/@paper-ui/nuxt",
   "license": "MIT",
   "type": "module",
+  "private": false,
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
