@@ -1,31 +1,186 @@
 <template>
-  <div class="w-48 p-4">
-    <PUSelect
-      :options="options"
-      :model-value="selectedValue"
-      placeholder="Select an option"
-      size="large"
-      :example-option="{ value: 1, label: 'Example Item' }"
-      @update:model-value="handleModelValueUpdate"
+  <div class="screen h-screen flex justify-center items-center relative overflow-y-auto p-20">
+    <div class="w-48 flex flex-col gap-8 h-full">
+      <PUButton
+        flavor="outlined"
+        shape="rounded"
+        @click="openToast"
+      >
+        Open Toast
+      </PUButton>
+      <div class="btn-icons flex gap-2">
+        <PUButtonIcon
+          name="arrow-down"
+          flavor="outlined"
+        />
+        <PUButtonIcon
+          name="info"
+          flavor="ghost"
+        />
+      </div>
+      <PUSelect
+        :options="options"
+        :model-value="selectedValue"
+        placeholder="Select an option"
+        size="large"
+        :example-option="{ value: 1, label: 'Example Item' }"
+        @update:model-value="handleModelValueUpdate"
+      />
+
+      <PUTooltip :positions="['bottom-left']">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias fugit
+        molestiae eos, voluptatem sit quos illo
+      </PUTooltip>
+      <div class="">
+        <PULabel id="test">
+          teste
+        </PULabel>
+        <PUInput
+          id="test"
+          v-model="value"
+          placeholder="Search"
+          icon-left="search"
+        />
+      </div>
+      <div class="">
+        <PULabel id="test2">
+          teste
+        </PULabel>
+        <PUTextArea
+          id="test2"
+          v-model="value"
+          placeholder="Search"
+          icon-left="search"
+        />
+        <div class="tags flex gap-2">
+          <PUTag label="Tag 1" />
+          <PUTag
+            label="Tag 2"
+            icon="close"
+          />
+          <PUTag label="Tag 3" />
+        </div>
+        <div class="badges flex gap-2 my-4">
+          <PUBadge
+            label="Badge 1"
+            severity="secondary"
+          />
+          <PUBadge
+            label="Badge 2"
+            icon="close"
+          />
+          <PUBadge
+            label="Badge 3"
+            severity="ghost"
+          />
+        </div>
+        <div class="w-72 my-8">
+          <PUAccordion :items="accordionItems">
+            <template #header="{ item, isOpen }">
+              <h3 :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }">
+                {{ item.title }}
+              </h3>
+            </template>
+
+            <template #content="{ item }">
+              <p>{{ item.content }}</p>
+            </template>
+          </PUAccordion>
+        </div>
+        <div class="w-72">
+          <PUTabs :tabs="tabs">
+            <template #tab="{ tab, isActive }">
+              <div
+                :class="{ 'text-black': isActive, 'text-gray-500': !isActive }"
+                class="flex items-center gap-2"
+              >
+                <span>{{ tab.label }}</span>
+              </div>
+            </template>
+
+            <!-- Content Customization -->
+            <template #content="{ tab }">
+              <p class="my-4">
+                {{ tab.content }}
+              </p>
+            </template>
+          </PUTabs>
+        </div>
+      </div>
+      <button
+        class="open-modal-button absolute top-8 left-8"
+        @click="showModal"
+      >
+        Open Modal {{ isVisible }}
+      </button>
+    </div>
+    <PUModal />
+    <PUToast
+      ref="toast"
+      position="top-right"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import PUSelect from '../src/runtime/components/PUSelect.vue'
+const { add } = useToast()
 
-// Opções para o dropdown
-const options = [
+const options = ref([
   { value: 1, label: 'Example Item' },
   { value: 2, label: 'Option 2' },
   { value: 3, label: 'Option 3' },
+])
+
+const value = ref<string | number | null>(null)
+
+const { show, isVisible } = useModal()
+
+const showModal = () => {
+  show()
+}
+
+const accordionItems = [
+  {
+    title: 'Accordion 1',
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+  },
+  {
+    title: 'Accordion 2',
+    content: 'Incidunt a voluptatum reiciendis soluta est unde consectetur!',
+  },
+  {
+    title: 'Accordion 3',
+    content: 'Explicabo, odio molestias! Quaerat, ipsa fugit quasi atque.',
+  },
 ]
 
-// Controle do valor selecionado
+const tabs = [
+  {
+    label: 'Tab 1',
+    content: 'Content for Tab 1',
+  },
+  {
+    label: 'Tab 2',
+    content: 'Content for Tab 2',
+  },
+  {
+    label: 'Tab 3',
+    content: 'Content for Tab 3',
+  },
+]
+
 const selectedValue = ref<string | number | null>(null)
 
-// Função para atualizar o valor selecionado
 const handleModelValueUpdate = (value: string | number | null) => {
   selectedValue.value = value
+}
+
+const openToast = () => {
+  add({
+    severity: 'secondary',
+    summary: 'Success',
+    detail: 'Action completed successfully!',
+    life: 30000,
+  })
 }
 </script>
