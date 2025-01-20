@@ -58,7 +58,7 @@ buttonIconClass.push(
 }
 
 .pu-button-icon.pu-button-icon--normal {
-  @apply bg-primary-light-500 rounded-lg  text-primary-light-50;
+  @apply bg-primary-light-500 border-2 rounded-lg  text-primary-light-50;
 }
 
 .pu-button-icon.pu-button-icon--outlined {
@@ -66,7 +66,7 @@ buttonIconClass.push(
 }
 
 .pu-button-icon.pu-button-icon--ghost {
-  @apply bg-transparent text-primary-light-500 border-transparent;
+  @apply bg-transparent border-2 text-primary-light-500 border-transparent;
 }
 
 .pu-button-icon.pu-button-icon--small {
