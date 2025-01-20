@@ -1,6 +1,5 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, installModule } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addComponentsDir, installModule, addImports } from '@nuxt/kit'
 
-// Module options TypeScript interface definition
 export type ModuleOptions = object
 
 export default defineNuxtModule<ModuleOptions>({
@@ -8,21 +7,25 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'my-module',
     configKey: 'myModule',
   },
-  // Default configuration options of the Nuxt module
   defaults: {},
   async setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url)
+    const resolveRuntimeModule = (path: string) => resolver.resolve('./runtime', path)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve('./runtime/plugin'))
 
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
     })
 
+    addImports([
+      { name: 'useToast', as: 'useToast', from: resolveRuntimeModule('./composables/useToast') },
+      { name: 'useModal', as: 'useModal', from: resolveRuntimeModule('./composables/useModal') },
+    ])
+
     _nuxt.options.css.push(resolver.resolve('./runtime/style.css'))
 
-    await installModule('@nuxtjs/tailwindcss', { // sub dependencias
+    await installModule('@nuxtjs/tailwindcss', {
       exposeConfig: true,
       config: {
         cssPath: ['./runtime/assets/css/tailwind.css', { injectPosition: 'first' }],
