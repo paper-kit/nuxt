@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion">
+  <div class="accordion font-patrick">
     <div
       v-for="(item, index) in items"
       :key="index"

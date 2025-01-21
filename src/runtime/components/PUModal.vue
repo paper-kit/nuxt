@@ -49,6 +49,10 @@ const closeOnBackdrop = (event: MouseEvent) => {
 </script>
 
 <style scoped>
+*{
+  font-family: 'Patrick Hand', cursive;
+}
+
 .modal-overlay {
   @apply fixed inset-0 flex items-center justify-center bg-white/75 z-50 bg-blend-color-burn;
 }

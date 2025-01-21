@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs relative">
+  <div class="tabs relative font-patrick">
     <!-- Tabs Navigation -->
     <div class="tabs-nav relative">
       <div
@@ -83,7 +83,7 @@ onUpdated(() => nextTick(updateIndicatorPosition))
 
 <style scoped>
 .tabs {
-  @apply w-full border-b border-gray-300;
+  @apply w-full border-b border-gray-300 ;
 }
 
 .tabs-nav {

@@ -2,7 +2,7 @@
   <div
     v-for="(toast) in toasts"
     :key="toast.id"
-    class="pu-toast-container"
+    class="pu-toast-container font-patrick"
     :class="positionClass"
   >
     <transition name="toast-transition">

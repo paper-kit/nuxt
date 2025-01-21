@@ -1,5 +1,5 @@
 <template>
-  <div class="pu-tag">
+  <div class="pu-tag font-patrick">
     <div class="pu-tag--default">
       <span>{{ label }}</span>
       <PUIcon

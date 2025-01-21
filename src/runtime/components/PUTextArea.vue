@@ -1,5 +1,5 @@
 <template>
-  <div class="pu-textarea">
+  <div class="pu-textarea font-patrick">
     <textarea
       :id="id"
       v-model="value"

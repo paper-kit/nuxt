@@ -1,5 +1,5 @@
 <template>
-  <div class="pu-badge">
+  <div class="pu-badge font-patrick">
     <div
       :class="badgeClass"
       class="pu-badge--default"

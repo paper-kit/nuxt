@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="pu-tooltip">
+    <div class="pu-tooltip font-patrick">
       <slot />
       <div
         v-for="position in positions"

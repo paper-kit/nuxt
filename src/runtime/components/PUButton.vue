@@ -1,7 +1,7 @@
 <template>
   <button
     :disabled="disabled"
-    class="pu-button"
+    class="pu-button font-patrick"
     :class="buttonClass"
   >
     <PUIcon

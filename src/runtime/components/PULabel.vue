@@ -1,5 +1,5 @@
 <template>
-  <div class="pu-label">
+  <div class="pu-label font-patrick">
     <label :for="id">
       <slot />
     </label>

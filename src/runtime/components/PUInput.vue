@@ -1,5 +1,5 @@
 <template>
-  <div class="pu-input">
+  <div class="pu-input font-patrick">
     <label :for="id">
       <PUIcon
         v-if="iconLeft"
