@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 export const useTabs = () => {
   const activeTab = ref(0)
 

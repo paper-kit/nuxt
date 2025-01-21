@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 export const useAccordion = () => {
   const openSections = ref<Set<number>>(new Set())
 

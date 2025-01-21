@@ -15,6 +15,8 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+
 defineProps<{
   disabled?: boolean
   placeholder?: string
