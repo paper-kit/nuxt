@@ -1,3 +1,5 @@
+import { useState } from 'nuxt/app'
+
 export const useModal = () => {
   const isVisible = useState<boolean>('modalVisible', () => false)
 
