@@ -16,7 +16,7 @@
           :is-active="isActive(index)"
         >
           <div class="default-tab">
-            <tab.icon class="tab-icon" />
+            <PUIcon :name="tab.icon || ''" />
             <span>{{ tab.label }}</span>
           </div>
         </slot>
