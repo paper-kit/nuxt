@@ -1,3 +1,5 @@
+import { ref } from 'vue'
+
 export interface Toast {
   id?: number
   severity: 'primary' | 'secondary'
