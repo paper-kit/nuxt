@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <div>
     <div class="nav-wrapper flex justify-between px-4">
       <div class="w-full flex justify-center">
         <a
@@ -20,7 +20,7 @@
         <li><a href="https://github.com/paper-kit/nuxt"><PUButton flavor="outlined">Github</PUButton></a></li>
       </ul>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script lang="ts" setup>
