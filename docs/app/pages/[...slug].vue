@@ -12,12 +12,10 @@ if (!page.value) {
 </script>
 
 <template>
-  <NuxtLayout>
-    <div class=" overflow-y-auto ">
-      <ContentRenderer
-        v-if="page"
-        :value="page"
-      />
-    </div>
-  </NuxtLayout>
+  <div class=" overflow-y-auto ">
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+    />
+  </div>
 </template>
