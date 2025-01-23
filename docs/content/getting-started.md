@@ -114,7 +114,7 @@ Paper-UI is designed to be easily customizable. You can override styles using Ta
 #title
 Contributing
 #description
-We welcome contributions to Paper-UI! Feel free to check out our [Contributing Guide](./contributing.md) to get started.
+We welcome contributions to Paper-UI!
 ::
 
 ---
