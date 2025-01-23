@@ -6,7 +6,7 @@
           href="/"
           class="brand-logo flex"
         ><img
-          src="/logo.png"
+          src="/logo.svg"
           width="80"
           alt=""
         ><div class="text-2xl mt-5">Paper Ui</div></a>
