@@ -1,6 +1,10 @@
 export default defineNuxtConfig({
-  modules: ['../src/module'],
+  modules: ['@paper-ui/nuxt', '@nuxtjs/tailwindcss', '@nuxt/content'],
   devtools: { enabled: true },
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio',
+    },
+  },
   compatibilityDate: '2025-01-09',
-  myModule: {},
 })
