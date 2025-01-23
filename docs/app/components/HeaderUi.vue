@@ -6,7 +6,7 @@
           href="/"
           class="brand-logo flex"
         ><img
-          src="https://avatars.githubusercontent.com/u/165912134?s=400&u=f52b418a7346cf1629064d23ff093ae2752786e5&v=4"
+          src="/logo.png"
           width="80"
           alt=""
         ><div class="text-2xl mt-5">Paper Ui</div></a>
