@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center h-full relative font-patrick">
-    <div class="text-7xl text-primary-light-500 text-center w-full items-center flex justify-center tracking-wider leading-loose uppercase">
-      <div class="w-1/2 flex items-end justify-end h-auto flex-col">
+    <div class="text-5xl h-full font-bold md:py-0 py-16 md:text-7xl text-primary-light-500 text-center w-full items-center flex justify-center tracking-wider leading-loose uppercase">
+      <div class="w-full md:w-1/2 flex items-end justify-end h-auto flex-col leading-loose">
         <slot />
         <div class="text-lg absolute bottom-0 left-1/2 -translate-x-1/2">
           <a href="/getting-started">
@@ -9,7 +9,7 @@
           </a>
         </div>
       </div>
-      <div class=" flex justify-center w-1/2 ">
+      <div class=" hidden md:flex justify-center w-1/2 ">
         <svg
           width="574"
           height="709"

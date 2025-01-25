@@ -1,15 +1,17 @@
 <template>
   <div>
     <div class="nav-wrapper flex justify-between px-4">
-      <div class="w-full flex justify-center">
+      <div class=" flex justify-center items-center gap-2 mt-5">
+        <img
+          src="/logo.svg"
+          class=""
+          width="32"
+          alt=""
+        >
         <a
           href="/"
           class="brand-logo flex"
-        ><img
-          src="/logo.svg"
-          width="80"
-          alt=""
-        ><div class="text-2xl mt-5">Paper Ui</div></a>
+        ><div class="text-2xlfont-patrick ">Paper Ui</div></a>
       </div>
 
       <ul
