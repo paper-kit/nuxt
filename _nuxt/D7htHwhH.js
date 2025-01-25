@@ -1,0 +1,1 @@
+import{l as o,k as c,f as i,g as t,V as e}from"./DEriY2bc.js";const n={},a={class:"my-4 space-y-2"},l={class:"topic-title text-xl font-bold"},r={class:"topic-description text-lg"};function d(s,_){return c(),i("div",a,[t("div",l,[e(s.$slots,"title")]),t("div",r,[e(s.$slots,"description")])])}const f=Object.assign(o(n,[["render",d]]),{__name:"DocTopic"});export{f as default};
