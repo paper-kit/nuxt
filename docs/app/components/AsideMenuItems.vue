@@ -3,6 +3,7 @@
     <div
       v-for="list, index in items"
       :key="index"
+      class="space-y-2"
     >
       <div class="font-bold mb-2">
         {{ list.title }}

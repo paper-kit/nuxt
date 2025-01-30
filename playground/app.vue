@@ -27,7 +27,7 @@
         @update:model-value="handleModelValueUpdate"
       />
 
-      <PUTooltip :positions="['bottom-left']">
+      <PUTooltip :positions="[]">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias fugit
         molestiae eos, voluptatem sit quos illo
       </PUTooltip>
