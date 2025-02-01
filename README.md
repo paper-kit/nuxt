@@ -15,25 +15,25 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![Nuxt][nuxt-src]][nuxt-href]
 
 
-`@paper-ui/nuxt` é uma biblioteca de componentes para Nuxt.js que busca criar uma estética "desenhada" para seus componentes. Com esta biblioteca, você pode construir interfaces com componentes que possuem um estilo único e artisticamente projetado.
+`@paper-ui/nuxt` is a component library for Nuxt.js that aims to create a "hand-drawn" aesthetic for your UI. With this library, you can build interfaces using components with a unique and artistically crafted style.
 
-## Instalação
+## Installation
 
-Para instalar o módulo em seu projeto Nuxt.js, utilize o seguinte comando:
+To install the module in your Nuxt.js project, use the following command:
 
 ```bash
 npm install @paper-ui/nuxt
 ```
 
-Ou, se estiver utilizando o `pnpm`:
+Or, if you're using `pnpm`:
 
 ```bash
 pnpm add @paper-ui/nuxt
 ```
 
-## Como usar
+## Usage
 
-Depois de instalar o módulo, basta adicioná-lo ao seu arquivo `nuxt.config.js`:
+After installing the module, add it to your `nuxt.config.js` file:
 
 ```js
 export default defineNuxtConfig({
@@ -43,58 +43,57 @@ export default defineNuxtConfig({
 })
 ```
 
-Agora você pode utilizar os componentes oferecidos pela biblioteca em suas páginas e componentes Vue.
+Now you can use the components provided by the library in your pages and Vue components.
 
-### Exemplo de uso
+### Example Usage
 
 ```vue
 <template>
   <PUButton>Click Me!</PUButton>
 </template>
-
 ```
 
 ## Scripts
 
-Aqui estão alguns scripts úteis disponíveis durante o desenvolvimento e a manutenção do módulo:
+Here are some useful scripts available during development and maintenance of the module:
 
-- `dev`: Inicia o ambiente de desenvolvimento com o Playground do Nuxt.
-- `dev:build`: Construa o ambiente do Playground para testes.
-- `dev:prepare`: Prepara o ambiente de desenvolvimento com `nuxt-module-build`.
-- `release`: Realiza a preparação para a liberação, rodando testes, linting e publicando o módulo.
-- `lint`: Executa o linting do código com ESLint.
-- `test`: Executa os testes usando Vitest.
-- `test:watch`: Observa as mudanças e executa os testes automaticamente.
-- `test:types`: Verifica os tipos do TypeScript.
+- `dev`: Starts the development environment with the Nuxt Playground.
+- `dev:build`: Builds the Playground environment for testing.
+- `dev:prepare`: Prepares the development environment using `nuxt-module-build`.
+- `release`: Prepares for release by running tests, linting, and publishing the module.
+- `lint`: Runs ESLint to check code quality.
+- `test`: Runs tests using Vitest.
+- `test:watch`: Watches for changes and runs tests automatically.
+- `test:types`: Checks TypeScript types.
 
-## Dependências
+## Dependencies
 
-- `@nuxt/kit`: Núcleo do Nuxt 3.
-- `@nuxtjs/tailwindcss`: Integração com o Tailwind CSS.
+- `@nuxt/kit`: Core module for Nuxt 3.
+- `@nuxtjs/tailwindcss`: Integration with Tailwind CSS.
 
-## Desenvolvimento
+## Development
 
-Durante o desenvolvimento, você pode testar o módulo localmente utilizando o Playground incluído no projeto. O ambiente de desenvolvimento permite que você veja como os componentes se comportam enquanto você faz alterações.
+During development, you can test the module locally using the included Playground. The development environment allows you to see how components behave as you make changes.
 
-### Rodando o Playground
+### Running the Playground
 
-Execute o comando abaixo para iniciar o Playground em modo de desenvolvimento:
+Run the following command to start the Playground in development mode:
 
 ```bash
 npm run dev
 ```
 
-Ou, se estiver usando o `pnpm`:
+Or, if you're using `pnpm`:
 
 ```bash
 pnpm dev
 ```
 
-Isso abrirá o servidor de desenvolvimento do Nuxt, permitindo que você visualize os componentes em ação.
+This will start the Nuxt development server, allowing you to preview the components in action.
 
-## Licença
+## License
 
-Este módulo é licenciado sob a [Licença MIT](LICENSE).
+This module is licensed under the [MIT License](LICENSE).
 
 ## Changelog
 
