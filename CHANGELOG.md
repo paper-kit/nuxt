@@ -1,6 +1,48 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.1.0...v1.2.0)
+
+### 🚀 Enhancements
+
+- **docs:** Add docs components ([db546cb](https://github.com/paper-kit/nuxt/commit/db546cb))
+- **docs:** Add aside menu ([5555c53](https://github.com/paper-kit/nuxt/commit/5555c53))
+- **docs:** Add docs page ([2e7c72b](https://github.com/paper-kit/nuxt/commit/2e7c72b))
+- **docs:** Add components page ([81b8262](https://github.com/paper-kit/nuxt/commit/81b8262))
+
+### 🩹 Fixes
+
+- **docs-ci:** Rollup error ([06afbec](https://github.com/paper-kit/nuxt/commit/06afbec))
+- **lint:** Fix eslint warnings ([e65166d](https://github.com/paper-kit/nuxt/commit/e65166d))
+
+### 🏡 Chore
+
+- **config:** Update package.json to npm ([c02b041](https://github.com/paper-kit/nuxt/commit/c02b041))
+- **version:** Change to 1.1.2 ([ca300c5](https://github.com/paper-kit/nuxt/commit/ca300c5))
+- **composable:** Add import path for useState ([eedb2c7](https://github.com/paper-kit/nuxt/commit/eedb2c7))
+- **component:** Add ref import path ([f368a7c](https://github.com/paper-kit/nuxt/commit/f368a7c))
+- **component:** Add ref import path ([7c67eec](https://github.com/paper-kit/nuxt/commit/7c67eec))
+- **release:** V1.1.5 ([3e4e369](https://github.com/paper-kit/nuxt/commit/3e4e369))
+- **components:** Update font ([dc5a781](https://github.com/paper-kit/nuxt/commit/dc5a781))
+- **release:** V1.1.6 ([5483129](https://github.com/paper-kit/nuxt/commit/5483129))
+- **app:** Initial commit by Nuxt Studio ([786fdf7](https://github.com/paper-kit/nuxt/commit/786fdf7))
+- **deployment:** Add workflow file ([7c4a3b0](https://github.com/paper-kit/nuxt/commit/7c4a3b0))
+- **docs:** Add content options and debug ([0a05ac4](https://github.com/paper-kit/nuxt/commit/0a05ac4))
+- **docs:** Remove unused page ([aa70d17](https://github.com/paper-kit/nuxt/commit/aa70d17))
+- **docs:** Add header on layout ([1fcd243](https://github.com/paper-kit/nuxt/commit/1fcd243))
+- **docs:** Add layout ([1510fcc](https://github.com/paper-kit/nuxt/commit/1510fcc))
+- **layout:** Remove nuxt layout ([45b93ca](https://github.com/paper-kit/nuxt/commit/45b93ca))
+- **docs:** Add logo and adjust header ([5d22d20](https://github.com/paper-kit/nuxt/commit/5d22d20))
+- **release:** V1.1.7 ([b23a6cf](https://github.com/paper-kit/nuxt/commit/b23a6cf))
+
+### ❤️ Contributors
+
+- Felipe <felipe16.12.1998@gmail.com>
+- Felipe Oliveira <felipe16.12.1998@gmail.com>
+- FELIPE COSTA DE OLIVEIRA ([@FelipeO16](http://github.com/FelipeO16))
+
 ## v1.1.0
 
 
