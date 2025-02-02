@@ -97,8 +97,6 @@
                 <span>{{ tab.label }}</span>
               </div>
             </template>
-
-            <!-- Content Customization -->
             <template #content="{ tab }">
               <p class="my-4">
                 {{ tab.content }}
@@ -113,7 +111,42 @@
       >
         Open Modal {{ isVisible }}
       </button>
+      <div class="flex flex-col gap-2">
+        <PUCheckbox v-model="checked" />
+        <PUSwitch
+          v-model="checked"
+          label="Ativar recurso"
+          width="mid"
+        />
+        <PURadio
+          v-model="checked"
+          :options="[
+            { label: 'Opção 1', value: true },
+            { label: 'Opção 2', value: false },
+          ]"
+          flavor="outlined"
+        />
+        <PURadio
+          v-model="checked"
+          :options="[
+            { label: 'Opção 1', value: true },
+            { label: 'Opção 2', value: false },
+          ]"
+          flavor="normal"
+        />
+
+        <PURadio
+          v-model="checked"
+          :options="[
+            { label: 'Opção 1', value: true },
+            { label: 'Opção 2', value: false },
+          ]"
+          flavor="box"
+        />
+      </div>
     </div>
+
+    <br>
     <PUModal />
     <PUToast
       ref="toast"
@@ -131,7 +164,9 @@ const options = ref([
   { value: 3, label: 'Option 3' },
 ])
 
-const value = ref<string | number | null>(null)
+const value = ref<string | number | null>('')
+
+const checked = ref<boolean>(false)
 
 const { show, isVisible } = useModal()
 
