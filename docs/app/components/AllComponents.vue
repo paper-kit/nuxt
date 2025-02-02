@@ -7,7 +7,7 @@
         </PUButton>
       </template>
       <template #component-name>
-        <a href="/pu-button">PUButton</a>
+        <a href="/docs/components/pu-button">PUButton</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -22,7 +22,7 @@
         />
       </template>
       <template #component-name>
-        <a href="/pu-select">PUSelect</a>
+        <a href="/docs/components/pu-select">PUSelect</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -33,7 +33,7 @@
         />
       </template>
       <template #component-name>
-        <a href="/pu-button-icon">PUButtonIcon</a>
+        <a href="/docs/components/pu-button-icon">PUButtonIcon</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -51,7 +51,7 @@
         </div>
       </template>
       <template #component-name>
-        <a href="/pu-input">PUInput</a>
+        <a href="/docs/components/pu-input">PUInput</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -68,7 +68,7 @@
         </div>
       </template>
       <template #component-name>
-        <a href="/pu-textarea">PUTextArea</a>
+        <a href="/docs/components/pu-textarea">PUTextArea</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -83,7 +83,7 @@
         </div>
       </template>
       <template #component-name>
-        <a href="/pu-tag">PUTag</a>
+        <a href="/docs/components/pu-tag">PUTag</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -104,7 +104,7 @@
         </div>
       </template>
       <template #component-name>
-        <a href="/pu-badge">PUBadge</a>
+        <a href="/docs/components/pu-badge">PUBadge</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -124,7 +124,7 @@
         </div>
       </template>
       <template #component-name>
-        <a href="/pu-accordion">PUAccordion</a>
+        <a href="/docs/components/pu-accordion">PUAccordion</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -150,7 +150,7 @@
         </div>
       </template>
       <template #component-name>
-        <a href="/pu-tabs">PUTabs</a>
+        <a href="/docs/components/pu-tabs">PUTabs</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -164,7 +164,7 @@
         </PUButton>
       </template>
       <template #component-name>
-        <a href="/pu-toast">PUToast</a>
+        <a href="/docs/components/pu-toast">PUToast</a>
       </template>
     </ShowComponent>
     <ShowComponent>
@@ -178,7 +178,7 @@
         </PUButton>
       </template>
       <template #component-name>
-        <a href="/pu-accordion">PUAccordion</a>
+        <a href="/docs/components/pu-modal">PUModal</a>
       </template>
     </ShowComponent>
     <PUModal />
@@ -200,7 +200,7 @@ const options = ref([
 
 const value = ref<string | number | null>(null)
 
-const { show, isVisible } = useModal()
+const { show } = useModal()
 
 const showModal = () => {
   show()
