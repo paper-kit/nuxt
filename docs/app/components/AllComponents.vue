@@ -27,10 +27,12 @@
     </ShowComponent>
     <ShowComponent>
       <template #component>
-        <PUButtonIcon
-          name="arrow-down"
-          flavor="outlined"
-        />
+        <div class="flex">
+          <PUButtonIcon
+            name="arrow-down"
+            flavor="outlined"
+          />
+        </div>
       </template>
       <template #component-name>
         <a href="/docs/components/pu-button-icon">PUButtonIcon</a>
@@ -181,6 +183,51 @@
         <a href="/docs/components/pu-modal">PUModal</a>
       </template>
     </ShowComponent>
+    <ShowComponent>
+      <template #component>
+        <div class="flex gap-2 items-center">
+          <PUCheckbox v-model="checked" />
+          <PUCheckbox
+            v-model="checked"
+            flavor="outlined"
+            label="checked"
+            strike-on-false
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-checkbox">PUCheckbox</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent>
+      <template #component>
+        <PUSwitch
+          v-model="checked"
+          label="Switch?"
+          width="mid"
+        />
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-switch">PUSwitch</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent>
+      <template #component>
+        <div class="flex">
+          <PURadio
+            v-model="checked"
+            :options="[
+              { label: 'True', value: true },
+              { label: 'False', value: false },
+            ]"
+            flavor="box"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-radio">PURadio</a>
+      </template>
+    </ShowComponent>
     <PUModal />
     <PUToast
       ref="toast"
@@ -233,6 +280,8 @@ const selectedValue = ref<string | number | null>(null)
 const handleModelValueUpdate = (value: string | number | null) => {
   selectedValue.value = value
 }
+
+const checked = ref<boolean>(false)
 
 const openToast = () => {
   add({

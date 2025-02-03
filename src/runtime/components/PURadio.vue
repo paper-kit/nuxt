@@ -88,7 +88,7 @@ const getDotClasses = computed(() => {
 <template>
   <div
     v-if="options"
-    class="flex flex-col gap-2 font-patrick"
+    class="flex gap-2 font-patrick"
   >
     <div
       v-for="option in options"
