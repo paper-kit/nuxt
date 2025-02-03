@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.3.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.2.0...v1.3.0)
+
+### 🚀 Enhancements
+
+- **components:** Add new component PUCheckBox ([bb25a24](https://github.com/paper-kit/nuxt/commit/bb25a24))
+- **components:** Add new component PURadio ([b59e339](https://github.com/paper-kit/nuxt/commit/b59e339))
+- **components:** Add new component PUSwitch ([28befd8](https://github.com/paper-kit/nuxt/commit/28befd8))
+- **icons:** Add new icons check and minus ([98db193](https://github.com/paper-kit/nuxt/commit/98db193))
+- **docs:** Add new components to components docs ([23a3f9b](https://github.com/paper-kit/nuxt/commit/23a3f9b))
+
+### 🏡 Chore
+
+- **playground:** Add new components to app ([c2632a9](https://github.com/paper-kit/nuxt/commit/c2632a9))
+
+### ❤️ Contributors
+
+- Felipe <felipe16.12.1998@gmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.1.0...v1.2.0)
