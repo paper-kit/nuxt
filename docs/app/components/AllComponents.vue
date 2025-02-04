@@ -185,6 +185,16 @@
     </ShowComponent>
     <ShowComponent>
       <template #component>
+        <PUTooltip :positions="['bottom-right']">
+          Hello World!
+        </PUTooltip>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-tooltip">PUTooltip</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent>
+      <template #component>
         <div class="flex gap-2 items-center">
           <PUCheckbox v-model="checked" />
           <PUCheckbox
