@@ -1,45 +1,39 @@
 ::doc-topic
 #title
-PUAccordion Component 
+PU-Accordion Component
 #description
-A highly customizable tab component with smooth animations and Tailwind CSS integration.
+A customizable accordion component with smooth transitions and slot support
 ::
 
 ::doc-topic
 #title
-Basic Usage
+Usage
 #description
-Minimal setup with default styling:
+Basic Usage
 ::
-::paper-p-u-accordion
+::paper-show-accordion{type="default"}
+#code
 ```html
 <template>
-  <PUAccordion :items="accordionItems" />
+  <PUAccordion :items="[
+    { title: 'First Item', content: 'First content' },
+    { title: 'Second Item', content: 'Second content' }
+  ]" />
 </template>
-
-<script setup lang="ts">
-const accordionItems = [
-  {
-    title: "Accordion 1",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    title: "Accordion 2",
-    content: "Incidunt a voluptatum reiciendis soluta est unde consectetur!",
-  },
-  {
-    title: "Accordion 3",
-    content: "Explicabo, odio molestias! Quaerat, ipsa fugit quasi atque.",
-  },
-];
-</script>
 ```
 ::
 
-::paper-p-u-accordion{type="custom"}
+::doc-topic
+#description
+### Custom Headers
+::
+::paper-show-accordion{type="custom-header"}
+#code
 ```html
 <template>
-  <PUAccordion :items="accordionItems">
+  <PUAccordion
+    :items="items"
+  >
     <template #header="{ item, isOpen }">
       <h3 :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }">
         {{ item.title }}
@@ -50,41 +44,94 @@ const accordionItems = [
       <p>{{ item.content }}</p>
     </template>
   </PUAccordion>
-<template>
-
----
-
-<script setup lang="ts">
-const accordionItems = [
-  {
-    title: "Accordion 1",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-  },
-  {
-    title: "Accordion 2",
-    content: "Incidunt a voluptatum reiciendis soluta est unde consectetur!",
-  },
-  {
-    title: "Accordion 3",
-    content: "Explicabo, odio molestias! Quaerat, ipsa fugit quasi atque.",
-  },
-];
-</script>
+</template>
 ```
 ::
 
+::doc-topic
+#description
+### Custom Content
+::
+::paper-show-accordion{type="custom-content"}
+#code
+```html
+<template>
+  <PUAccordion :items="items">
+    <template #content="{ item }">
+      <div class="custom-content">
+        <PUIcon name="info" />
+        {{ item.content }}
+      </div>
+    </template>
+  </PUAccordion>
+</template>
+```
+::
+
+::doc-topic
+#title
+## Props
+::
 ::doc-table
 ---
-headers: ['Prop', 'Type', 'Default', 'Description']
+headers: ['Prop', 'Type', 'Required', 'Default', 'Description']
 rows:
-  - - 'tabs'
-    - |
-      Array<{
-        label: string
-        content: string
-        icon?: string
-      }>
-    - '[]'
-    - 'Array of tab objects'
+  - - 'items'
+    - 'Array<{title: string, content: string}>'
+    - 'Yes'
+    - '-'
+    - 'Accordion items data structure'
 ---
 ::
+
+::doc-topic
+#title
+## Slots
+::
+::doc-table
+---
+headers: ['Slot', 'Props', 'Description']
+rows:
+  - - 'header'
+    - '{ item: object, isOpen: boolean }'
+    - 'Custom header template'
+  - - 'content'
+    - '{ item: object }'
+    - 'Custom content template'
+---
+::
+
+::doc-topic
+#title
+## Styling
+#description
+- Base styling with Tailwind:
+::code-box{header="Core Structure" type="css" copy}
+```css
+  .accordion {
+    @apply p-1 bg-white shadow-sm;
+    @apply border-2 border-primary-light-500 rounded-lg;
+  }
+
+  .accordion-header {
+    @apply flex justify-between items-center cursor-pointer p-2 font-bold;
+  }
+```
+::
+- Smooth transitions:
+::code-box{header="Transition Effects" type="css" copy}
+```css
+  .accordion-enter-active,
+  .accordion-leave-active {
+    @apply transition-all duration-300;
+  }
+
+  .accordion-enter-from,
+  .accordion-leave-to {
+    @apply max-h-0 opacity-0;
+  }
+```
+::
+
+
+
