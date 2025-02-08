@@ -1,6 +1,40 @@
 # Changelog
 
 
+## v1.4.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.3.0...v1.4.0)
+
+### 🚀 Enhancements
+
+- **docs:** Add components to docs ([06916ed](https://github.com/paper-kit/nuxt/commit/06916ed))
+- **docs:** Add pu-tooltip page ([a83288e](https://github.com/paper-kit/nuxt/commit/a83288e))
+- **docs:** Add DocTable component ([a7e9f27](https://github.com/paper-kit/nuxt/commit/a7e9f27))
+- **docs:** Add components page ([39c1d82](https://github.com/paper-kit/nuxt/commit/39c1d82))
+- **docs:** Add pu-tabs page ([721a45a](https://github.com/paper-kit/nuxt/commit/721a45a))
+- **docs:** Add CodeBlock and use on pu-accordion page ([fe532e1](https://github.com/paper-kit/nuxt/commit/fe532e1))
+- **docs:** Add accordion component docs ([2e71f69](https://github.com/paper-kit/nuxt/commit/2e71f69))
+- **docs:** Add docs page for accordion ([e2a4cec](https://github.com/paper-kit/nuxt/commit/e2a4cec))
+- **docs:** Add docs page for badge ([a44550c](https://github.com/paper-kit/nuxt/commit/a44550c))
+- **docs:** Add docs page for select ([d220fc5](https://github.com/paper-kit/nuxt/commit/d220fc5))
+- **docs:** Add docs page for tooltip ([0bca68e](https://github.com/paper-kit/nuxt/commit/0bca68e))
+- **docs:** Add docs page for input ([d5386ca](https://github.com/paper-kit/nuxt/commit/d5386ca))
+- **docs:** Add docs page for button ([bc03cd8](https://github.com/paper-kit/nuxt/commit/bc03cd8))
+- **icons:** Add all icons to PUIcon ([3f7aa83](https://github.com/paper-kit/nuxt/commit/3f7aa83))
+- **docs:** Add docs page for button-icon ([d643823](https://github.com/paper-kit/nuxt/commit/d643823))
+
+### 🏡 Chore
+
+- **release:** V1.3.0 ([ee2628d](https://github.com/paper-kit/nuxt/commit/ee2628d))
+- **docs:** Adjust pu-tabs page ([b7bdf99](https://github.com/paper-kit/nuxt/commit/b7bdf99))
+- **docs:** Fix codeblock component ([ff49678](https://github.com/paper-kit/nuxt/commit/ff49678))
+- **lint:** Fix some warnings ([67aedf5](https://github.com/paper-kit/nuxt/commit/67aedf5))
+
+### ❤️ Contributors
+
+- Felipe <felipe16.12.1998@gmail.com>
+- Felipe Oliveira <felipe16.12.1998@gmail.com>
+
 ## v1.3.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.2.0...v1.3.0)
