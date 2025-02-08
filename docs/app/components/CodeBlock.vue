@@ -1,9 +1,10 @@
 <template>
   <div class="border-2 border-primary-light-500 rounded-lg">
     <div class="flex border-b border-primary-light-500">
-      <button
+      <PUButton
         v-for="tab in tabs"
         :key="tab.label"
+        flavor="ghost"
         class="px-4 py-2 font-medium transition-colors duration-200"
         :class="{
           'bg-primary-light-500 text-white': activeTab === tab.label,
@@ -12,7 +13,7 @@
         @click="activeTab = tab.label"
       >
         {{ tab.label }}
-      </button>
+      </PUButton>
     </div>
     <div class="p-6 bg-gradient-to-b from-white to-gray-50 rounded-xl shadow-lg h-auto">
       <div
