@@ -59,7 +59,7 @@ const handleChange = (event: Event) => {
     </select>
     <span class="absolute inset-y-0 right-2 flex items-center pr-2 pointer-events-none">
       <PUIcon
-        name="arrow-down"
+        name="chevron-down"
         custom-class="text-primary-light-500"
       />
     </span>

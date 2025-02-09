@@ -19,7 +19,7 @@
           </h3>
         </slot>
         <PUIcon
-          name="arrow-down"
+          name="chevron-down"
           class="icon"
           :class="{ 'rotate-180': isOpen(index) }"
         />
