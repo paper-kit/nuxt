@@ -29,7 +29,7 @@
       <template #component>
         <div class="flex">
           <PUButtonIcon
-            name="arrow-down"
+            name="chevron-down"
             flavor="outlined"
           />
         </div>
@@ -48,7 +48,7 @@
             id="test"
             v-model="value"
             placeholder="Search"
-            icon-left="search"
+            icon-left="search-plus"
           />
         </div>
       </template>
