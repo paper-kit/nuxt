@@ -1,6 +1,38 @@
 # Changelog
 
 
+## v1.5.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.4.0...v1.5.0)
+
+### 🚀 Enhancements
+
+- **docs:** Add docs page for toast ([78375b6](https://github.com/paper-kit/nuxt/commit/78375b6))
+- **docs:** Add docs page for checkbox ([d44dc3e](https://github.com/paper-kit/nuxt/commit/d44dc3e))
+- **docs:** Add docs page for modal ([3b5e34b](https://github.com/paper-kit/nuxt/commit/3b5e34b))
+- **docs:** Add docs page for switch ([4d130d6](https://github.com/paper-kit/nuxt/commit/4d130d6))
+- **docs:** Add docs page for radio ([41b6355](https://github.com/paper-kit/nuxt/commit/41b6355))
+- **docs:** Add docs page for tag ([2d60b29](https://github.com/paper-kit/nuxt/commit/2d60b29))
+- **docs:** Add docs page for textarea ([043e3da](https://github.com/paper-kit/nuxt/commit/043e3da))
+- **docs:** Add docs page for toast ([c699807](https://github.com/paper-kit/nuxt/commit/c699807))
+- **docs:** Add icons on aside menu ([e5ceb3e](https://github.com/paper-kit/nuxt/commit/e5ceb3e))
+- **docs:** Add docs page for icons ([06f8b75](https://github.com/paper-kit/nuxt/commit/06f8b75))
+
+### 🏡 Chore
+
+- **release:** V1.4.0 ([468468e](https://github.com/paper-kit/nuxt/commit/468468e))
+- **docs:** Fix icon on allcomponents ([2c76353](https://github.com/paper-kit/nuxt/commit/2c76353))
+- **docs:** Removed some files ([79eef84](https://github.com/paper-kit/nuxt/commit/79eef84))
+- **component:** Update icon ([95c0f9f](https://github.com/paper-kit/nuxt/commit/95c0f9f))
+- **component:** Update path to get stroke params ([3703e78](https://github.com/paper-kit/nuxt/commit/3703e78))
+- **docs:** Update aside menu to adjust layout ([7fa5e49](https://github.com/paper-kit/nuxt/commit/7fa5e49))
+- **component:** Update input to emit changes ([f5cfe99](https://github.com/paper-kit/nuxt/commit/f5cfe99))
+- **docs:** Update docs page gap ([d196d63](https://github.com/paper-kit/nuxt/commit/d196d63))
+
+### ❤️ Contributors
+
+- Felipe <felipe16.12.1998@gmail.com>
+
 ## v1.4.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.3.0...v1.4.0)
