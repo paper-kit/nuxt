@@ -21,7 +21,10 @@
           <PUToast position="bottom-right" />
           <PUToast position="center" />
         </div>
-        <PUButton @click="showSecondary" flavor="outlined">
+        <PUButton
+          flavor="outlined"
+          @click="showSecondary"
+        >
           Show Outlined Toast
         </PUButton>
       </template>
