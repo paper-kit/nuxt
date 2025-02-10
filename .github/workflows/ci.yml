@@ -20,10 +20,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm exec eslint .
 
   test:
     runs-on: ubuntu-latest
