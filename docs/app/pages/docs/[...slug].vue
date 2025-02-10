@@ -12,7 +12,7 @@ if (!page.value) {
 </script>
 
 <template>
-  <div class=" overflow-y-auto flex py-4 h-auto">
+  <div class=" overflow-y-auto flex py-4 h-auto gap-2">
     <AsideMenu />
     <div class="w-full flex flex-col gap-4">
       <ContentRenderer
