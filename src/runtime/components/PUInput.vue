@@ -44,6 +44,15 @@ const emit = defineEmits<{
   (event: 'update:modelValue', value: string | number | null): void
 }>()
 
+//add a watcher to update the modelvalue
+
+watch(() => value.value, (newVal) => {
+  emit('update:modelValue', newVal)
+})
+
+// add event listeners to the input field
+
+
 const updateValue = (e: Event) => {
   const target = e.target as HTMLInputElement
   emit('update:modelValue', target.value)
