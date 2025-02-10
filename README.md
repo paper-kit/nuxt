@@ -14,12 +14,15 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
+![paper-ui-home](https://github.com/user-attachments/assets/c5b4f83a-d052-475d-ad0b-596c9621b5a0)
+
 
 `@paper-ui/nuxt` is a component library for Nuxt.js that aims to create a "hand-drawn" aesthetic for your UI. With this library, you can build interfaces using components with a unique and artistically crafted style.
 
+
 ## Installation
 
-To install the module in your Nuxt.js project, use the following command:
+To install the module in your Nuxt.js project, use `one` of the following commands:
 
 ```bash
 npx nuxi@latest module add paper-ui
@@ -28,8 +31,6 @@ npx nuxi@latest module add paper-ui
 ```bash
 npm install @paper-ui/nuxt
 ```
-
-Or, if you're using `pnpm`:
 
 ```bash
 pnpm add @paper-ui/nuxt
