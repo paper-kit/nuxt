@@ -18,7 +18,7 @@ const items: Items[] = [
     title: 'Getting Started',
     links: [
       { name: 'Introduction', link: '/docs' },
-      { name: 'Installation', link: '/docs' },
+      { name: 'Icons', link: '/docs/icons' },
       { name: 'Configuration', link: '/docs' },
       { name: 'Components', link: '/docs' },
     ],
