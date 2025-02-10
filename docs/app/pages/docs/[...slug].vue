@@ -14,9 +14,11 @@ if (!page.value) {
 <template>
   <div class=" overflow-y-auto flex py-4 h-auto">
     <AsideMenu />
-    <ContentRenderer
-      v-if="page"
-      :value="page"
-    />
+    <div class="w-full flex flex-col gap-4">
+      <ContentRenderer
+        v-if="page"
+        :value="page"
+      />
+    </div>
   </div>
 </template>
