@@ -22,6 +22,10 @@ Find and replace all on all files (CMD+SHIFT+F):
 To install the module in your Nuxt.js project, use the following command:
 
 ```bash
+npx nuxi@latest module add paper-ui
+```
+
+```bash
 npm install @paper-ui/nuxt
 ```
 
