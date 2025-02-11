@@ -4,6 +4,7 @@
       <input
         v-if="!alwaysOpen"
         type="text"
+        :disabled
         :value="formattedDate"
         readonly
         class="datepicker-input w-full border-2 border-black rounded-lg pl-10 py-2"
@@ -68,6 +69,7 @@ const props = defineProps<{
   locale?: Locale
   disabledDates?: string[]
   disabledRange?: { start: string, end: string }
+  disabled?: boolean
 }>()
 const emit = defineEmits(['update:modelValue'])
 
