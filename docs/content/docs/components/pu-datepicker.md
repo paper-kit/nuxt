@@ -115,6 +115,11 @@ rows:
     - 'No'
     - 'undefined'
     - 'Range of disabled dates'
+  - - 'disabled'
+    - 'boolean'
+    - 'No'
+    - 'false'
+    - 'Disable input'
 ---
 ::
 
