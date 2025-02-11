@@ -22,9 +22,9 @@ defineProps<{
 }>()
 
 const positionClass = ref({
-  'top': 'top-[-11px] left-1/2 -translate-x-1/2 rotate-[-135deg]',
-  'top-left': 'top-[-11px] left-[25%] -translate-x-[25%] rotate-[-135deg]',
-  'top-right': 'top-[-11px] left-[75%] -translate-x-[75%] rotate-[-135deg]',
+  'top': 'top-[-10.5px] left-1/2 -translate-x-1/2 rotate-[-135deg]',
+  'top-left': 'top-[-10.5px] left-[25%] -translate-x-[25%] rotate-[-135deg]',
+  'top-right': 'top-[-10.5px] left-[75%] -translate-x-[75%] rotate-[-135deg]',
 
   'bottom': 'bottom-[-10px] left-1/2 -translate-x-1/2 rotate-45',
   'bottom-left': 'bottom-[-10px] left-[25%] -translate-x-[25%] rotate-45',
