@@ -1,6 +1,37 @@
 # Changelog
 
 
+## v1.6.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.5.0...v1.6.0)
+
+### 🚀 Enhancements
+
+- **component:** Add new component PUDatePicker ([0e7070b](https://github.com/paper-kit/nuxt/commit/0e7070b))
+- **docs:** Add docs page for datepicker ([2ec545e](https://github.com/paper-kit/nuxt/commit/2ec545e))
+- **components:** Add PUProgress component ([0224a3a](https://github.com/paper-kit/nuxt/commit/0224a3a))
+- **docs:** Add docs page for progress ([f632ae8](https://github.com/paper-kit/nuxt/commit/f632ae8))
+- **docs:** Add new components on menu ([9ab9931](https://github.com/paper-kit/nuxt/commit/9ab9931))
+
+### 🩹 Fixes
+
+- **component:** Fix before content on tooltip ([2b217a1](https://github.com/paper-kit/nuxt/commit/2b217a1))
+- **component:** Update disabled state for datepicker ([7839989](https://github.com/paper-kit/nuxt/commit/7839989))
+
+### 🏡 Chore
+
+- **release:** V1.5.0 ([ff1a6cc](https://github.com/paper-kit/nuxt/commit/ff1a6cc))
+- **lint:** Fix some warnings ([191b4db](https://github.com/paper-kit/nuxt/commit/191b4db))
+- **docs:** Add nuxt command to add module ([140e5f3](https://github.com/paper-kit/nuxt/commit/140e5f3))
+- **docs:** Add datepicker on aside menu ([a853bd6](https://github.com/paper-kit/nuxt/commit/a853bd6))
+- **component:** Update layout on datepicker ([fd49c04](https://github.com/paper-kit/nuxt/commit/fd49c04))
+- **docs:** Update props for datepicker doc ([6559b4e](https://github.com/paper-kit/nuxt/commit/6559b4e))
+
+### ❤️ Contributors
+
+- Felipe <felipe16.12.1998@gmail.com>
+- Felipe Oliveira <felipe16.12.1998@gmail.com>
+
 ## v1.5.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.4.0...v1.5.0)
