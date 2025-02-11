@@ -96,7 +96,7 @@ onUpdated(() => nextTick(updateIndicatorPosition))
 }
 
 .tab-item.active-tab {
-  @apply text-black font-semibold;
+  @apply text-primary-light-500 font-semibold;
 }
 
 .default-tab {

@@ -7,13 +7,13 @@
         :disabled
         :value="formattedDate"
         readonly
-        class="datepicker-input w-full border-2 border-black rounded-lg pl-10 py-2"
+        class="datepicker-input w-full border-2 border-primary-light-500 rounded-lg pl-10 py-2"
         @focus="isOpen = true"
       >
       <PUIcon
         v-if="!alwaysOpen"
         name="calender"
-        class="absolute left-3 top-1/2 -translate-y-1/2 text-black cursor-pointer"
+        class="absolute left-3 top-1/2 -translate-y-1/2 text-primary-light-500 cursor-pointer"
         @click="isOpen = true"
       />
     </div>
@@ -184,7 +184,7 @@ const nextMonth = () => {
 }
 
 .datepicker-days button.selected {
-  @apply bg-black text-white;
+  @apply bg-primary-light-500 text-white;
 }
 
 .datepicker-days button.disabled {

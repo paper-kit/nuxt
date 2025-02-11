@@ -70,7 +70,7 @@ const closeOnBackdrop = (event: MouseEvent) => {
 }
 
 .modal-button {
-  @apply bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-700;
+  @apply bg-primary-light-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700;
 }
 
 .fade-modal-enter-active,

@@ -13,7 +13,7 @@
       >
         <PUIcon
           name="info"
-          :custom-class="toast.severity === 'primary' ? 'text-white' : 'text-black'"
+          :custom-class="toast.severity === 'primary' ? 'text-white' : 'text-primary-light-500'"
         />
         <div class="inline-block">
           {{ toast.summary }}

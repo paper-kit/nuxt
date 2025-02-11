@@ -17,7 +17,7 @@
         fill="none"
       />
       <circle
-        class="text-black stroke-current transition-all duration-300"
+        class="text-primary-light-500 stroke-current transition-all duration-300"
         cx="50"
         cy="50"
         r="45"
@@ -34,7 +34,7 @@
       :style="{ height: sizeMap.horizontal + 'px' }"
     >
       <div
-        class="h-full bg-black transition-all duration-300"
+        class="h-full bg-primary-light-500 transition-all duration-300"
         :style="{ width: `${progress}%` }"
       />
     </div>
@@ -45,7 +45,7 @@
       :style="{ width: sizeMap.vertical + 'px', height: '100px' }"
     >
       <div
-        class="bg-black transition-all duration-300"
+        class="bg-primary-light-500 transition-all duration-300"
         :style="{ height: `${progress}%` }"
       />
     </div>

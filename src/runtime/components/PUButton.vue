@@ -8,7 +8,7 @@
       v-if="iconLeft"
       :name="iconLeft"
       :custom-class="
-        flavor == 'outlined' || flavor == 'ghost' ? 'text-black' : 'text-white'
+        flavor == 'outlined' || flavor == 'ghost' ? 'text-primary-light-500' : 'text-white'
       "
     />
     <slot />
@@ -16,7 +16,7 @@
       v-if="iconRight"
       :name="iconRight"
       :custom-class="
-        flavor == 'outlined' || flavor == 'ghost' ? 'text-black' : 'text-white'
+        flavor == 'outlined' || flavor == 'ghost' ? 'text-primary-light-500' : 'text-white'
       "
     />
   </button>
@@ -65,7 +65,7 @@ buttonClass.push(
 }
 
 .pu-button:not(:disabled):hover {
-  @apply shadow-black/50 font-bold;
+  @apply shadow-primary-light-500/50 font-bold;
 }
 
 .pu-button.pu-button--disabled {

@@ -134,7 +134,7 @@
           <PUTabs :tabs="tabs">
             <template #tab="{ tab, isActive }">
               <div
-                :class="{ 'text-black': isActive, 'text-gray-500': !isActive }"
+                :class="{ 'text-primary-light-500': isActive, 'text-gray-500': !isActive }"
                 class="flex items-center gap-2"
               >
                 <span>{{ tab.label }}</span>
