@@ -28,6 +28,22 @@
       {{ date2 }}
     </div>
     <div class="w-48 flex flex-col gap-8 h-full">
+      <PUProgress
+        mode="horizontal"
+        :progress="75"
+        size="small"
+      />
+      <PUProgress
+        mode="vertical"
+        :progress="50"
+        size="medium"
+      />
+      <PUProgress
+        mode="radial"
+        :progress="30"
+        size="large"
+      />
+
       <PUButton
         flavor="outlined"
         shape="rounded"
