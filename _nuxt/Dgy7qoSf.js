@@ -1,0 +1,1 @@
+import{a as o,f as s,k as a,i as t,Y as _,l as n}from"./PDdZSj2d.js";const r={class:"pu-label font-patrick"},c=["for"],l=o({__name:"PULabel",props:{id:{}},setup(p){return(e,d)=>(a(),s("div",r,[t("label",{for:e.id},[_(e.$slots,"default",{},void 0,!0)],8,c)]))}}),f=Object.assign(n(l,[["__scopeId","data-v-89fbe72e"]]),{__name:"PULabel"});export{f as _};
