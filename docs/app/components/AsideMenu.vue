@@ -34,6 +34,7 @@ const items: Items[] = [
       { name: 'PUDatePicker', link: '/docs/components/pu-datepicker', new: true },
       { name: 'PUInput', link: '/docs/components/pu-input' },
       { name: 'PUModal', link: '/docs/components/pu-modal' },
+      { name: 'PUProgress', link: '/docs/components/pu-progress', new: true },
       { name: 'PURadio', link: '/docs/components/pu-radio' },
       { name: 'PUSelect', link: '/docs/components/pu-select' },
       { name: 'PUSwitch', link: '/docs/components/pu-switch' },

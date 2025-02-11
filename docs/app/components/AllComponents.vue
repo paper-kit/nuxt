@@ -238,6 +238,35 @@
         <a href="/docs/components/pu-radio">PURadio</a>
       </template>
     </ShowComponent>
+    <ShowComponent>
+      <template #component>
+        <div class="flex w-72 relative">
+          <PUDatePicker
+            v-model="date2"
+            locale="en-US"
+            class="absolute"
+            disabled
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-datepicker">PUDatePicker</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent>
+      <template #component>
+        <div class="w-56">
+          <PUProgress
+            :progress="63"
+            mode="horizontal"
+            size="medium"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-progress">PUProgress</a>
+      </template>
+    </ShowComponent>
     <PUModal />
     <PUToast
       ref="toast"
@@ -262,6 +291,8 @@ const { show } = useModal()
 const showModal = () => {
   show()
 }
+
+const date2 = ref('2025-02-10')
 
 const accordionItems = [
   {
