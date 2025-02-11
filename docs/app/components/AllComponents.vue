@@ -267,6 +267,27 @@
         <a href="/docs/components/pu-progress">PUProgress</a>
       </template>
     </ShowComponent>
+    <ShowComponent>
+      <template #component>
+        <div class="flex gap-2">
+          <PUAvatar
+            src="/avatar.svg"
+            size="small"
+          />
+          <PUAvatar
+            src="/avatar.svg"
+            size="medium"
+          />
+          <PUAvatar
+            src="/avatar.svg"
+            size="large"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-avatar">PUAvatar</a>
+      </template>
+    </ShowComponent>
     <PUModal />
     <PUToast
       ref="toast"
