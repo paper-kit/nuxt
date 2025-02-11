@@ -27,6 +27,7 @@ const items: Items[] = [
     title: 'Components',
     links: [
       { name: 'PUAccordion', link: '/docs/components/pu-accordion' },
+      { name: 'PUAvatar', link: '/docs/components/pu-avatar', new: true },
       { name: 'PUBadge', link: '/docs/components/pu-badge' },
       { name: 'PUButtonIcon', link: '/docs/components/pu-button-icon' },
       { name: 'PUButton', link: '/docs/components/pu-button' },
