@@ -1,5 +1,32 @@
 <template>
   <div class="screen h-screen flex justify-center items-center relative overflow-y-auto p-20">
+    <div>
+      <div class="space-y-8">
+        <PUDatePicker
+          v-model="date2"
+          locale="en-US"
+          always-open
+        />
+
+        <PUDatePicker
+          v-model="date2"
+          locale="en-US"
+        />
+
+        <PUDatePicker
+          v-model="date2"
+          :disabled-dates="disabledDates"
+          locale="pt-BR"
+        />
+
+        <PUDatePicker
+          v-model="date2"
+          :disabled-range="disabledRange"
+          locale="pt-BR"
+        />
+      </div>
+      {{ date2 }}
+    </div>
     <div class="w-48 flex flex-col gap-8 h-full">
       <PUButton
         flavor="outlined"
@@ -188,6 +215,16 @@ const accordionItems = [
     content: 'Explicabo, odio molestias! Quaerat, ipsa fugit quasi atque.',
   },
 ]
+
+const date2 = ref('2025-02-10')
+const disabledDates = ref([
+  new Date(2025, 1, 14).toISOString().split('T')[0],
+  new Date(2025, 1, 21).toISOString().split('T')[0],
+])
+const disabledRange = ref({
+  start: new Date(2025, 1, 10).toISOString().split('T')[0],
+  end: new Date(2025, 1, 15).toISOString().split('T')[0],
+})
 
 const tabs = [
   {
