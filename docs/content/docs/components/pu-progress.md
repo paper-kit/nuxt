@@ -105,7 +105,7 @@ rows:
 ::code-box{header="Progress Colors" type="css" copy}
 ```css
   .progress-bar {
-    @apply bg-black transition-all duration-300;
+    @apply bg-primary-light-500 transition-all duration-300;
   }
 ```
 ::

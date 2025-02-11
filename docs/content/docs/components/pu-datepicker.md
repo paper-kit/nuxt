@@ -158,7 +158,7 @@ rows:
   }
 
   .datepicker-days button.selected {
-    @apply bg-black text-white;
+    @apply bg-primary-light-500 text-white;
   }
 ```
 ::
