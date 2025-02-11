@@ -186,6 +186,9 @@
           ]"
           flavor="box"
         />
+        <PUAvatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8VV7dlZvxOseZJqh0baBIHNre1tzNjcZpXQ&s" size="small" shape="circular" />
+        <PUAvatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8VV7dlZvxOseZJqh0baBIHNre1tzNjcZpXQ&s" size="medium" shape="rounded" />
+        <PUAvatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8VV7dlZvxOseZJqh0baBIHNre1tzNjcZpXQ&s" size="large" shape="square" />
       </div>
     </div>
 
