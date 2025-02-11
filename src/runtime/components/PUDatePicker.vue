@@ -1,19 +1,27 @@
 <template>
-  <div class="relative font-patrick w-72">
-    <input
-      v-if="!alwaysOpen"
-      type="text"
-      :value="formattedDate"
-      readonly
-      class="datepicker-input border-2 border-primary-light-500 rounded-lg shadow-md shadow-primary-light-500/20 mb-2"
-      @focus="isOpen = true"
-    >
+  <div class="relative font-patrick">
+    <div class="relative min-w-full">
+      <input
+        v-if="!alwaysOpen"
+        type="text"
+        :value="formattedDate"
+        readonly
+        class="datepicker-input w-full border-2 border-black rounded-lg pl-10 py-2"
+        @focus="isOpen = true"
+      >
+      <PUIcon
+        v-if="!alwaysOpen"
+        name="calender"
+        class="absolute left-3 top-1/2 -translate-y-1/2 text-black cursor-pointer"
+        @click="isOpen = true"
+      />
+    </div>
     <PUTooltip
       v-if="isOpen || alwaysOpen"
       :positions="alwaysOpen ? [] : ['top-left']"
-      class="datepicker-container w-full p-4"
+      class="datepicker-container w-full p-4 "
     >
-      <div class="datepicker-header">
+      <div class="datepicker-header min-w-full">
         <button @click="prevMonth">
           <PUIcon name="chevron-left" />
         </button>
@@ -22,22 +30,24 @@
           <PUIcon name="chevron-right" />
         </button>
       </div>
-      <div class="datepicker-weekdays">
+      <div class="datepicker-weekdays ">
         <span
           v-for="day in weekDays[locale]"
           :key="day"
+          class=""
         >{{ day }}</span>
       </div>
       <div class="datepicker-days">
         <span
           v-for="n in startOffset"
           :key="'empty-' + n"
-          class="empty"
+          class="empty bg-primary-light-50"
         />
         <button
           v-for="day in daysInMonth"
           :key="day"
           :class="{ selected: isSelected(day), disabled: isDisabled(day) }"
+          class="hover:bg-primary-light-100"
           @click="selectDate(day)"
         >
           {{ day }}
@@ -164,11 +174,11 @@ const nextMonth = () => {
 
 .datepicker-weekdays,
 .datepicker-days {
-  @apply grid grid-cols-7 text-center;
+  @apply grid grid-cols-7 text-center gap-1;
 }
 
 .datepicker-days button {
-  @apply p-1 cursor-pointer rounded-md;
+  @apply p-1 cursor-pointer rounded-sm;
 }
 
 .datepicker-days button.selected {
@@ -180,6 +190,6 @@ const nextMonth = () => {
 }
 
 .datepicker-input {
-  @apply w-full p-1 rounded-md cursor-pointer;
+  @apply w-full rounded-md cursor-pointer;
 }
 </style>

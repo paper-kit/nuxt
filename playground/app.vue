@@ -1,7 +1,7 @@
 <template>
   <div class="screen h-screen flex justify-center items-center relative overflow-y-auto p-20">
     <div>
-      <div class="space-y-8">
+      <div class="space-y-8 w-96">
         <PUDatePicker
           v-model="date2"
           locale="en-US"
@@ -54,7 +54,7 @@
         @update:model-value="handleModelValueUpdate"
       />
 
-      <PUTooltip :positions="[]">
+      <PUTooltip :positions="['top']">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias fugit
         molestiae eos, voluptatem sit quos illo
       </PUTooltip>
