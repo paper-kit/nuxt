@@ -11,11 +11,15 @@
       <div
         v-for="item in list.links"
         :key="item.name"
-        class="font-sans text-sm"
+        class="w-full flex justify-between items-center font-sans text-sm"
       >
         <a
           :href="item.link"
         >{{ item.name }}</a>
+        <PUBadge
+          v-if="item.new"
+          label="new"
+        />
       </div>
       <div
         v-if="index !== items.length - 1"
@@ -31,7 +35,7 @@
 defineProps<{
   items: {
     title: string
-    links: { name: string, link: string }[]
+    links: { name: string, link: string, new: boolean }[]
   }[]
 }>()
 </script>

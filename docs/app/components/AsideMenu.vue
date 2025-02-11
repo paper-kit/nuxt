@@ -10,7 +10,7 @@ import AsideMenuItems from './AsideMenuItems.vue'
 
 interface Items {
   title: string
-  links: { name: string, link: string }[]
+  links: { name: string, link: string, new?: boolean }[]
 }
 
 const items: Items[] = [
@@ -31,6 +31,7 @@ const items: Items[] = [
       { name: 'PUButtonIcon', link: '/docs/components/pu-button-icon' },
       { name: 'PUButton', link: '/docs/components/pu-button' },
       { name: 'PUCheckbox', link: '/docs/components/pu-checkbox' },
+      { name: 'PUDatePicker', link: '/docs/components/pu-datepicker', new: true },
       { name: 'PUInput', link: '/docs/components/pu-input' },
       { name: 'PUModal', link: '/docs/components/pu-modal' },
       { name: 'PURadio', link: '/docs/components/pu-radio' },
