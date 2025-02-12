@@ -17,10 +17,15 @@ const props = withDefaults(
   },
 )
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'checked', 'unchecked'])
 
 const toggleState = () => {
   if (props.disabled) return
+  if (props.modelValue) {
+    emit('unchecked')
+  } else {
+    emit('checked')
+  }
   emit('update:modelValue', !props.modelValue)
 }
 
