@@ -39,6 +39,7 @@ const items: Items[] = [
       { name: 'PURadio', link: '/docs/components/pu-radio' },
       { name: 'PUSelect', link: '/docs/components/pu-select' },
       { name: 'PUSwitch', link: '/docs/components/pu-switch' },
+      { name: 'PUTable', link: '/docs/components/pu-table', new: true },
       { name: 'PUTabs', link: '/docs/components/pu-tabs' },
       { name: 'PUTag', link: '/docs/components/pu-tag' },
       { name: 'PUTextArea', link: '/docs/components/pu-textarea' },
