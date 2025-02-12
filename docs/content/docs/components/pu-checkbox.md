@@ -113,6 +113,12 @@ rows:
   - - 'update:modelValue'
     - 'Emits when state changes'
     - 'boolean'
+  - - 'checked'
+    - 'Emits when checked'
+    - '-'
+  - - 'unchecked'
+    - 'Emits when state unchecked'
+    - '-'
 ---
 ::
 
