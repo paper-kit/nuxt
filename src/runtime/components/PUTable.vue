@@ -127,7 +127,7 @@ const setSort = (key: string) => {
 
     <div
       v-if="perPage"
-      class="flex justify-between mt-4 font-patrick"
+      class="flex justify-between mt-4 font-patrick items-center"
     >
       <PUButton
         key="table-previous"
