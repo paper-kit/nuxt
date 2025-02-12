@@ -10,8 +10,6 @@ const props = defineProps<{
   hiddenColumns?: string[]
 }>()
 
-const emit = defineEmits(['update:hiddenColumns'])
-
 const searchQuery = ref('')
 const sortKey = ref<string | null>(null)
 const sortOrder = ref<'asc' | 'desc'>('asc')
@@ -60,17 +58,6 @@ const setSort = (key: string) => {
     sortOrder.value = 'asc'
   }
 }
-
-const toggleColumn = (key: string) => {
-  const hidden = new Set(props.hiddenColumns)
-  if (hidden.has(key)) {
-    hidden.delete(key)
-  }
-  else {
-    hidden.add(key)
-  }
-  emit('update:hiddenColumns', Array.from(hidden))
-}
 </script>
 
 <template>
@@ -84,34 +71,20 @@ const toggleColumn = (key: string) => {
           v-model="searchQuery"
           type="text"
           icon-left="search"
-          placeholder="Pesquisar..."
+          placeholder="Search..."
           class="border p-2 rounded"
         />
-      </div>
-      <div class="flex gap-2">
-        <label
-          v-for="header in headers"
-          :key="header.key"
-          class="flex items-center gap-1"
-        >
-          <input
-            type="checkbox"
-            :checked="!hiddenColumns?.includes(header.key)"
-            @change="toggleColumn(header.key)"
-          >
-          {{ header.label }}
-        </label>
       </div>
     </div>
 
     <table class="w-full border-collapse border-2 border-primary-light-500 font-patrick">
       <thead>
-        <tr class="bg-primary-light-500 text-white text-left">
+        <tr class="bg-primary-light-500/10 text-primary-light-500 text-left">
           <th
             v-for="header in headers"
             v-show="!hiddenColumns?.includes(header.key)"
             :key="header.key"
-            class="border p-2 border-primary-light-50 cursor-pointer"
+            class="border p-2 border-primary-light-500 cursor-pointer"
             @click="sortable ? setSort(header.key) : null"
           >
             {{ header.label }}
@@ -154,21 +127,27 @@ const toggleColumn = (key: string) => {
 
     <div
       v-if="perPage"
-      class="flex justify-between mt-4"
+      class="flex justify-between mt-4 font-patrick"
     >
-      <button
+      <PUButton
+        key="table-previous"
         :disabled="currentPage === 1"
+        icon-left="chevron-left"
+        flavor="outlined"
         @click="currentPage--"
       >
-        « Anterior
-      </button>
-      <span>Página {{ currentPage }} de {{ totalPages }}</span>
-      <button
+        Previous
+      </PUButton>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <PUButton
+        key="table-next"
+        flavor="outlined"
+        icon-right="chevron-right"
         :disabled="currentPage === totalPages"
         @click="currentPage++"
       >
-        Próximo »
-      </button>
+        Next
+      </PUButton>
     </div>
   </div>
 </template>
