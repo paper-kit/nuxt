@@ -20,7 +20,7 @@
     </CodeBlock>
 
     <CodeBlock v-if="type === 'sorting'">
-      <template #preview> 
+      <template #preview>
         <PUTable
           :headers="[
             { key: 'name', label: 'Name' },

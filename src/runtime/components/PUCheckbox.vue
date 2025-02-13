@@ -23,7 +23,8 @@ const toggleState = () => {
   if (props.disabled) return
   if (props.modelValue) {
     emit('unchecked')
-  } else {
+  }
+  else {
     emit('checked')
   }
   emit('update:modelValue', !props.modelValue)
