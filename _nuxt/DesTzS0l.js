@@ -1,1 +1,0 @@
-import{l as o,f as c,k as i,i as t,Y as e}from"./Bn4YlaNq.js";const n={},a={class:"my-4 space-y-2"},l={class:"topic-title text-xl font-bold"},r={class:"topic-description text-lg"};function d(s,_){return i(),c("div",a,[t("div",l,[e(s.$slots,"title")]),t("div",r,[e(s.$slots,"description")])])}const f=Object.assign(o(n,[["render",d]]),{__name:"DocTopic"});export{f as default};
