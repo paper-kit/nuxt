@@ -83,10 +83,10 @@ watch(isMuted, (newVal) => {
       ref="videoRef"
       :src="src"
       :poster="poster"
-      class="w-full aspect-video bg-black"
+      class="w-full aspect-video bg-white"
     />
 
-    <div class="absolute bottom-0 left-0 w-full bg-primary-light-500 text-white p-2 flex items-center gap-3">
+    <div class="absolute -bottom-1 -left-1 w-[calc(100%+.5rem)] bg-white border-2 border-primary-light-500 rounded-b-lg text-primary-light-500 p-2 flex items-center gap-3">
       <button @click="togglePlay">
         <PUIcon
           :name="isPlaying ? 'pause' : 'play'"
@@ -96,14 +96,14 @@ watch(isMuted, (newVal) => {
 
       <input
         type="range"
-        class="flex-1 accent-white"
+        class="flex-1 accent-primary-light-500"
         min="0"
         :max="duration"
         :value="currentTime"
         @input="seek"
       >
 
-      <span class="text-xs">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span>
+      <span class="text-sm font-bold font-patrick">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span>
 
       <button @click="toggleMute">
         <PUIcon
@@ -113,7 +113,7 @@ watch(isMuted, (newVal) => {
       </button>
       <input
         type="range"
-        class="w-16 accent-white"
+        class="w-16 accent-primary-light-500"
         min="0"
         max="1"
         step="0.1"
