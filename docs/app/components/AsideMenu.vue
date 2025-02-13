@@ -44,6 +44,7 @@ const items: Items[] = [
       { name: 'PUTextArea', link: '/docs/components/pu-textarea' },
       { name: 'PUToast', link: '/docs/components/pu-toast' },
       { name: 'PUTooltip', link: '/docs/components/pu-tooltip' },
+      { name: 'PUvideo', link: '/docs/components/pu-video', new: true },
     ],
   },
 ]

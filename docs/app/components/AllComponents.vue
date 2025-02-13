@@ -2,6 +2,32 @@
   <div class="flex gap-4 flex-wrap mx-4">
     <ShowComponent is-new>
       <template #component>
+        <div class="flex w-48 relative">
+          <PUVideo
+            src=""
+            poster=""
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-audio">PUAudio</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex w-48 relative">
+          <PUVideo
+            src=""
+            poster=""
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-video">PUVideo</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
         <div class="flex w-72 relative">
           <PUDatePicker
             v-model="date2"
