@@ -15,12 +15,11 @@ interface Items {
 
 const items: Items[] = [
   {
-    title: 'Getting Started',
+    title: 'Introduction',
     links: [
-      { name: 'Introduction', link: '/docs' },
+      { name: 'Getting Started', link: '/docs/getting-started' },
+      { name: 'All Components', link: '/docs' },
       { name: 'Icons', link: '/docs/icons' },
-      { name: 'Configuration', link: '/docs' },
-      { name: 'Components', link: '/docs' },
     ],
   },
   {
