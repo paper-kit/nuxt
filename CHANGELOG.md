@@ -1,6 +1,50 @@
 # Changelog
 
 
+## v1.7.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.6.0...v1.7.0)
+
+### 🚀 Enhancements
+
+- **component:** Add new component PUAvatar ([a6a0ac4](https://github.com/paper-kit/nuxt/commit/a6a0ac4))
+- **docs:** Add docs page for progress ([43c7d6c](https://github.com/paper-kit/nuxt/commit/43c7d6c))
+- **docs:** Add avatar on aside menu ([2fda273](https://github.com/paper-kit/nuxt/commit/2fda273))
+- **docs:** Add PUTable component ([f7919b6](https://github.com/paper-kit/nuxt/commit/f7919b6))
+- **component:** Add new events on checkbox ([239b193](https://github.com/paper-kit/nuxt/commit/239b193))
+- **docs:** Add new events on checkbox doc ([8a5cf71](https://github.com/paper-kit/nuxt/commit/8a5cf71))
+- **component:** Add new component PUTable ([f050f29](https://github.com/paper-kit/nuxt/commit/f050f29))
+- **docs:** Add docs page for table ([89da6c8](https://github.com/paper-kit/nuxt/commit/89da6c8))
+- **docs:** Add 'new' on new components ([85d8f87](https://github.com/paper-kit/nuxt/commit/85d8f87))
+- **component:** Add new component PUVideo ([56aa352](https://github.com/paper-kit/nuxt/commit/56aa352))
+- **component:** Add new component PUAudio ([4bcbe46](https://github.com/paper-kit/nuxt/commit/4bcbe46))
+- **docs:** Add docs page for video ([9478175](https://github.com/paper-kit/nuxt/commit/9478175))
+- **docs:** Add docs page for audio ([c230090](https://github.com/paper-kit/nuxt/commit/c230090))
+- **docs:** Add audio/video components on docs/menu ([936919c](https://github.com/paper-kit/nuxt/commit/936919c))
+- **docs:** Add assets on docs ([76839cd](https://github.com/paper-kit/nuxt/commit/76839cd))
+
+### 🩹 Fixes
+
+- **component:** Fix disabled state on button ([1c95c93](https://github.com/paper-kit/nuxt/commit/1c95c93))
+- **docs:** Fix aside menu urls ([48780c7](https://github.com/paper-kit/nuxt/commit/48780c7))
+
+### 🏡 Chore
+
+- **release:** V1.6.0 ([0420567](https://github.com/paper-kit/nuxt/commit/0420567))
+- **components:** Update style to primary color ([d0f9fcd](https://github.com/paper-kit/nuxt/commit/d0f9fcd))
+- **docs:** Update style to primary color ([aa3a320](https://github.com/paper-kit/nuxt/commit/aa3a320))
+- **layout:** Adjust pagination of the table ([785640d](https://github.com/paper-kit/nuxt/commit/785640d))
+- **lint:** Fix eslint warnings ([245035c](https://github.com/paper-kit/nuxt/commit/245035c))
+- **docs:** Move file into docs folder ([f6d307d](https://github.com/paper-kit/nuxt/commit/f6d307d))
+- **docs:** Change url to /docs ([c223675](https://github.com/paper-kit/nuxt/commit/c223675))
+- **component:** Update layout on pu-video ([d1ff150](https://github.com/paper-kit/nuxt/commit/d1ff150))
+- **component:** Update icons on pu-toast ([4c9bbda](https://github.com/paper-kit/nuxt/commit/4c9bbda))
+
+### ❤️ Contributors
+
+- Felipe <felipe16.12.1998@gmail.com>
+- Felipe Oliveira <felipe16.12.1998@gmail.com>
+
 ## v1.6.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.5.0...v1.6.0)
