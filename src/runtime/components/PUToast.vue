@@ -12,14 +12,14 @@
         :class="toastClass(toast.severity)"
       >
         <PUIcon
-          name="info"
+          name="info-circle"
           :custom-class="toast.severity === 'primary' ? 'text-white' : 'text-primary-light-500'"
         />
         <div class="inline-block">
           {{ toast.summary }}
         </div>
         <PUIcon
-          name="close"
+          name="times"
           class="close-icon"
           @click="toast.id ? removeToast(toast.id) : null"
         />

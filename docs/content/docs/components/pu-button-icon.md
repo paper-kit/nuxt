@@ -149,7 +149,7 @@ rows:
 ::code-box{header="Hover State" type="css" copy}
 ```css
   .pu-button-icon:not(:disabled):hover {
-    @apply shadow-black/50 font-bold;
+    @apply shadow-primary-light-500/50 font-bold;
   }
 ```
 ::

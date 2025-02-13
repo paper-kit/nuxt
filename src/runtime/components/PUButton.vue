@@ -2,7 +2,7 @@
   <button
     :disabled="disabled"
     class="pu-button font-patrick"
-    :class="buttonClass"
+    :class="[buttonClass, disabled ? 'pu-button--disabled' : '']"
   >
     <PUIcon
       v-if="iconLeft"
@@ -23,6 +23,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, defineProps } from 'vue'
+
 const props = withDefaults(
   defineProps<{
     disabled?: boolean
@@ -42,26 +44,25 @@ const props = withDefaults(
   },
 )
 
-const buttonClass: string[] = ['pu-button']
+const buttonClass = ref<string[]>(['pu-button'])
 
-const flavorClasses = {
+const flavorClasses = ref({
   normal: 'pu-button--normal',
   outlined: 'pu-button--outlined',
   ghost: 'pu-button--ghost',
-}
+})
 
-buttonClass.push(
-  flavorClasses[props.flavor],
+buttonClass.value.push(
+  flavorClasses.value[props.flavor],
   `pu-button--${props.size}`,
   `pu-button--${props.shape}`,
-  props.disabled ? 'pu-button--disabled' : '',
   props.customClass,
 )
 </script>
 
 <style lang="css" scoped>
 .pu-button {
-  @apply  py-2 shadow-md transition duration-200 ease-in-out flex justify-center gap-1;
+  @apply  py-2 shadow-md transition duration-200 ease-in-out flex justify-center items-center gap-1;
 }
 
 .pu-button:not(:disabled):hover {

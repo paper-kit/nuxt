@@ -15,18 +15,18 @@ interface Items {
 
 const items: Items[] = [
   {
-    title: 'Getting Started',
+    title: 'Introduction',
     links: [
-      { name: 'Introduction', link: '/docs' },
+      { name: 'Getting Started', link: '/docs/getting-started' },
+      { name: 'All Components', link: '/docs' },
       { name: 'Icons', link: '/docs/icons' },
-      { name: 'Configuration', link: '/docs' },
-      { name: 'Components', link: '/docs' },
     ],
   },
   {
     title: 'Components',
     links: [
       { name: 'PUAccordion', link: '/docs/components/pu-accordion' },
+      { name: 'PUAvatar', link: '/docs/components/pu-avatar', new: true },
       { name: 'PUBadge', link: '/docs/components/pu-badge' },
       { name: 'PUButtonIcon', link: '/docs/components/pu-button-icon' },
       { name: 'PUButton', link: '/docs/components/pu-button' },
@@ -38,11 +38,13 @@ const items: Items[] = [
       { name: 'PURadio', link: '/docs/components/pu-radio' },
       { name: 'PUSelect', link: '/docs/components/pu-select' },
       { name: 'PUSwitch', link: '/docs/components/pu-switch' },
+      { name: 'PUTable', link: '/docs/components/pu-table', new: true },
       { name: 'PUTabs', link: '/docs/components/pu-tabs' },
       { name: 'PUTag', link: '/docs/components/pu-tag' },
       { name: 'PUTextArea', link: '/docs/components/pu-textarea' },
       { name: 'PUToast', link: '/docs/components/pu-toast' },
       { name: 'PUTooltip', link: '/docs/components/pu-tooltip' },
+      { name: 'PUvideo', link: '/docs/components/pu-video', new: true },
     ],
   },
 ]

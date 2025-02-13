@@ -1,5 +1,104 @@
 <template>
   <div class="flex gap-4 flex-wrap mx-4">
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex w-48 relative">
+          <PUVideo
+            src=""
+            poster=""
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-audio">PUAudio</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex w-48 relative">
+          <PUVideo
+            src=""
+            poster=""
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-video">PUVideo</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex w-72 relative">
+          <PUDatePicker
+            v-model="date2"
+            locale="en-US"
+            class="absolute"
+            disabled
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-datepicker">PUDatePicker</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-56">
+          <PUProgress
+            :progress="63"
+            mode="horizontal"
+            size="medium"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-progress">PUProgress</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex gap-2">
+          <PUAvatar
+            src="/avatar.svg"
+            size="small"
+          />
+          <PUAvatar
+            src="/avatar.svg"
+            size="medium"
+          />
+          <PUAvatar
+            src="/avatar.svg"
+            size="large"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-avatar">PUAvatar</a>
+      </template>
+    </ShowComponent>
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex gap-2">
+          <PUTable
+            :headers="[
+              { key: 'name', label: 'Name' },
+              { key: 'age', label: 'Age' },
+            ]"
+            :rows="[
+              { name: 'John Doe', age: 28 },
+            ]"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-table">PUtable</a>
+      </template>
+    </ShowComponent>
+    <PUModal />
+    <PUToast
+      ref="toast"
+      position="top-right"
+    />
     <ShowComponent>
       <template #component>
         <PUButton flavor="outlined">
@@ -135,7 +234,7 @@
           <PUTabs :tabs="tabs">
             <template #tab="{ tab, isActive }">
               <div
-                :class="{ 'text-black': isActive, 'text-gray-500': !isActive }"
+                :class="{ 'text-primary-light-500': isActive, 'text-gray-500': !isActive }"
                 class="flex items-center gap-2"
               >
                 <span>{{ tab.label }}</span>
@@ -230,7 +329,7 @@
               { label: 'True', value: true },
               { label: 'False', value: false },
             ]"
-            flavor="box"
+            flavor="normal"
           />
         </div>
       </template>
@@ -238,40 +337,6 @@
         <a href="/docs/components/pu-radio">PURadio</a>
       </template>
     </ShowComponent>
-    <ShowComponent>
-      <template #component>
-        <div class="flex w-72 relative">
-          <PUDatePicker
-            v-model="date2"
-            locale="en-US"
-            class="absolute"
-            disabled
-          />
-        </div>
-      </template>
-      <template #component-name>
-        <a href="/docs/components/pu-datepicker">PUDatePicker</a>
-      </template>
-    </ShowComponent>
-    <ShowComponent>
-      <template #component>
-        <div class="w-56">
-          <PUProgress
-            :progress="63"
-            mode="horizontal"
-            size="medium"
-          />
-        </div>
-      </template>
-      <template #component-name>
-        <a href="/docs/components/pu-progress">PUProgress</a>
-      </template>
-    </ShowComponent>
-    <PUModal />
-    <PUToast
-      ref="toast"
-      position="top-right"
-    />
   </div>
 </template>
 

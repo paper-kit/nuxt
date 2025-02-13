@@ -259,7 +259,7 @@ rows:
 ```css
   .pu-tooltip {
     @apply relative border-2 border-primary-light-500 bg-white 
-          rounded-lg text-center p-4 shadow-lg shadow-black/20;
+          rounded-lg text-center p-4 shadow-lg shadow-primary-light-500/20;
   }
 
   .tooltip-arrow {

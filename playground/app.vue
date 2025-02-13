@@ -186,8 +186,37 @@
           ]"
           flavor="box"
         />
+        <PUAvatar
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8VV7dlZvxOseZJqh0baBIHNre1tzNjcZpXQ&s"
+          size="small"
+          shape="circular"
+        />
+        <PUAvatar
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8VV7dlZvxOseZJqh0baBIHNre1tzNjcZpXQ&s"
+          size="medium"
+          shape="rounded"
+        />
+        <PUAvatar
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8VV7dlZvxOseZJqh0baBIHNre1tzNjcZpXQ&s"
+          size="large"
+          shape="square"
+        />
       </div>
     </div>
+
+    <PUTable
+      :headers="tableHeaders"
+      :rows="tableRows"
+      sortable
+      filterable
+      :per-page="2"
+      :hidden-columns="['age']"
+      @update:hidden-columns="(cols) => console.log(cols)"
+    >
+      <template #cell-age="{ row }">
+        <span class="font-bold">{{ row.age }} anos</span>
+      </template>
+    </PUTable>
 
     <br>
     <PUModal />
@@ -205,6 +234,55 @@ const options = ref([
   { value: 1, label: 'Example Item' },
   { value: 2, label: 'Option 2' },
   { value: 3, label: 'Option 3' },
+])
+
+const tableHeaders = [
+  { key: 'name', label: 'Name' },
+  { key: 'age', label: 'Age' },
+  { key: 'email', label: 'Email' },
+  { key: 'status', label: 'Status' },
+]
+
+// const tableRows = [
+//   [
+//     'John Doe', 30, 'john.doe@gmail.com', 'active',
+//   ],
+//   [
+//     'Jane Doe', 25, 'jane.doe@gmail.com', 'inactive',
+//   ],
+//   [
+//     'Alice Johnson', 35, 'alice.johnson@gmail.com', 'active',
+//   ],
+//   [
+//     'Bob Johnson', 40, 'Bob.johnson@gmail', 'inactive',
+//   ],
+// ]
+
+const tableRows = ref([
+  {
+    name: 'John Doe',
+    age: 30,
+    email: 'john.doe@gmail.com',
+    status: 'active',
+  },
+  {
+    name: 'Jane Doe',
+    age: 25,
+    email: 'jane.doe@gmail.com',
+    status: 'inactive',
+  },
+  {
+    name: 'Alice Johnson',
+    age: 35,
+    email: 'alice.johnson@gmail.com',
+    status: 'active',
+  },
+  {
+    name: 'Bob Johnson',
+    age: 40,
+    email: 'Bob.johnson@gmail',
+    status: 'inactive',
+  },
 ])
 
 const value = ref<string | number | null>('')

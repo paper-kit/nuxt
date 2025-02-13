@@ -177,7 +177,7 @@ rows:
     @apply py-2 shadow-md transition duration-200 ease-in-out flex justify-center gap-1;
   }
   .pu-button:not(:disabled):hover {
-    @apply shadow-black/50 font-bold;
+    @apply shadow-primary-light-500/50 font-bold;
   }
 ```
 ::
