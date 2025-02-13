@@ -4,7 +4,7 @@
       <div class="w-full md:w-1/2 flex items-end justify-end h-auto flex-col leading-loose">
         <slot />
         <div class="text-lg absolute bottom-0 left-1/2 -translate-x-1/2">
-          <a href="/getting-started">
+          <a href="/docs/getting-started">
             <PUButton flavor="outlined">Get Started</PUButton>
           </a>
         </div>
