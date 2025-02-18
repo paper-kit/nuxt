@@ -18,7 +18,7 @@
     <div class="p-6 bg-gradient-to-b from-white to-gray-50 rounded-xl shadow-lg h-auto">
       <div
         v-if="activeTab === 'Preview'"
-        class="w-full h-full flex justify-center items-center gap-2"
+        class="w-full h-full flex justify-center items-center gap-2 p-4 bg-primary-light-500 dark"
       >
         <slot name="preview" />
       </div>

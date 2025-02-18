@@ -1,5 +1,15 @@
 <template>
   <div class="flex gap-4 flex-wrap mx-4">
+    <PUCompare>
+      <template #left>
+        <img src="/bg.svg" class="w-full h-full object-cover" />
+      </template>
+      <template #right>
+        <img src="/bg.svg" class="w-full h-full object-cover" />
+      </template>
+    </PUCompare>
+
+
     <ShowComponent is-new>
       <template #component>
         <div class="flex w-48 relative">

@@ -65,8 +65,8 @@ const toggle = (index: number) => {
 
 <style scoped>
 .accordion {
-  @apply p-1 bg-white shadow-sm;
-  @apply border-2 border-primary-light-500 rounded-lg;
+  @apply p-1 bg-white dark:bg-primary-light-500 shadow-sm;
+  @apply border-2 border-primary-light-500 dark:border-white rounded-lg;
   @apply text-base;
 }
 
@@ -79,19 +79,19 @@ const toggle = (index: number) => {
 }
 
 .default-header {
-  @apply text-gray-800 text-lg;
+  @apply text-gray-800 dark:text-white text-lg;
 }
 
 .icon {
-  @apply transform transition-transform duration-200;
+  @apply transform transition-transform duration-200 dark:text-white;;
 }
 
 .accordion-content {
-  @apply p-2 text-gray-700 text-base;
+  @apply p-2 text-gray-700 dark:text-gray-50 text-base;
 }
 
 .divider {
-  @apply border-t border-primary-light-500/10 my-2;
+  @apply border-t border-primary-light-500/10 dark:border-white/50 my-2;
 }
 
 /* Transitions */
