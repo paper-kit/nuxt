@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const props = defineProps<{
+defineProps<{
   ariaLabel?: string
   ariaLabelledby?: string
 }>()
@@ -47,11 +47,11 @@ const updateSlider = (event: Event) => {
       class="absolute top-0 bottom-0 border border-primary-light-500"
       :style="{ left: sliderValue + '%' }"
     >
-    <div class="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary-light-500 flex justify-between">
-      <PUIcon name="chevron-left" />
-      <PUIcon name="chevron-right" />
+      <div class="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary-light-500 flex justify-between">
+        <PUIcon name="chevron-left" />
+        <PUIcon name="chevron-right" />
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
