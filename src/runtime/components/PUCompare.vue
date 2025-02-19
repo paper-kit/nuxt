@@ -4,6 +4,8 @@ import { ref } from 'vue'
 defineProps<{
   ariaLabel?: string
   ariaLabelledby?: string
+  withDarkMode?: boolean
+  withIcon?: boolean
 }>()
 
 const sliderValue = ref(50)
@@ -15,24 +17,34 @@ const updateSlider = (event: Event) => {
 
 <template>
   <div
-    class="relative w-full max-w-lg border-2 border-primary-light-500 rounded-lg shadow-lg p-4 overflow-hidden"
+    class="relative w-full max-w-lg border-2 border-primary-light-500 rounded-lg shadow-lg overflow-hidden"
     :aria-labelledby="ariaLabelledby"
     :aria-label="ariaLabel"
   >
-    <!-- Left Side (Fixo) -->
-    <div class="absolute inset-0">
+    <div class="absolute -z-20 inset-0 flex items-center justify-center pointer-events-none bg-white dark:bg-primary-light-500">
+      <div
+        v-if="withDarkMode"
+        class="absolute top-1 right-1 text-primary-light-500 font-patrick"
+      >
+        <PUIcon name="brightness" />
+      </div>
       <slot name="left" />
     </div>
 
-    <!-- Right Side (Cortado pelo slider) -->
     <div
-      class="absolute inset-0 overflow-hidden"
-      :style="{ width: sliderValue + '%' }"
+      class="absolute -z-20 inset-0 flex items-center justify-center overflow-hidden  "
+      :class="{ 'dark bg-primary-light-500': withDarkMode }"
+      :style="{ clipPath: `inset(0 ${100 - sliderValue}% 0 0)` }"
     >
+      <div
+        v-if="withDarkMode"
+        class="absolute top-1 left-1 text-white font-patrick"
+      >
+        <PUIcon name="moon" />
+      </div>
       <slot name="right" />
     </div>
 
-    <!-- Slider -->
     <input
       v-model="sliderValue"
       type="range"
@@ -42,12 +54,14 @@ const updateSlider = (event: Event) => {
       @input="updateSlider"
     >
 
-    <!-- Linha do Slider -->
     <div
       class="absolute top-0 bottom-0 border border-primary-light-500"
       :style="{ left: sliderValue + '%' }"
     >
-      <div class="absolute -z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary-light-500 flex justify-between">
+      <div
+        v-if="withIcon"
+        class="absolute -z-10 top-1/2 text-xs -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary-light-300 bg-white/70  flex items-center gap-1 shadow-md"
+      >
         <PUIcon name="chevron-left" />
         <PUIcon name="chevron-right" />
       </div>

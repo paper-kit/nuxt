@@ -1,19 +1,34 @@
 <template>
   <div class="flex gap-4 flex-wrap mx-4">
-    <PUCompare>
-      <template #left>
-        <img
-          src="/bg.svg"
-          class="w-full h-full object-cover"
-        >
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex w-48 relative">
+          <div class="flex gap-4 flex-wrap mx-4 w-full h-24">
+            <PUCompare with-dark-mode>
+              <template #left>
+                <PUButton
+                  flavor="normal"
+                  shape="rounded"
+                >
+                  Click me!
+                </PUButton>
+              </template>
+              <template #right>
+                <PUButton
+                  flavor="normal"
+                  shape="rounded"
+                >
+                  Click me!
+                </PUButton>
+              </template>
+            </PUCompare>
+          </div>
+        </div>
       </template>
-      <template #right>
-        <img
-          src="/bg.svg"
-          class="w-full h-full object-cover"
-        >
+      <template #component-name>
+        <a href="/docs/components/pu-audio">PUCompare</a>
       </template>
-    </PUCompare>
+    </ShowComponent>
 
     <ShowComponent is-new>
       <template #component>
