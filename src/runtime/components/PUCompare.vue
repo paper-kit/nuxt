@@ -28,7 +28,7 @@ const updateSlider = (event: Event) => {
       >
         <PUIcon name="brightness" />
       </div>
-      <slot name="left" />
+      <slot />
     </div>
 
     <div
@@ -42,7 +42,7 @@ const updateSlider = (event: Event) => {
       >
         <PUIcon name="moon" />
       </div>
-      <slot name="right" />
+      <slot />
     </div>
 
     <input
