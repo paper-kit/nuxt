@@ -3,6 +3,36 @@
     <ShowComponent is-new>
       <template #component>
         <div class="flex w-48 relative">
+          <div class="flex gap-4 flex-wrap mx-4 w-full h-24">
+            <PUCompare with-dark-mode>
+              <template #left>
+                <PUButton
+                  flavor="normal"
+                  shape="rounded"
+                >
+                  Click me!
+                </PUButton>
+              </template>
+              <template #right>
+                <PUButton
+                  flavor="normal"
+                  shape="rounded"
+                >
+                  Click me!
+                </PUButton>
+              </template>
+            </PUCompare>
+          </div>
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-audio">PUCompare</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="flex w-48 relative">
           <PUVideo
             src=""
             poster=""

@@ -23,10 +23,7 @@ const props = withDefaults(
 
 const emit = defineEmits(['update:modelValue'])
 
-const isActive = computed(() => {
-  // Correção: Sempre compara modelValue com value (para uso sem options)
-  return props.modelValue === props.value
-})
+const isActive = computed(() => props.modelValue === props.value)
 
 const updateValue = (value: string | number | boolean) => {
   if (!props.disabled && value !== undefined) {
@@ -35,7 +32,10 @@ const updateValue = (value: string | number | boolean) => {
 }
 
 const getRadioClasses = (active: boolean) => {
-  const classes = ['flex items-center gap-2 group transition-all']
+  const classes = [
+    'flex items-center gap-2 group transition-all',
+    'dark:bg-transparent', // Background para o modo dark
+  ]
 
   if (props.disabled) {
     classes.push('cursor-not-allowed opacity-50')
@@ -48,12 +48,15 @@ const getRadioClasses = (active: boolean) => {
     classes.push('p-2 rounded-lg border-2')
 
     if (active) {
-      classes.push('border-primary-light-600')
+      classes.push('border-primary-light-600 dark:border-white')
       if (props.flavor === 'outlined') classes.push('font-bold')
       if (props.flavor === 'box') classes.push('font-bold')
     }
     else {
-      classes.push('border-primary-light-300 hover:border-primary-light-400')
+      classes.push(
+        'border-primary-light-300 hover:border-primary-light-400',
+        'dark:border-primary-light-400 dark:hover:border-primary-light-300',
+      )
     }
   }
 
@@ -61,18 +64,28 @@ const getRadioClasses = (active: boolean) => {
 }
 
 const getRadioCircleClasses = (active: boolean) => {
-  const classes = ['w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all']
+  const classes = [
+    'w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all',
+  ]
 
   if (props.flavor === 'outlined') {
-    classes.push(active ? 'border-primary-light-600 bg-primary-light-100' : 'border-primary-light-300')
+    classes.push(
+      active
+        ? 'border-primary-light-600 bg-white dark:border-white dark:bg-primary-light-600'
+        : 'border-primary-light-300 dark:border-primary-light-300',
+    )
   }
   else if (props.flavor === 'normal') {
-    classes.push(active ? 'border-primary-light-600 bg-primary-light-600' : 'border-primary-light-300 bg-white')
+    classes.push(
+      active
+        ? 'border-primary-light-600 bg-primary-light-600 dark:border-white dark:bg-primary-light-500'
+        : 'border-primary-light-300 bg-white dark:border-white dark:bg-primary-light-600',
+    )
   }
 
   if (props.disabled) {
-    classes.push('border-primary-light-200')
-    if (props.flavor === 'normal') classes.push('bg-gray-100')
+    classes.push('border-primary-light-200 dark:border-primary-light-500')
+    if (props.flavor === 'normal') classes.push('bg-gray-100 dark:bg-gray-700')
   }
 
   return classes
@@ -80,8 +93,8 @@ const getRadioCircleClasses = (active: boolean) => {
 
 const getDotClasses = computed(() => {
   return props.flavor === 'outlined'
-    ? 'w-2 h-2 rounded-full bg-primary-light-600'
-    : 'w-2 h-2 rounded-full bg-white'
+    ? 'w-2 h-2 rounded-full bg-primary-light-600 dark:bg-white'
+    : 'w-2 h-2 rounded-full bg-white dark:bg-white'
 })
 </script>
 
@@ -107,7 +120,7 @@ const getDotClasses = computed(() => {
         />
       </div>
       <span
-        class="text-primary-light-600 select-none"
+        class="text-primary-light-600 dark:text-white select-none"
         :class="{
           'font-bold': modelValue === option.value,
           'group-hover:opacity-80': !disabled,
@@ -135,7 +148,7 @@ const getDotClasses = computed(() => {
     </div>
     <span
       v-if="label"
-      class="text-primary-light-600 select-none"
+      class="text-primary-light-600 dark:text-white select-none"
       :class="{
         'font-bold': isActive,
         'group-hover:opacity-80': !disabled,
