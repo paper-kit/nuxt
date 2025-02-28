@@ -1,6 +1,9 @@
 <template>
   <div class="modal-demo">
-    <CodeBlock v-if="type === 'default'">
+    <CodeBlock
+      v-if="type === 'default'"
+      :compare="false"
+    >
       <template #preview>
         <PUButton @click="show">
           show
@@ -27,7 +30,10 @@
         <slot name="code" />
       </template>
     </CodeBlock>
-    <CodeBlock v-else>
+    <CodeBlock
+      v-else
+      :compare="false"
+    >
       <template #preview>
         <PUButton @click="show">
           show
