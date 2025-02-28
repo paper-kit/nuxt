@@ -82,7 +82,7 @@ buttonClass.value.push(
 }
 
 .pu-button.pu-button--ghost {
-  @apply bg-transparent text-primary-light-500 border-transparent shadow-none;
+  @apply bg-transparent text-primary-light-500 border-transparent shadow-none dark:text-primary-light-50 dark:border-transparent dark:shadow-white/20;
 }
 
 .pu-button.pu-button--small {
