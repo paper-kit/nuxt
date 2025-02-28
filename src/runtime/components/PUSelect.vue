@@ -1,36 +1,36 @@
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, onMounted } from 'vue'
+import { defineProps, defineEmits, ref, onMounted } from "vue";
 
 type Option = {
-  value: string | number
-  label: string
-}
+  value: string | number;
+  label: string;
+};
 
 const props = defineProps<{
-  options: Option[]
-  modelValue: string | number | null
-  placeholder?: string
-  size?: 'small' | 'large'
-  id?: string
-  exampleOption?: Option
-}>()
+  options: Option[];
+  modelValue: string | number | null;
+  placeholder?: string;
+  size?: "small" | "large";
+  id?: string;
+  exampleOption?: Option;
+}>();
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(["update:modelValue"]);
 
-const selectedValue = ref<string | number | null>(null)
+const selectedValue = ref<string | number | null>(null);
 
 onMounted(() => {
   if (props.exampleOption) {
-    selectedValue.value = props.exampleOption.value
-    emit('update:modelValue', props.exampleOption.value)
+    selectedValue.value = props.exampleOption.value;
+    emit("update:modelValue", props.exampleOption.value);
   }
-})
+});
 
 const handleChange = (event: Event) => {
-  const target = event.target as HTMLSelectElement
-  selectedValue.value = target.value
-  emit('update:modelValue', target.value)
-}
+  const target = event.target as HTMLSelectElement;
+  selectedValue.value = target.value;
+  emit("update:modelValue", target.value);
+};
 </script>
 
 <template>
@@ -41,12 +41,8 @@ const handleChange = (event: Event) => {
       :value="selectedValue"
       @change="handleChange"
     >
-      <option
-        value=""
-        disabled
-        hidden
-      >
-        {{ placeholder || 'Select' }}
+      <option value="" disabled hidden>
+        {{ placeholder || "Select" }}
       </option>
       <option
         v-for="option in options"
@@ -57,15 +53,12 @@ const handleChange = (event: Event) => {
         {{ option.label }}
       </option>
     </select>
-    <span class="absolute inset-y-0 right-2 flex items-center pr-2 pointer-events-none">
-      <PUIcon
-        name="chevron-down"
-        custom-class="text-primary-light-500"
-      />
+    <span
+      class="absolute inset-y-0 right-2 flex items-center pr-2 pointer-events-none"
+    >
+      <PUIcon name="chevron-down" custom-class="text-primary-light-500" />
     </span>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

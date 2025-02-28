@@ -12,22 +12,10 @@
     <CodeBlock v-if="type === 'sizes'">
       <template #preview>
         <div class="flex items-center gap-2">
-          <PUAvatar
-            src="/avatar.svg"
-            size="small"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            size="medium"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            size="large"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            size="xlarge"
-          />
+          <PUAvatar src="/avatar.svg" size="small" />
+          <PUAvatar src="/avatar.svg" size="medium" />
+          <PUAvatar src="/avatar.svg" size="large" />
+          <PUAvatar src="/avatar.svg" size="xlarge" />
         </div>
       </template>
       <template #code>
@@ -38,18 +26,9 @@
     <CodeBlock v-if="type === 'shapes'">
       <template #preview>
         <div class="flex items-center gap-2">
-          <PUAvatar
-            src="/avatar.svg"
-            shape="circular"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            shape="rounded"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            shape="square"
-          />
+          <PUAvatar src="/avatar.svg" shape="circular" />
+          <PUAvatar src="/avatar.svg" shape="rounded" />
+          <PUAvatar src="/avatar.svg" shape="square" />
         </div>
       </template>
       <template #code>
@@ -70,6 +49,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'sizes' | 'shapes' | 'fallback'
-}>()
+  type: "default" | "sizes" | "shapes" | "fallback";
+}>();
 </script>

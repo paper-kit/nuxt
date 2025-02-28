@@ -15,7 +15,9 @@
         {{ tab.label }}
       </PUButton>
     </div>
-    <div class="p-6 bg-gradient-to-b from-white to-gray-50 rounded-xl shadow-lg h-auto">
+    <div
+      class="p-6 bg-gradient-to-b from-white to-gray-50 rounded-xl shadow-lg h-auto"
+    >
       <div
         v-if="activeTab === 'Preview'"
         class="w-full h-full flex justify-center items-center gap-2"
@@ -23,10 +25,7 @@
         <slot name="preview" />
       </div>
       <div v-else>
-        <CodeBox
-          type="vue"
-          header="app.vue"
-        >
+        <CodeBox type="vue" header="app.vue">
           <slot name="code" />
         </CodeBox>
       </div>
@@ -35,11 +34,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const tabs = [
-  { label: 'Preview' },
-  { label: 'Code' },
-]
-const activeTab = ref(tabs && tabs.length ? tabs[0].label : '')
+const tabs = [{ label: "Preview" }, { label: "Code" }];
+const activeTab = ref(tabs && tabs.length ? tabs[0].label : "");
 </script>

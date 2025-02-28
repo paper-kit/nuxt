@@ -7,7 +7,7 @@
       <div class="flex gap-2 items-center">
         <button
           tabindex="-1"
-          class=" py-1.5 focus:outline-none text-gray-700 text-sm rounded-md flex items-center gap-1.5 hover:bg-gray-50"
+          class="py-1.5 focus:outline-none text-gray-700 text-sm rounded-md flex items-center gap-1.5 hover:bg-gray-50"
         >
           <svg
             v-if="type == 'vue'"
@@ -20,16 +20,20 @@
             width="1em"
             height="1em"
             viewBox="0 0 32 32"
-          ><path
-            fill="#41b883"
-            d="M24.4 3.925H30l-14 24.15L2 3.925h10.71l3.29 5.6l3.22-5.6Z"
-          /><path
-            fill="#41b883"
-            d="m2 3.925l14 24.15l14-24.15h-5.6L16 18.415L7.53 3.925Z"
-          /><path
-            fill="#35495e"
-            d="M7.53 3.925L16 18.485l8.4-14.56h-5.18L16 9.525l-3.29-5.6Z"
-          /></svg>
+          >
+            <path
+              fill="#41b883"
+              d="M24.4 3.925H30l-14 24.15L2 3.925h10.71l3.29 5.6l3.22-5.6Z"
+            />
+            <path
+              fill="#41b883"
+              d="m2 3.925l14 24.15l14-24.15h-5.6L16 18.415L7.53 3.925Z"
+            />
+            <path
+              fill="#35495e"
+              d="M7.53 3.925L16 18.485l8.4-14.56h-5.18L16 9.525l-3.29-5.6Z"
+            />
+          </svg>
           <svg
             v-if="type == 'npm'"
             data-v-1b310ddc=""
@@ -79,10 +83,12 @@
             width="1em"
             height="1em"
             viewBox="0 0 32 32"
-          ><path
-            fill="#00DC82"
-            d="M17.708 25h10.409c.33 0 .655-.088.942-.254a1.9 1.9 0 0 0 .689-.696a1.91 1.91 0 0 0 0-1.9L22.756 9.936a1.87 1.87 0 0 0-3.261 0l-1.788 3.125l-3.494-6.111a1.871 1.871 0 0 0-3.262 0l-8.7 15.2a1.91 1.91 0 0 0 .69 2.595c.286.167.61.255.941.255h6.534c2.589 0 4.498-1.147 5.811-3.385l3.19-5.572l1.708-2.982l5.127 8.957h-6.835zm-7.398-2.985l-4.56-.001l6.836-11.942l3.41 5.97l-2.283 3.992c-.873 1.452-1.864 1.981-3.403 1.981"
-          /></svg>
+          >
+            <path
+              fill="#00DC82"
+              d="M17.708 25h10.409c.33 0 .655-.088.942-.254a1.9 1.9 0 0 0 .689-.696a1.91 1.91 0 0 0 0-1.9L22.756 9.936a1.87 1.87 0 0 0-3.261 0l-1.788 3.125l-3.494-6.111a1.871 1.871 0 0 0-3.262 0l-8.7 15.2a1.91 1.91 0 0 0 .69 2.595c.286.167.61.255.941.255h6.534c2.589 0 4.498-1.147 5.811-3.385l3.19-5.572l1.708-2.982l5.127 8.957h-6.835zm-7.398-2.985l-4.56-.001l6.836-11.942l3.41 5.97l-2.283 3.992c-.873 1.452-1.864 1.981-3.403 1.981"
+            />
+          </svg>
 
           <span>{{ header }}</span>
         </button>
@@ -98,7 +104,9 @@
         @click="copyText()"
       > -->
     </div>
-    <div class="w-full flex flex-col p-4 border-2 border-t-0 border-primary-light-500 shadow-lg shadow-primary-light-500/20 bg-[#1c1c1c] text-sm rounded-b-lg">
+    <div
+      class="w-full flex flex-col p-4 border-2 border-t-0 border-primary-light-500 shadow-lg shadow-primary-light-500/20 bg-[#1c1c1c] text-sm rounded-b-lg"
+    >
       <slot />
     </div>
     <!-- <PUToast /> -->
@@ -109,10 +117,10 @@
 // const { add } = useToast()
 
 defineProps<{
-  header?: string
-  type?: 'npm' | 'vue' | 'cmd' | 'nuxt'
-  copy?: string
-}>()
+  header?: string;
+  type?: "npm" | "vue" | "cmd" | "nuxt";
+  copy?: string;
+}>();
 
 // const toast = useToast()
 

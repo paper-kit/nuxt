@@ -18,7 +18,6 @@ Find and replace all on all files (CMD+SHIFT+F):
 
 `@paper-ui/nuxt` is a component library for Nuxt.js that aims to create a "hand-drawn" aesthetic for your UI. With this library, you can build interfaces using components with a unique and artistically crafted style.
 
-
 ## Links
 
 - [✨ Demo](https://stackblitz.com/edit/nuxt-starter-mkfqhq74?file=app.vue)
@@ -48,10 +47,8 @@ After installing the module, add it to your `nuxt.config.js` file:
 
 ```js
 export default defineNuxtConfig({
-  modules: [
-    '@paper-ui/nuxt'
-  ]
-})
+  modules: ["@paper-ui/nuxt"],
+});
 ```
 
 Now you can use the components provided by the library in your pages and Vue components.
@@ -109,18 +106,16 @@ This module is licensed under the [MIT License](LICENSE).
 ## Changelog
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/paper-ui?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/paper-ui?file=playground%2Fapp.vue) -->
+  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/@paper-ui/nuxt/latest.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-version-href]: https://npmjs.com/package/@paper-ui/nuxt
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/paper-ui.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-downloads-href]: https://npm.chart.dev/@paper-ui/nuxt
-
 [license-src]: https://img.shields.io/npm/l/@paper-ui/nuxt.svg?style=flat&colorA=020420&colorB=00DC82
 [license-href]: https://npmjs.com/package/@paper-ui/nuxt
-
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

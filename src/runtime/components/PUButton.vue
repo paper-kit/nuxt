@@ -8,7 +8,9 @@
       v-if="iconLeft"
       :name="iconLeft"
       :custom-class="
-        flavor == 'outlined' || flavor == 'ghost' ? 'text-primary-light-500' : 'text-white'
+        flavor == 'outlined' || flavor == 'ghost'
+          ? 'text-primary-light-500'
+          : 'text-white'
       "
     />
     <slot />
@@ -16,53 +18,55 @@
       v-if="iconRight"
       :name="iconRight"
       :custom-class="
-        flavor == 'outlined' || flavor == 'ghost' ? 'text-primary-light-500' : 'text-white'
+        flavor == 'outlined' || flavor == 'ghost'
+          ? 'text-primary-light-500'
+          : 'text-white'
       "
     />
   </button>
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
+import { ref, defineProps } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    disabled?: boolean
-    flavor?: 'normal' | 'outlined' | 'ghost'
-    shape?: 'rounded' | 'circle'
-    size?: 'small' | 'medium' | 'large'
-    customClass?: string
-    iconLeft?: string
-    iconRight?: string
+    disabled?: boolean;
+    flavor?: "normal" | "outlined" | "ghost";
+    shape?: "rounded" | "circle";
+    size?: "small" | "medium" | "large";
+    customClass?: string;
+    iconLeft?: string;
+    iconRight?: string;
   }>(),
   {
     disabled: false,
-    flavor: 'normal',
-    shape: 'rounded',
-    size: 'medium',
-    customClass: '',
+    flavor: "normal",
+    shape: "rounded",
+    size: "medium",
+    customClass: "",
   },
-)
+);
 
-const buttonClass = ref<string[]>(['pu-button'])
+const buttonClass = ref<string[]>(["pu-button"]);
 
 const flavorClasses = ref({
-  normal: 'pu-button--normal',
-  outlined: 'pu-button--outlined',
-  ghost: 'pu-button--ghost',
-})
+  normal: "pu-button--normal",
+  outlined: "pu-button--outlined",
+  ghost: "pu-button--ghost",
+});
 
 buttonClass.value.push(
   flavorClasses.value[props.flavor],
   `pu-button--${props.size}`,
   `pu-button--${props.shape}`,
   props.customClass,
-)
+);
 </script>
 
 <style lang="css" scoped>
 .pu-button {
-  @apply  py-2 shadow-md transition duration-200 ease-in-out flex justify-center items-center gap-1;
+  @apply py-2 shadow-md transition duration-200 ease-in-out flex justify-center items-center gap-1;
 }
 
 .pu-button:not(:disabled):hover {

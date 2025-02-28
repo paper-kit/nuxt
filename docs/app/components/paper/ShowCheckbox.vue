@@ -11,10 +11,7 @@
 
     <CodeBlock v-if="type === 'with-label'">
       <template #preview>
-        <PUCheckbox
-          v-model="labelChecked"
-          label="Sample Label"
-        />
+        <PUCheckbox v-model="labelChecked" label="Sample Label" />
       </template>
       <template #code>
         <slot name="code" />
@@ -37,10 +34,7 @@
     <CodeBlock v-if="type === 'flavors'">
       <template #preview>
         <div class="flex flex-col gap-2">
-          <PUCheckbox
-            v-model="normalChecked"
-            label="Normal"
-          />
+          <PUCheckbox v-model="normalChecked" label="Normal" />
           <PUCheckbox
             v-model="outlinedChecked"
             label="Outlined"
@@ -57,12 +51,12 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'with-label' | 'strike' | 'flavors'
-}>()
+  type: "default" | "with-label" | "strike" | "flavors";
+}>();
 
-const demoChecked = ref(false)
-const labelChecked = ref(true)
-const strikeChecked = ref(false)
-const normalChecked = ref(true)
-const outlinedChecked = ref(false)
+const demoChecked = ref(false);
+const labelChecked = ref(true);
+const strikeChecked = ref(false);
+const normalChecked = ref(true);
+const outlinedChecked = ref(false);
 </script>

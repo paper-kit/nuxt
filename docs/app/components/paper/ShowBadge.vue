@@ -10,10 +10,7 @@
     </CodeBlock>
     <CodeBlock v-if="type == 'icon'">
       <template #preview>
-        <PUBadge
-          label="With Icon"
-          icon="close"
-        />
+        <PUBadge label="With Icon" icon="close" />
       </template>
       <template #code>
         <slot name="code" />
@@ -22,18 +19,9 @@
     <CodeBlock v-if="type == 'all'">
       <template #preview>
         <div class="flex gap-2">
-          <PUBadge
-            label="Primary"
-            severity="primary"
-          />
-          <PUBadge
-            label="Secondary"
-            severity="secondary"
-          />
-          <PUBadge
-            label="Ghost"
-            severity="ghost"
-          />
+          <PUBadge label="Primary" severity="primary" />
+          <PUBadge label="Secondary" severity="secondary" />
+          <PUBadge label="Ghost" severity="ghost" />
         </div>
       </template>
       <template #code>
@@ -45,6 +33,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'all' | 'icon'
-}>()
+  type: "default" | "all" | "icon";
+}>();
 </script>

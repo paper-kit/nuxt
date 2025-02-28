@@ -11,37 +11,37 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    disabled?: boolean
-    flavor?: 'normal' | 'outlined' | 'ghost'
-    shape?: 'rounded' | 'circle'
-    size?: 'small' | 'medium' | 'large'
-    customClass?: string
-    name: string
+    disabled?: boolean;
+    flavor?: "normal" | "outlined" | "ghost";
+    shape?: "rounded" | "circle";
+    size?: "small" | "medium" | "large";
+    customClass?: string;
+    name: string;
   }>(),
   {
     disabled: false,
-    flavor: 'normal',
-    shape: 'circle',
-    size: 'medium',
-    customClass: '',
+    flavor: "normal",
+    shape: "circle",
+    size: "medium",
+    customClass: "",
   },
-)
+);
 
-const buttonIconClass: string[] = ['pu-button-icon']
+const buttonIconClass: string[] = ["pu-button-icon"];
 
 const flavorClasses = {
-  normal: 'pu-button-icon--normal',
-  outlined: 'pu-button-icon--outlined',
-  ghost: 'pu-button-icon--ghost',
-}
+  normal: "pu-button-icon--normal",
+  outlined: "pu-button-icon--outlined",
+  ghost: "pu-button-icon--ghost",
+};
 
 buttonIconClass.push(
   flavorClasses[props.flavor],
   `pu-button-icon--${props.size}`,
   `pu-button-icon--${props.shape}`,
-  props.disabled ? 'pu-button-icon--disabled' : '',
+  props.disabled ? "pu-button-icon--disabled" : "",
   props.customClass,
-)
+);
 </script>
 
 <style lang="css" scoped>

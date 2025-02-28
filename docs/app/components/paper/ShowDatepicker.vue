@@ -11,10 +11,7 @@
 
     <CodeBlock v-if="type === 'always-open'">
       <template #preview>
-        <PUDatePicker
-          v-model="selectedDate"
-          always-open
-        />
+        <PUDatePicker v-model="selectedDate" always-open />
       </template>
       <template #code>
         <slot name="code" />
@@ -48,9 +45,9 @@
 </template>
 
 <script lang="ts" setup>
-const selectedDate = ref('2023-10-16')
+const selectedDate = ref("2023-10-16");
 
 defineProps<{
-  type: 'default' | 'always-open' | 'disabled-dates' | 'disabled-range'
-}>()
+  type: "default" | "always-open" | "disabled-dates" | "disabled-range";
+}>();
 </script>

@@ -13,6 +13,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type?: 'default'
-}>()
+  type?: "default";
+}>();
 </script>

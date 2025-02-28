@@ -2,10 +2,7 @@
   <div class="textarea-demo">
     <CodeBlock v-if="type === 'default'">
       <template #preview>
-        <PUTextArea
-          v-model="demoValue"
-          placeholder="Enter text..."
-        />
+        <PUTextArea v-model="demoValue" placeholder="Enter text..." />
       </template>
       <template #code>
         <slot name="code" />
@@ -28,9 +25,7 @@
     <CodeBlock v-if="type === 'with-label'">
       <template #preview>
         <div class="flex flex-col gap-1">
-          <PULabel id="demoLabel">
-            Description
-          </PULabel>
+          <PULabel id="demoLabel"> Description </PULabel>
           <PUTextArea
             id="demoLabel"
             v-model="labelValue"
@@ -46,13 +41,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps<{
-  type: 'default' | 'disabled' | 'with-label'
-}>()
+  type: "default" | "disabled" | "with-label";
+}>();
 
-const demoValue = ref('')
-const disabledValue = ref('')
-const labelValue = ref('')
+const demoValue = ref("");
+const disabledValue = ref("");
+const labelValue = ref("");
 </script>

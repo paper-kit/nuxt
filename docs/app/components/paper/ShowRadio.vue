@@ -2,11 +2,7 @@
   <div class="font-patrick">
     <CodeBlock v-if="type === 'default'">
       <template #preview>
-        <PURadio
-          v-model="selectedValue"
-          :value="'option1'"
-          label="Option 1"
-        />
+        <PURadio v-model="selectedValue" :value="'option1'" label="Option 1" />
       </template>
       <template #code>
         <slot name="code" />
@@ -73,11 +69,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps<{
-  type: 'default' | 'with-options' | 'all-variants'
-}>()
+  type: "default" | "with-options" | "all-variants";
+}>();
 
-const selectedValue = ref('option1')
+const selectedValue = ref("option1");
 </script>

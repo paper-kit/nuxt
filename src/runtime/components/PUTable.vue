@@ -1,71 +1,67 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed } from "vue";
 
 const props = defineProps<{
-  headers: { key: string, label: string }[]
-  rows: Record<string, string | number | boolean>[]
-  sortable?: boolean
-  filterable?: boolean
-  perPage?: number
-  hiddenColumns?: string[]
-}>()
+  headers: { key: string; label: string }[];
+  rows: Record<string, string | number | boolean>[];
+  sortable?: boolean;
+  filterable?: boolean;
+  perPage?: number;
+  hiddenColumns?: string[];
+}>();
 
-const searchQuery = ref('')
-const sortKey = ref<string | null>(null)
-const sortOrder = ref<'asc' | 'desc'>('asc')
-const currentPage = ref(1)
+const searchQuery = ref("");
+const sortKey = ref<string | null>(null);
+const sortOrder = ref<"asc" | "desc">("asc");
+const currentPage = ref(1);
 
 const filteredRows = computed(() => {
-  if (!props.filterable || !searchQuery.value) return props.rows
-  return props.rows.filter(row =>
-    Object.values(row).some(value =>
+  if (!props.filterable || !searchQuery.value) return props.rows;
+  return props.rows.filter((row) =>
+    Object.values(row).some((value) =>
       String(value).toLowerCase().includes(searchQuery.value.toLowerCase()),
     ),
-  )
-})
+  );
+});
 
 const sortedRows = computed(() => {
-  if (!props.sortable || !sortKey.value) return filteredRows.value
+  if (!props.sortable || !sortKey.value) return filteredRows.value;
   return [...filteredRows.value].sort((a, b) => {
-    const valA = a[sortKey.value!]
-    const valB = b[sortKey.value!]
+    const valA = a[sortKey.value!];
+    const valB = b[sortKey.value!];
 
-    if (typeof valA === 'number' && typeof valB === 'number') {
-      return sortOrder.value === 'asc' ? valA - valB : valB - valA
+    if (typeof valA === "number" && typeof valB === "number") {
+      return sortOrder.value === "asc" ? valA - valB : valB - valA;
     }
-    return sortOrder.value === 'asc'
+    return sortOrder.value === "asc"
       ? String(valA).localeCompare(String(valB))
-      : String(valB).localeCompare(String(valA))
-  })
-})
+      : String(valB).localeCompare(String(valA));
+  });
+});
 
 const paginatedRows = computed(() => {
-  if (!props.perPage) return sortedRows.value
-  const start = (currentPage.value - 1) * props.perPage
-  return sortedRows.value.slice(start, start + props.perPage)
-})
+  if (!props.perPage) return sortedRows.value;
+  const start = (currentPage.value - 1) * props.perPage;
+  return sortedRows.value.slice(start, start + props.perPage);
+});
 
 const totalPages = computed(() =>
   props.perPage ? Math.ceil(sortedRows.value.length / props.perPage) : 1,
-)
+);
 
 const setSort = (key: string) => {
   if (sortKey.value === key) {
-    sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc'
+    sortOrder.value = sortOrder.value === "asc" ? "desc" : "asc";
+  } else {
+    sortKey.value = key;
+    sortOrder.value = "asc";
   }
-  else {
-    sortKey.value = key
-    sortOrder.value = 'asc'
-  }
-}
+};
 </script>
 
 <template>
   <div class="w-full">
-    <div
-      v-if="filterable"
-      class="mb-3 flex justify-between"
-    >
+    <div v-if="filterable" class="mb-3 flex justify-between">
       <div class="w-48">
         <PUInput
           v-model="searchQuery"
@@ -77,7 +73,9 @@ const setSort = (key: string) => {
       </div>
     </div>
 
-    <table class="w-full border-collapse border-2 border-primary-light-500 font-patrick">
+    <table
+      class="w-full border-collapse border-2 border-primary-light-500 font-patrick"
+    >
       <thead>
         <tr class="bg-primary-light-500/10 text-primary-light-500 text-left">
           <th
@@ -94,30 +92,20 @@ const setSort = (key: string) => {
                 class="inline-flex"
                 name="chevron-up"
               />
-              <PUIcon
-                v-else
-                class="inline-flex"
-                name="chevron-down"
-              />
+              <PUIcon v-else class="inline-flex" name="chevron-down" />
             </span>
           </th>
         </tr>
       </thead>
       <tbody class="shadow-lg shadow-primary-light-500/20">
-        <tr
-          v-for="(row, rowIndex) in paginatedRows"
-          :key="rowIndex"
-        >
+        <tr v-for="(row, rowIndex) in paginatedRows" :key="rowIndex">
           <td
             v-for="header in headers"
             v-show="!hiddenColumns?.includes(header.key)"
             :key="header.key"
             class="border p-2 border-primary-light-500"
           >
-            <slot
-              :name="`cell-${header.key}`"
-              :row="row"
-            >
+            <slot :name="`cell-${header.key}`" :row="row">
               {{ row[header.key] }}
             </slot>
           </td>

@@ -1,6 +1,6 @@
 <template>
   <div
-    v-for="(toast) in toasts"
+    v-for="toast in toasts"
     :key="toast.id"
     class="pu-toast-container font-patrick"
     :class="positionClass"
@@ -13,7 +13,11 @@
       >
         <PUIcon
           name="check"
-          :custom-class="toast.severity === 'primary' ? 'text-white' : 'text-primary-light-500'"
+          :custom-class="
+            toast.severity === 'primary'
+              ? 'text-white'
+              : 'text-primary-light-500'
+          "
         />
         <div class="inline-block">
           {{ toast.summary }}
@@ -29,31 +33,36 @@
 </template>
 
 <script setup lang="ts">
-import { toasts, removeToast } from '../stores/toastStore'
+import { toasts, removeToast } from "../stores/toastStore";
 
 const props = withDefaults(
   defineProps<{
-    position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'center'
+    position?:
+      | "top-left"
+      | "top-right"
+      | "bottom-left"
+      | "bottom-right"
+      | "center";
   }>(),
   {
-    position: 'top-right',
+    position: "top-right",
   },
-)
+);
 
 const positionClass = {
-  'top-left': 'pu-toast-container--top-left',
-  'top-right': 'pu-toast-container--top-right',
-  'bottom-left': 'pu-toast-container--bottom-left',
-  'bottom-right': 'pu-toast-container--bottom-right',
-  'center': 'pu-toast-container--center',
-}[props.position || 'top-right']
+  "top-left": "pu-toast-container--top-left",
+  "top-right": "pu-toast-container--top-right",
+  "bottom-left": "pu-toast-container--bottom-left",
+  "bottom-right": "pu-toast-container--bottom-right",
+  center: "pu-toast-container--center",
+}[props.position || "top-right"];
 
 const toastClass = (severity: string) => {
   return {
-    primary: 'pu-toast--primary',
-    secondary: 'pu-toast--secondary',
-  }[severity]
-}
+    primary: "pu-toast--primary",
+    secondary: "pu-toast--secondary",
+  }[severity];
+};
 </script>
 
 <style lang="css" scoped>
@@ -94,7 +103,7 @@ const toastClass = (severity: string) => {
 }
 
 .pu-toast span {
-  @apply flex-1 font-medium ;
+  @apply flex-1 font-medium;
 }
 
 .close-icon {

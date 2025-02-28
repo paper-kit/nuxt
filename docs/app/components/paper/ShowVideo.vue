@@ -2,9 +2,7 @@
   <div class="video-demo">
     <CodeBlock v-if="type === 'default'">
       <template #preview>
-        <PUVideo
-          src="/paper-ui.mp4"
-        />
+        <PUVideo src="/paper-ui.mp4" />
       </template>
       <template #code>
         <slot name="code" />
@@ -13,10 +11,7 @@
 
     <CodeBlock v-if="type === 'poster'">
       <template #preview>
-        <PUVideo
-          src="/paper-ui.mp4"
-          poster="/bg.svg"
-        />
+        <PUVideo src="/paper-ui.mp4" poster="/bg.svg" />
       </template>
       <template #code>
         <slot name="code" />
@@ -27,6 +22,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'poster'
-}>()
+  type: "default" | "poster";
+}>();
 </script>

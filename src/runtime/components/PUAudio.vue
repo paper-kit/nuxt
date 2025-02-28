@@ -1,76 +1,76 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch } from "vue";
 
-defineProps<{ src: string }>()
+defineProps<{ src: string }>();
 
-const audioRef = ref<HTMLAudioElement | null>(null)
-const isPlaying = ref(false)
-const currentTime = ref(0)
-const duration = ref(0)
-const volume = ref(1)
-const isMuted = ref(false)
+const audioRef = ref<HTMLAudioElement | null>(null);
+const isPlaying = ref(false);
+const currentTime = ref(0);
+const duration = ref(0);
+const volume = ref(1);
+const isMuted = ref(false);
 
 const togglePlay = () => {
-  if (!audioRef.value) return
+  if (!audioRef.value) return;
   if (audioRef.value.paused) {
-    audioRef.value.play()
-    isPlaying.value = true
+    audioRef.value.play();
+    isPlaying.value = true;
+  } else {
+    audioRef.value.pause();
+    isPlaying.value = false;
   }
-  else {
-    audioRef.value.pause()
-    isPlaying.value = false
-  }
-}
+};
 
 const updateTime = () => {
-  if (!audioRef.value) return
-  currentTime.value = audioRef.value.currentTime
-  duration.value = audioRef.value.duration
-}
+  if (!audioRef.value) return;
+  currentTime.value = audioRef.value.currentTime;
+  duration.value = audioRef.value.duration;
+};
 
 const formatTime = (time: number) => {
-  const minutes = Math.floor(time / 60)
-  const seconds = Math.floor(time % 60).toString().padStart(2, '0')
-  return `${minutes}:${seconds}`
-}
+  const minutes = Math.floor(time / 60);
+  const seconds = Math.floor(time % 60)
+    .toString()
+    .padStart(2, "0");
+  return `${minutes}:${seconds}`;
+};
 
 const seek = (event: Event) => {
-  if (!audioRef.value) return
-  const input = event.target as HTMLInputElement
-  audioRef.value.currentTime = Number.parseFloat(input.value)
-}
+  if (!audioRef.value) return;
+  const input = event.target as HTMLInputElement;
+  audioRef.value.currentTime = Number.parseFloat(input.value);
+};
 
 const adjustVolume = (event: Event) => {
-  if (!audioRef.value) return
-  const input = event.target as HTMLInputElement
-  volume.value = Number.parseFloat(input.value)
-  audioRef.value.volume = volume.value
-}
+  if (!audioRef.value) return;
+  const input = event.target as HTMLInputElement;
+  volume.value = Number.parseFloat(input.value);
+  audioRef.value.volume = volume.value;
+};
 
 const toggleMute = () => {
-  if (!audioRef.value) return
-  isMuted.value = !isMuted.value
-  audioRef.value.muted = isMuted.value
-}
+  if (!audioRef.value) return;
+  isMuted.value = !isMuted.value;
+  audioRef.value.muted = isMuted.value;
+};
 
 onMounted(() => {
   if (audioRef.value) {
-    audioRef.value.addEventListener('timeupdate', updateTime)
-    audioRef.value.addEventListener('loadedmetadata', updateTime)
+    audioRef.value.addEventListener("timeupdate", updateTime);
+    audioRef.value.addEventListener("loadedmetadata", updateTime);
   }
-})
+});
 
 watch(isMuted, (newVal) => {
-  if (audioRef.value) audioRef.value.muted = newVal
-})
+  if (audioRef.value) audioRef.value.muted = newVal;
+});
 </script>
 
 <template>
-  <div class="relative w-full max-w-lg border-2 border-primary-light-500 rounded-lg shadow-lg p-4 flex items-center gap-3 bg-white">
-    <audio
-      ref="audioRef"
-      :src="src"
-    />
+  <div
+    class="relative w-full max-w-lg border-2 border-primary-light-500 rounded-lg shadow-lg p-4 flex items-center gap-3 bg-white"
+  >
+    <audio ref="audioRef" :src="src" />
 
     <!-- Play/Pause -->
     <button @click="togglePlay">
@@ -87,7 +87,7 @@ watch(isMuted, (newVal) => {
       :max="duration"
       :value="currentTime"
       @input="seek"
-    >
+    />
 
     <span class="text-md font-bold text-primary-light-600 font-patrick">
       {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
@@ -107,7 +107,7 @@ watch(isMuted, (newVal) => {
       step="0.1"
       :value="volume"
       @input="adjustVolume"
-    >
+    />
   </div>
 </template>
 

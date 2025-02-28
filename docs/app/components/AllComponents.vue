@@ -3,10 +3,7 @@
     <ShowComponent is-new>
       <template #component>
         <div class="flex w-48 relative">
-          <PUVideo
-            src=""
-            poster=""
-          />
+          <PUVideo src="" poster="" />
         </div>
       </template>
       <template #component-name>
@@ -16,10 +13,7 @@
     <ShowComponent is-new>
       <template #component>
         <div class="flex w-48 relative">
-          <PUVideo
-            src=""
-            poster=""
-          />
+          <PUVideo src="" poster="" />
         </div>
       </template>
       <template #component-name>
@@ -44,11 +38,7 @@
     <ShowComponent is-new>
       <template #component>
         <div class="w-56">
-          <PUProgress
-            :progress="63"
-            mode="horizontal"
-            size="medium"
-          />
+          <PUProgress :progress="63" mode="horizontal" size="medium" />
         </div>
       </template>
       <template #component-name>
@@ -58,18 +48,9 @@
     <ShowComponent is-new>
       <template #component>
         <div class="flex gap-2">
-          <PUAvatar
-            src="/avatar.svg"
-            size="small"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            size="medium"
-          />
-          <PUAvatar
-            src="/avatar.svg"
-            size="large"
-          />
+          <PUAvatar src="/avatar.svg" size="small" />
+          <PUAvatar src="/avatar.svg" size="medium" />
+          <PUAvatar src="/avatar.svg" size="large" />
         </div>
       </template>
       <template #component-name>
@@ -84,9 +65,7 @@
               { key: 'name', label: 'Name' },
               { key: 'age', label: 'Age' },
             ]"
-            :rows="[
-              { name: 'John Doe', age: 28 },
-            ]"
+            :rows="[{ name: 'John Doe', age: 28 }]"
           />
         </div>
       </template>
@@ -95,15 +74,10 @@
       </template>
     </ShowComponent>
     <PUModal />
-    <PUToast
-      ref="toast"
-      position="top-right"
-    />
+    <PUToast ref="toast" position="top-right" />
     <ShowComponent>
       <template #component>
-        <PUButton flavor="outlined">
-          Click me!
-        </PUButton>
+        <PUButton flavor="outlined"> Click me! </PUButton>
       </template>
       <template #component-name>
         <a href="/docs/components/pu-button">PUButton</a>
@@ -127,10 +101,7 @@
     <ShowComponent>
       <template #component>
         <div class="flex">
-          <PUButtonIcon
-            name="chevron-down"
-            flavor="outlined"
-          />
+          <PUButtonIcon name="chevron-down" flavor="outlined" />
         </div>
       </template>
       <template #component-name>
@@ -140,9 +111,7 @@
     <ShowComponent>
       <template #component>
         <div class="">
-          <PULabel id="test">
-            teste
-          </PULabel>
+          <PULabel id="test"> teste </PULabel>
           <PUInput
             id="test"
             v-model="value"
@@ -158,14 +127,8 @@
     <ShowComponent>
       <template #component>
         <div class="">
-          <PULabel id="test2">
-            teste
-          </PULabel>
-          <PUTextArea
-            id="test2"
-            v-model="value"
-            placeholder="Type"
-          />
+          <PULabel id="test2"> teste </PULabel>
+          <PUTextArea id="test2" v-model="value" placeholder="Type" />
         </div>
       </template>
       <template #component-name>
@@ -176,10 +139,7 @@
       <template #component>
         <div class="tags flex gap-2">
           <PUTag label="Tag 1" />
-          <PUTag
-            label="Tag 2"
-            icon="close"
-          />
+          <PUTag label="Tag 2" icon="close" />
           <PUTag label="Tag 3" />
         </div>
       </template>
@@ -190,18 +150,9 @@
     <ShowComponent>
       <template #component>
         <div class="tags flex gap-2">
-          <PUBadge
-            label="Badge 1"
-            severity="secondary"
-          />
-          <PUBadge
-            label="Badge 2"
-            icon="close"
-          />
-          <PUBadge
-            label="Badge 3"
-            severity="ghost"
-          />
+          <PUBadge label="Badge 1" severity="secondary" />
+          <PUBadge label="Badge 2" icon="close" />
+          <PUBadge label="Badge 3" severity="ghost" />
         </div>
       </template>
       <template #component-name>
@@ -213,7 +164,9 @@
         <div class="w-72">
           <PUAccordion :items="accordionItems">
             <template #header="{ item, isOpen }">
-              <h3 :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }">
+              <h3
+                :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }"
+              >
                 {{ item.title }}
               </h3>
             </template>
@@ -234,7 +187,10 @@
           <PUTabs :tabs="tabs">
             <template #tab="{ tab, isActive }">
               <div
-                :class="{ 'text-primary-light-500': isActive, 'text-gray-500': !isActive }"
+                :class="{
+                  'text-primary-light-500': isActive,
+                  'text-gray-500': !isActive,
+                }"
                 class="flex items-center gap-2"
               >
                 <span>{{ tab.label }}</span>
@@ -256,11 +212,7 @@
     </ShowComponent>
     <ShowComponent>
       <template #component>
-        <PUButton
-          flavor="normal"
-          shape="rounded"
-          @click="openToast"
-        >
+        <PUButton flavor="normal" shape="rounded" @click="openToast">
           Open Toast
         </PUButton>
       </template>
@@ -270,11 +222,7 @@
     </ShowComponent>
     <ShowComponent>
       <template #component>
-        <PUButton
-          flavor="normal"
-          shape="rounded"
-          @click="showModal()"
-        >
+        <PUButton flavor="normal" shape="rounded" @click="showModal()">
           Open Modal
         </PUButton>
       </template>
@@ -284,9 +232,7 @@
     </ShowComponent>
     <ShowComponent>
       <template #component>
-        <PUTooltip :positions="['bottom-right']">
-          Hello World!
-        </PUTooltip>
+        <PUTooltip :positions="['bottom-right']"> Hello World! </PUTooltip>
       </template>
       <template #component-name>
         <a href="/docs/components/pu-tooltip">PUTooltip</a>
@@ -310,11 +256,7 @@
     </ShowComponent>
     <ShowComponent>
       <template #component>
-        <PUSwitch
-          v-model="checked"
-          label="Switch?"
-          width="mid"
-        />
+        <PUSwitch v-model="checked" label="Switch?" width="mid" />
       </template>
       <template #component-name>
         <a href="/docs/components/pu-switch">PUSwitch</a>
@@ -341,60 +283,60 @@
 </template>
 
 <script setup lang="ts">
-const { add } = useToast()
+const { add } = useToast();
 
 const options = ref([
-  { value: 1, label: 'Example Item' },
-  { value: 2, label: 'Option 2' },
-  { value: 3, label: 'Option 3' },
-])
+  { value: 1, label: "Example Item" },
+  { value: 2, label: "Option 2" },
+  { value: 3, label: "Option 3" },
+]);
 
-const value = ref<string | number | null>(null)
+const value = ref<string | number | null>(null);
 
-const { show } = useModal()
+const { show } = useModal();
 
 const showModal = () => {
-  show()
-}
+  show();
+};
 
-const date2 = ref('2025-02-10')
+const date2 = ref("2025-02-10");
 
 const accordionItems = [
   {
-    title: 'Accordion 1',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    title: "Accordion 1",
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
   },
-]
+];
 
 const tabs = [
   {
-    label: 'Tab 1',
-    content: 'Content for Tab 1',
+    label: "Tab 1",
+    content: "Content for Tab 1",
   },
   {
-    label: 'Tab 2',
-    content: 'Content for Tab 2',
+    label: "Tab 2",
+    content: "Content for Tab 2",
   },
   {
-    label: 'Tab 3',
-    content: 'Content for Tab 3',
+    label: "Tab 3",
+    content: "Content for Tab 3",
   },
-]
+];
 
-const selectedValue = ref<string | number | null>(null)
+const selectedValue = ref<string | number | null>(null);
 
 const handleModelValueUpdate = (value: string | number | null) => {
-  selectedValue.value = value
-}
+  selectedValue.value = value;
+};
 
-const checked = ref<boolean>(false)
+const checked = ref<boolean>(false);
 
 const openToast = () => {
   add({
-    severity: 'secondary',
-    summary: 'Success',
-    detail: 'Action completed successfully!',
+    severity: "secondary",
+    summary: "Success",
+    detail: "Action completed successfully!",
     life: 30000,
-  })
-}
+  });
+};
 </script>
