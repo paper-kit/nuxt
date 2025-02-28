@@ -21,7 +21,10 @@
         class="w-full h-full flex justify-center flex-wrap items-center gap-2 p-4 "
       >
         <slot name="preview" />
-        <div class="flex gap-4 flex-wrap justify-between mx-4 min-h-[200px] w-full lg:w-1/2">
+        <div
+          v-if="compare"
+          class="flex gap-4 flex-wrap justify-between mx-4 min-h-[200px] w-full lg:w-1/2"
+        >
           <PUCompare
             with-dark-mode
             with-icon
@@ -45,6 +48,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+defineProps(
+  {
+    compare: {
+      type: Boolean,
+      default: true,
+    },
+  },
+)
 const tabs = [
   { label: 'Preview' },
   { label: 'Code' },
