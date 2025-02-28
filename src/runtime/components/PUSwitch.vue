@@ -32,7 +32,7 @@ const switchClasses = computed(() => {
   }
   const bgColors = {
     normal: {
-      active: 'bg-primary-light-500',
+      active: 'bg-primary-light-500 dark:bg-white',
       inactive: 'bg-primary-light-300',
     },
     outlined: {
@@ -50,7 +50,7 @@ const switchClasses = computed(() => {
 })
 
 const thumbClasses = computed(() => {
-  const base = 'absolute bg-white rounded-full shadow-sm transform transition-transform duration-300'
+  const base = 'absolute bg-white rounded-full shadow-sm transform transition-transform duration-300 dark:bg-primary-light-500 dark:border-white'
   const sizes = {
     full: 'w-4 h-4 top-1',
     mid: 'w-5 h-5 -top-1 border border-2 border-primary-light-500', // Thumb maior e posicionado acima do container
@@ -81,7 +81,7 @@ const thumbClasses = computed(() => {
       </div>
       <span
         v-if="label"
-        class="text-primary-light-500 transition-opacity select-none"
+        class="text-primary-light-500 transition-opacity select-none dark:text-primary-light-50"
         :class="{
           'text-primary-light-400': disabled,
           'group-hover:opacity-80': !disabled,
