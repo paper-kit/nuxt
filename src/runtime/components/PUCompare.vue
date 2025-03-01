@@ -21,9 +21,11 @@ const updateSlider = (event: Event) => {
     :aria-labelledby="ariaLabelledby"
     :aria-label="ariaLabel"
   >
-    <div class="absolute -z-20 inset-0 flex items-center justify-center pointer-events-none bg-white dark:bg-primary-light-500">
+    <div
+      v-if="withDarkMode"
+      class="absolute -z-20 inset-0 flex items-center justify-center pointer-events-none bg-white dark:bg-primary-light-500"
+    >
       <div
-        v-if="withDarkMode"
         class="absolute top-1 right-1 text-primary-light-500 font-patrick"
       >
         <PUIcon name="brightness" />
@@ -32,17 +34,32 @@ const updateSlider = (event: Event) => {
     </div>
 
     <div
+      v-if="withDarkMode"
       class="absolute -z-20 inset-0 flex items-center justify-center overflow-hidden  "
       :class="{ 'dark bg-primary-light-500': withDarkMode }"
       :style="{ clipPath: `inset(0 ${100 - sliderValue}% 0 0)` }"
     >
       <div
-        v-if="withDarkMode"
         class="absolute top-1 left-1 text-white font-patrick"
       >
         <PUIcon name="moon" />
       </div>
       <slot />
+    </div>
+
+    <div
+      v-if="!withDarkMode"
+      class="absolute -z-20 inset-0 flex items-center justify-center pointer-events-none bg-white dark:bg-primary-light-500"
+    >
+      <slot name="right" />
+    </div>
+
+    <div
+      v-if="!withDarkMode"
+      class="absolute -z-20 inset-0 flex items-center justify-center overflow-hidden bg-white"
+      :style="{ clipPath: `inset(0 ${100 - sliderValue}% 0 0)` }"
+    >
+      <slot name="left" />
     </div>
 
     <input
@@ -60,7 +77,7 @@ const updateSlider = (event: Event) => {
     >
       <div
         v-if="withIcon"
-        class="absolute -z-10 top-1/2 text-xs -translate-y-1/2 -translate-x-1/2 rounded-full border-2 border-primary-light-300 bg-white/70  flex items-center gap-1 shadow-md"
+        class="absolute -z-10 top-1/2 text-xs -translate-y-1/2 -translate-x-1/2 rounded-full  bg-slate-500/20 border border-slate-500/80 text-slate-500  flex items-center gap-1 shadow-md"
       >
         <PUIcon name="chevron-left" />
         <PUIcon name="chevron-right" />
