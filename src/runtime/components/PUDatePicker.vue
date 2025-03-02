@@ -7,20 +7,20 @@
         :disabled
         :value="formattedDate"
         readonly
-        class="datepicker-input w-full border-2 border-primary-light-500 rounded-lg pl-10 py-2"
+        class="datepicker-input w-full border-2 border-primary-light-500 dark:border-white bg-transparent dark:text-white rounded-lg pl-10 py-2"
         @focus="isOpen = true"
       >
       <PUIcon
         v-if="!alwaysOpen"
         name="calender"
-        class="absolute left-3 top-1/2 -translate-y-1/2 text-primary-light-500 cursor-pointer"
+        class="absolute left-3 top-1/2 -translate-y-1/2 text-primary-light-500 dark:text-white cursor-pointer"
         @click="isOpen = true"
       />
     </div>
     <PUTooltip
       v-if="isOpen || alwaysOpen"
       :positions="alwaysOpen ? [] : ['top-left']"
-      class="datepicker-container w-full p-4 "
+      class="datepicker-container w-full p-4"
     >
       <div class="datepicker-header min-w-full">
         <button @click="prevMonth">
@@ -42,13 +42,13 @@
         <span
           v-for="n in startOffset"
           :key="'empty-' + n"
-          class="empty bg-primary-light-50"
+          class="empty bg-primary-light-50 dark:bg-primary-light-400/20"
         />
         <button
           v-for="day in daysInMonth"
           :key="day"
           :class="{ selected: isSelected(day), disabled: isDisabled(day) }"
-          class="hover:bg-primary-light-100"
+          class="hover:bg-primary-light-100 dark:hover:bg-primary-light-400"
           @click="selectDate(day)"
         >
           {{ day }}
@@ -184,7 +184,7 @@ const nextMonth = () => {
 }
 
 .datepicker-days button.selected {
-  @apply bg-primary-light-500 text-white;
+  @apply bg-primary-light-500 text-white dark:bg-white dark:text-primary-light-500;
 }
 
 .datepicker-days button.disabled {
