@@ -27,4 +27,9 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-04-03',
+  tailwindcss: {
+    config: {
+      darkMode: 'class',
+    },
+  },
 })
