@@ -10,11 +10,7 @@
         :class="{ 'active-tab': isActive(index) }"
         @click="setActiveTab(index)"
       >
-        <slot
-          name="tab"
-          :tab="tab"
-          :is-active="isActive(index)"
-        >
+        <slot name="tab" :tab="tab" :is-active="isActive(index)">
           <div class="default-tab">
             <PUIcon :name="tab.icon || ''" />
             <span>{{ tab.label }}</span>
@@ -32,15 +28,8 @@
         class="tabs-content"
         :style="{ transform: `translateX(-${activeTab * 100}%)` }"
       >
-        <div
-          v-for="(tab, index) in tabs"
-          :key="index"
-          class="tab-panel"
-        >
-          <slot
-            name="content"
-            :tab="tab"
-          >
+        <div v-for="(tab, index) in tabs" :key="index" class="tab-panel">
+          <slot name="content" :tab="tab">
             <p>{{ tab.content }}</p>
           </slot>
         </div>
@@ -50,40 +39,40 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, nextTick, onMounted, onUpdated } from 'vue'
+import { ref, watch, nextTick, onMounted, onUpdated } from "vue";
 
 defineProps<{
-  tabs: { label: string, content: string, icon?: string }[]
-}>()
+  tabs: { label: string; content: string; icon?: string }[];
+}>();
 
-const tabRefs = ref<HTMLDivElement[]>([])
-const activeTabLeft = ref(0)
-const activeTabWidth = ref(0)
-const activeTab = ref(0)
+const tabRefs = ref<HTMLDivElement[]>([]);
+const activeTabLeft = ref(0);
+const activeTabWidth = ref(0);
+const activeTab = ref(0);
 
-const isActive = (index: number) => activeTab.value === index
+const isActive = (index: number) => activeTab.value === index;
 
 const setActiveTab = (index: number) => {
-  activeTab.value = index
-}
+  activeTab.value = index;
+};
 
 const updateIndicatorPosition = () => {
-  const currentTab = tabRefs.value[activeTab.value]
+  const currentTab = tabRefs.value[activeTab.value];
   if (currentTab) {
-    const { offsetLeft, offsetWidth } = currentTab
-    activeTabLeft.value = offsetLeft
-    activeTabWidth.value = offsetWidth
+    const { offsetLeft, offsetWidth } = currentTab;
+    activeTabLeft.value = offsetLeft;
+    activeTabWidth.value = offsetWidth;
   }
-}
+};
 
-watch(activeTab, () => nextTick(updateIndicatorPosition))
-onMounted(() => nextTick(updateIndicatorPosition))
-onUpdated(() => nextTick(updateIndicatorPosition))
+watch(activeTab, () => nextTick(updateIndicatorPosition));
+onMounted(() => nextTick(updateIndicatorPosition));
+onUpdated(() => nextTick(updateIndicatorPosition));
 </script>
 
 <style scoped>
 .tabs {
-  @apply w-full border-b border-gray-300 ;
+  @apply w-full border-b border-gray-300;
 }
 
 .tabs-nav {

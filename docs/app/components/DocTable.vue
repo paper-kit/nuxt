@@ -1,6 +1,8 @@
 <template>
   <div class="overflow-x-auto">
-    <table class="min-w-full divide-y divide-gray-200 border-2 border-primary-light-500 rounded-lg">
+    <table
+      class="min-w-full divide-y divide-gray-200 border-2 border-primary-light-500 rounded-lg"
+    >
       <thead class="bg-gray-50 rounded-lg border-2 border-primary-light-500">
         <tr>
           <th
@@ -12,11 +14,8 @@
           </th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-primary-light-500 ">
-        <tr
-          v-for="(row, rowIndex) in cleanedRows"
-          :key="rowIndex"
-        >
+      <tbody class="bg-white divide-y divide-primary-light-500">
+        <tr v-for="(row, rowIndex) in cleanedRows" :key="rowIndex">
           <td
             v-for="(cell, cellIndex) in row"
             :key="cellIndex"
@@ -31,24 +30,32 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 
-const props = defineProps<{ headers: string[], rows: Array<Array<string | number>> }>()
+const props = defineProps<{
+  headers: string[];
+  rows: Array<Array<string | number>>;
+}>();
 
-const cleanedHeaders = computed(() => Array.isArray(props.headers) ? props.headers : [])
-const cleanedRows = computed(() => Array.isArray(props.rows) ? props.rows.map(row => row.map(cleanText)) : [])
+const cleanedHeaders = computed(() =>
+  Array.isArray(props.headers) ? props.headers : [],
+);
+const cleanedRows = computed(() =>
+  Array.isArray(props.rows) ? props.rows.map((row) => row.map(cleanText)) : [],
+);
 
 const cleanText = (text: string | number): string => {
-  if (typeof text !== 'string') return String(text)
-  return text.normalize('NFC').replace(/\s+/g, ' ').trim()
-}
+  if (typeof text !== "string") return String(text);
+  return text.normalize("NFC").replace(/\s+/g, " ").trim();
+};
 </script>
 
 <style scoped>
 table {
   border-collapse: collapse;
 }
-th, td {
+th,
+td {
   padding: 8px;
   @apply border-2 border-primary-light-500;
 }

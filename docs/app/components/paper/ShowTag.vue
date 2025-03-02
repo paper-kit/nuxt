@@ -11,10 +11,7 @@
 
     <CodeBlock v-if="type === 'with-icon'">
       <template #preview>
-        <PUTag
-          label="Tag with Icon"
-          icon="clear-x"
-        />
+        <PUTag label="Tag with Icon" icon="clear-x" />
       </template>
       <template #code>
         <slot name="code" />
@@ -25,6 +22,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'with-icon'
-}>()
+  type: "default" | "with-icon";
+}>();
 </script>

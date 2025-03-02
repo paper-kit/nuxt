@@ -3,9 +3,7 @@
     <!-- Top Variations -->
     <CodeBlock v-if="type === 'top'">
       <template #preview>
-        <PUTooltip :positions="['top']">
-          Top
-        </PUTooltip>
+        <PUTooltip :positions="['top']"> Top </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -14,9 +12,7 @@
 
     <CodeBlock v-if="type === 'top-left'">
       <template #preview>
-        <PUTooltip :positions="['top-left']">
-          Top Left
-        </PUTooltip>
+        <PUTooltip :positions="['top-left']"> Top Left </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -25,9 +21,7 @@
 
     <CodeBlock v-if="type === 'top-right'">
       <template #preview>
-        <PUTooltip :positions="['top-right']">
-          Top Right
-        </PUTooltip>
+        <PUTooltip :positions="['top-right']"> Top Right </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -37,9 +31,7 @@
     <!-- Bottom Variations -->
     <CodeBlock v-if="type === 'bottom'">
       <template #preview>
-        <PUTooltip :positions="['bottom']">
-          Bottom
-        </PUTooltip>
+        <PUTooltip :positions="['bottom']"> Bottom </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -48,9 +40,7 @@
 
     <CodeBlock v-if="type === 'bottom-left'">
       <template #preview>
-        <PUTooltip :positions="['bottom-left']">
-          Bottom Left
-        </PUTooltip>
+        <PUTooltip :positions="['bottom-left']"> Bottom Left </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -59,9 +49,7 @@
 
     <CodeBlock v-if="type === 'bottom-right'">
       <template #preview>
-        <PUTooltip :positions="['bottom-right']">
-          Bottom Right
-        </PUTooltip>
+        <PUTooltip :positions="['bottom-right']"> Bottom Right </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -71,9 +59,7 @@
     <!-- Left Variations -->
     <CodeBlock v-if="type === 'left'">
       <template #preview>
-        <PUTooltip :positions="['left']">
-          Left
-        </PUTooltip>
+        <PUTooltip :positions="['left']"> Left </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -82,9 +68,7 @@
 
     <CodeBlock v-if="type === 'left-top'">
       <template #preview>
-        <PUTooltip :positions="['left-top']">
-          Left Top
-        </PUTooltip>
+        <PUTooltip :positions="['left-top']"> Left Top </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -93,9 +77,7 @@
 
     <CodeBlock v-if="type === 'left-bottom'">
       <template #preview>
-        <PUTooltip :positions="['left-bottom']">
-          Left Bottom
-        </PUTooltip>
+        <PUTooltip :positions="['left-bottom']"> Left Bottom </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -105,9 +87,7 @@
     <!-- Right Variations -->
     <CodeBlock v-if="type === 'right'">
       <template #preview>
-        <PUTooltip :positions="['right']">
-          Right
-        </PUTooltip>
+        <PUTooltip :positions="['right']"> Right </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -116,9 +96,7 @@
 
     <CodeBlock v-if="type === 'right-top'">
       <template #preview>
-        <PUTooltip :positions="['right-top']">
-          Right Top
-        </PUTooltip>
+        <PUTooltip :positions="['right-top']"> Right Top </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -127,9 +105,7 @@
 
     <CodeBlock v-if="type === 'right-bottom'">
       <template #preview>
-        <PUTooltip :positions="['right-bottom']">
-          Right Bottom
-        </PUTooltip>
+        <PUTooltip :positions="['right-bottom']"> Right Bottom </PUTooltip>
       </template>
       <template #code>
         <slot name="code" />
@@ -140,6 +116,18 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'left-top' | 'left-bottom' | 'right' | 'right-top' | 'right-bottom'
-}>()
+  type:
+    | "top"
+    | "top-left"
+    | "top-right"
+    | "bottom"
+    | "bottom-left"
+    | "bottom-right"
+    | "left"
+    | "left-top"
+    | "left-bottom"
+    | "right"
+    | "right-top"
+    | "right-bottom";
+}>();
 </script>

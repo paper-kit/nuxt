@@ -53,19 +53,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 
-const props = defineProps<{ mode: 'radial' | 'horizontal' | 'vertical', progress: number, size: 'small' | 'medium' | 'large' }>()
+const props = defineProps<{
+  mode: "radial" | "horizontal" | "vertical";
+  progress: number;
+  size: "small" | "medium" | "large";
+}>();
 
 const sizeMap = computed(() => {
   const sizes = {
     small: { horizontal: 8, vertical: 10, radial: 40 },
     medium: { horizontal: 12, vertical: 15, radial: 60 },
     large: { horizontal: 16, vertical: 20, radial: 80 },
-  }
-  return sizes[props.size]
-})
+  };
+  return sizes[props.size];
+});
 
-const circumference = 283
-const dashOffset = computed(() => circumference - (props.progress / 100) * circumference)
+const circumference = 283;
+const dashOffset = computed(
+  () => circumference - (props.progress / 100) * circumference,
+);
 </script>

@@ -11,10 +11,7 @@
 
     <CodeBlock v-if="type === 'with-icons'">
       <template #preview>
-        <PUButton
-          icon-left="arrow-down"
-          icon-right="arrow-down"
-        >
+        <PUButton icon-left="arrow-down" icon-right="arrow-down">
           Navigation
         </PUButton>
       </template>
@@ -28,38 +25,22 @@
         <div class="flex flex-col gap-4">
           <!-- Flavors -->
           <div class="flex gap-2">
-            <PUButton flavor="normal">
-              Normal
-            </PUButton>
-            <PUButton flavor="outlined">
-              Outlined
-            </PUButton>
-            <PUButton flavor="ghost">
-              Ghost
-            </PUButton>
+            <PUButton flavor="normal"> Normal </PUButton>
+            <PUButton flavor="outlined"> Outlined </PUButton>
+            <PUButton flavor="ghost"> Ghost </PUButton>
           </div>
 
           <!-- Sizes -->
           <div class="flex gap-2 items-center">
-            <PUButton size="small">
-              Small
-            </PUButton>
-            <PUButton size="medium">
-              Medium
-            </PUButton>
-            <PUButton size="large">
-              Large
-            </PUButton>
+            <PUButton size="small"> Small </PUButton>
+            <PUButton size="medium"> Medium </PUButton>
+            <PUButton size="large"> Large </PUButton>
           </div>
 
           <!-- Shapes -->
           <div class="flex gap-2">
-            <PUButton shape="rounded">
-              Rounded
-            </PUButton>
-            <PUButton shape="circle">
-              Circle
-            </PUButton>
+            <PUButton shape="rounded"> Rounded </PUButton>
+            <PUButton shape="circle"> Circle </PUButton>
           </div>
         </div>
       </template>
@@ -72,6 +53,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'with-icons' | 'all-variants'
-}>()
+  type: "default" | "with-icons" | "all-variants";
+}>();
 </script>

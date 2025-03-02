@@ -1,13 +1,17 @@
 <template>
   <div
-    :class="['flex items-center justify-center overflow-hidden', sizeClass, shapeClass]"
+    :class="[
+      'flex items-center justify-center overflow-hidden',
+      sizeClass,
+      shapeClass,
+    ]"
   >
     <img
       v-if="src"
       :src="src"
       alt="Avatar"
       class="w-full h-full object-cover"
-    >
+    />
     <div
       v-else
       class="w-16 h-16 rounded-lg flex justify-center items-center object-cover"
@@ -19,12 +23,7 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect
-          width="72"
-          height="72"
-          rx="2"
-          fill="white"
-        />
+        <rect width="72" height="72" rx="2" fill="white" />
         <path
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -37,32 +36,32 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed } from "vue";
 
 const props = defineProps<{
-  size?: 'small' | 'medium' | 'large' | 'xlarge'
-  shape?: 'circular' | 'rounded' | 'square'
-  src?: string
-}>()
+  size?: "small" | "medium" | "large" | "xlarge";
+  shape?: "circular" | "rounded" | "square";
+  src?: string;
+}>();
 
 const sizeClass = computed(() => {
   const sizes = {
-    small: 'w-8 h-8',
-    medium: 'w-12 h-12',
-    large: 'w-16 h-16',
-    xlarge: 'w-24 h-24',
-  }
-  return sizes[props.size || 'medium']
-})
+    small: "w-8 h-8",
+    medium: "w-12 h-12",
+    large: "w-16 h-16",
+    xlarge: "w-24 h-24",
+  };
+  return sizes[props.size || "medium"];
+});
 
 const shapeClass = computed(() => {
   const shapes = {
-    circular: 'rounded-full',
-    rounded: 'rounded-lg',
-    square: 'rounded-none',
-  }
-  return shapes[props.shape || 'circular']
-})
+    circular: "rounded-full",
+    rounded: "rounded-lg",
+    square: "rounded-none",
+  };
+  return shapes[props.shape || "circular"];
+});
 </script>
 
 <style scoped>

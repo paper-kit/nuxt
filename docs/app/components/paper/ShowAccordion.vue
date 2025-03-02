@@ -34,12 +34,11 @@
     <CodeBlock v-if="type === 'custom-header'">
       <template #preview>
         <div class="w-72">
-          <PUAccordion
-            :items="demoItems"
-            class="w-full"
-          >
+          <PUAccordion :items="demoItems" class="w-full">
             <template #header="{ item, isOpen }">
-              <h3 :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }">
+              <h3
+                :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }"
+              >
                 {{ item.title }}
               </h3>
             </template>
@@ -59,11 +58,11 @@
 
 <script lang="ts" setup>
 const demoItems = [
-  { title: 'Custom', content: 'Demo content' },
-  { title: 'Items', content: 'Sample data' },
-]
+  { title: "Custom", content: "Demo content" },
+  { title: "Items", content: "Sample data" },
+];
 
 defineProps<{
-  type: 'default' | 'custom-header' | 'custom-content'
-}>()
+  type: "default" | "custom-header" | "custom-content";
+}>();
 </script>

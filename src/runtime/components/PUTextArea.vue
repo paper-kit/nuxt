@@ -15,36 +15,36 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps<{
-  disabled?: boolean
-  placeholder?: string
-  id?: string
-  modelValue: string | number | null
-}>()
+  disabled?: boolean;
+  placeholder?: string;
+  id?: string;
+  modelValue: string | number | null;
+}>();
 
-const value = ref(null)
+const value = ref(null);
 
 const emit = defineEmits<{
-  (event: 'update:modelValue', value: string | number | null): void
-}>()
+  (event: "update:modelValue", value: string | number | null): void;
+}>();
 
 const updateValue = (e: Event) => {
-  const target = e.target as HTMLTextAreaElement
-  emit('update:modelValue', target.value)
-}
+  const target = e.target as HTMLTextAreaElement;
+  emit("update:modelValue", target.value);
+};
 
 const handleEnter = (e: KeyboardEvent) => {
-  if (e.key === 'Enter') {
-    emit('update:modelValue', value.value)
+  if (e.key === "Enter") {
+    emit("update:modelValue", value.value);
   }
-  e.preventDefault()
-}
+  e.preventDefault();
+};
 
 const handleBlur = () => {
-  emit('update:modelValue', value.value)
-}
+  emit("update:modelValue", value.value);
+};
 </script>
 
 <style scoped>

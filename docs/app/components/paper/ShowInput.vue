@@ -2,10 +2,7 @@
   <div class="pu-input-demo font-patrick">
     <CodeBlock v-if="type === 'default'">
       <template #preview>
-        <PUInput
-          v-model="demoValue"
-          placeholder="Enter text..."
-        />
+        <PUInput v-model="demoValue" placeholder="Enter text..." />
       </template>
       <template #code>
         <slot name="code" />
@@ -41,14 +38,8 @@
     <CodeBlock v-if="type === 'with-label'">
       <template #preview>
         <div class="flex flex-col w-full">
-          <PULabel id="label">
-            with label
-          </PULabel>
-          <PUInput
-            id="label"
-            v-model="demoValue"
-            placeholder="with label"
-          />
+          <PULabel id="label"> with label </PULabel>
+          <PUInput id="label" v-model="demoValue" placeholder="with label" />
         </div>
       </template>
       <template #code>
@@ -59,13 +50,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps<{
-  type: 'default' | 'with-icons' | 'disabled' | 'with-label'
-}>()
+  type: "default" | "with-icons" | "disabled" | "with-label";
+}>();
 
-const demoValue = ref('')
-const searchValue = ref('')
-const disabledValue = ref('')
+const demoValue = ref("");
+const searchValue = ref("");
+const disabledValue = ref("");
 </script>

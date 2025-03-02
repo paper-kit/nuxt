@@ -1,31 +1,15 @@
 <template>
   <transition name="fade-modal">
-    <div
-      v-if="isVisible"
-      class="modal-overlay"
-      @click="closeOnBackdrop"
-    >
-      <div
-        class="modal-container"
-        @click.stop
-      >
+    <div v-if="isVisible" class="modal-overlay" @click="closeOnBackdrop">
+      <div class="modal-container" @click.stop>
         <slot name="header">
-          <h3 class="modal-title">
-            Default Title
-          </h3>
+          <h3 class="modal-title">Default Title</h3>
         </slot>
         <slot name="content">
-          <p class="modal-content">
-            Default content goes here...
-          </p>
+          <p class="modal-content">Default content goes here...</p>
         </slot>
         <slot name="footer">
-          <button
-            class="modal-button"
-            @click="close"
-          >
-            Close
-          </button>
+          <button class="modal-button" @click="close">Close</button>
         </slot>
       </div>
     </div>
@@ -33,24 +17,24 @@
 </template>
 
 <script setup lang="ts">
-import { useModal } from '../composables/useModal'
+import { useModal } from "../composables/useModal";
 
-const { isVisible, hide } = useModal()
+const { isVisible, hide } = useModal();
 
 const close = () => {
-  hide()
-}
+  hide();
+};
 
 const closeOnBackdrop = (event: MouseEvent) => {
   if (event.target === event.currentTarget) {
-    close()
+    close();
   }
-}
+};
 </script>
 
 <style scoped>
-*{
-  font-family: 'Patrick Hand', cursive;
+* {
+  font-family: "Patrick Hand", cursive;
 }
 
 .modal-overlay {

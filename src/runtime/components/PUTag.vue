@@ -2,20 +2,16 @@
   <div class="pu-tag font-patrick">
     <div class="pu-tag--default">
       <span>{{ label }}</span>
-      <PUIcon
-        v-if="icon"
-        :name="icon"
-        class="cursor-pointer"
-      />
+      <PUIcon v-if="icon" :name="icon" class="cursor-pointer" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 defineProps<{
-  label: string
-  icon?: string
-}>()
+  label: string;
+  icon?: string;
+}>();
 </script>
 
 <style scoped>

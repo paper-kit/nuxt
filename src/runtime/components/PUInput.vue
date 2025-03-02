@@ -1,10 +1,7 @@
 <template>
   <div class="pu-input font-patrick">
     <label :for="id">
-      <PUIcon
-        v-if="iconLeft"
-        :name="iconLeft"
-      />
+      <PUIcon v-if="iconLeft" :name="iconLeft" />
     </label>
     <input
       :id="id"
@@ -16,53 +13,53 @@
       @update:modelValue="updateValue"
       @blur="handleBlur"
       @keydown.enter="handleEnter"
-    >
+    />
     <label :for="id">
-      <PUIcon
-        v-if="iconRight"
-        :name="iconRight"
-      />
+      <PUIcon v-if="iconRight" :name="iconRight" />
     </label>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from 'vue'
+import { ref, watch } from "vue";
 
 defineProps<{
-  disabled?: boolean
-  placeholder?: string
-  id?: string
-  iconLeft?: string
-  iconRight?: string
-  modelValue: string | number | null
-}>()
+  disabled?: boolean;
+  placeholder?: string;
+  id?: string;
+  iconLeft?: string;
+  iconRight?: string;
+  modelValue: string | number | null;
+}>();
 
-const value = ref(null)
+const value = ref(null);
 
 const emit = defineEmits<{
-  (event: 'update:modelValue', value: string | number | null): void
-}>()
+  (event: "update:modelValue", value: string | number | null): void;
+}>();
 
-watch(() => value.value, (newVal) => {
-  emit('update:modelValue', newVal)
-})
+watch(
+  () => value.value,
+  (newVal) => {
+    emit("update:modelValue", newVal);
+  },
+);
 
 const updateValue = (e: Event) => {
-  const target = e.target as HTMLInputElement
-  emit('update:modelValue', target.value)
-}
+  const target = e.target as HTMLInputElement;
+  emit("update:modelValue", target.value);
+};
 
 const handleEnter = (e: KeyboardEvent) => {
-  if (e.key === 'Enter') {
-    emit('update:modelValue', value.value)
+  if (e.key === "Enter") {
+    emit("update:modelValue", value.value);
   }
-  e.preventDefault()
-}
+  e.preventDefault();
+};
 
 const handleBlur = () => {
-  emit('update:modelValue', value.value)
-}
+  emit("update:modelValue", value.value);
+};
 </script>
 
 <style scoped>

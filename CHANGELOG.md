@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v1.7.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.6.0...v1.7.0)
@@ -206,7 +205,6 @@
 
 ## v1.1.0
 
-
 ### 🚀 Enhancements
 
 - **components:** PUIcon (54dae6a)
@@ -247,4 +245,3 @@
 ### ❤️ Contributors
 
 - Felipe Oliveira <felipe16.12.1998@gmail.com>
-

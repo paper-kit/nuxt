@@ -11,9 +11,9 @@
 </template>
 
 <script setup lang="ts">
-import { _backgroundImage } from '#tailwind-config/theme'
+import { _backgroundImage } from "#tailwind-config/theme";
 
-const route = useRoute()
+const route = useRoute();
 </script>
 
 <style>

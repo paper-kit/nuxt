@@ -1,49 +1,48 @@
 <script setup lang="ts">
-import { computed, defineProps, defineEmits } from 'vue'
+import { computed, defineProps, defineEmits } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    modelValue: boolean
-    disabled?: boolean
-    label?: string
-    flavor?: 'normal' | 'outlined'
-    strikeOnFalse?: boolean
+    modelValue: boolean;
+    disabled?: boolean;
+    label?: string;
+    flavor?: "normal" | "outlined";
+    strikeOnFalse?: boolean;
   }>(),
   {
     disabled: false,
-    label: '',
-    flavor: 'normal',
+    label: "",
+    flavor: "normal",
     strikeOnFalse: false,
   },
-)
+);
 
-const emit = defineEmits(['update:modelValue', 'checked', 'unchecked'])
+const emit = defineEmits(["update:modelValue", "checked", "unchecked"]);
 
 const toggleState = () => {
-  if (props.disabled) return
+  if (props.disabled) return;
   if (props.modelValue) {
-    emit('unchecked')
+    emit("unchecked");
+  } else {
+    emit("checked");
   }
-  else {
-    emit('checked')
-  }
-  emit('update:modelValue', !props.modelValue)
-}
+  emit("update:modelValue", !props.modelValue);
+};
 
 const currentState = computed(() => {
   return props.modelValue
-    ? { icon: 'check', style: 'bg-primary-light-500 text-white' }
-    : { icon: '', style: 'border-primary-light-500' }
-})
+    ? { icon: "check", style: "bg-primary-light-500 text-white" }
+    : { icon: "", style: "border-primary-light-500" };
+});
 
 const checkboxStyle = computed(() => {
-  if (props.flavor === 'outlined') {
-    return 'bg-transparent border-primary-light-500'
+  if (props.flavor === "outlined") {
+    return "bg-transparent border-primary-light-500";
   }
   return props.disabled
-    ? 'bg-primary-light-100 border-primary-light-300 text-primary-light-400'
-    : currentState.value.style
-})
+    ? "bg-primary-light-100 border-primary-light-300 text-primary-light-400"
+    : currentState.value.style;
+});
 </script>
 
 <template>
@@ -55,13 +54,16 @@ const checkboxStyle = computed(() => {
       @click="toggleState"
     >
       <div
-        class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500  rounded transition-all"
-        :class="[checkboxStyle, { 'active:animate-bounce': !disabled, 'border-primary-light-300': disabled }]"
+        class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500 rounded transition-all"
+        :class="[
+          checkboxStyle,
+          {
+            'active:animate-bounce': !disabled,
+            'border-primary-light-300': disabled,
+          },
+        ]"
       >
-        <PUIcon
-          v-if="currentState.icon"
-          :name="currentState.icon"
-        />
+        <PUIcon v-if="currentState.icon" :name="currentState.icon" />
       </div>
       <span
         class="transition-opacity text-primary-light-500 select-none"
@@ -78,7 +80,14 @@ const checkboxStyle = computed(() => {
     <div
       v-else
       class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500 rounded transition-all"
-      :class="[checkboxStyle, { 'cursor-pointer active:animate-bounce': !disabled, 'cursor-not-allowed': disabled, 'border-primary-light-300': disabled }]"
+      :class="[
+        checkboxStyle,
+        {
+          'cursor-pointer active:animate-bounce': !disabled,
+          'cursor-not-allowed': disabled,
+          'border-primary-light-300': disabled,
+        },
+      ]"
       @click="toggleState"
     >
       <PUIcon
@@ -92,7 +101,8 @@ const checkboxStyle = computed(() => {
 
 <style scoped>
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {

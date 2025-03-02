@@ -2,14 +2,10 @@
   <div class="modal-demo">
     <CodeBlock v-if="type === 'default'">
       <template #preview>
-        <PUButton @click="show">
-          show
-        </PUButton>
+        <PUButton @click="show"> show </PUButton>
         <PUModal>
           <template #header>
-            <h2 class="text-xl font-bold">
-              Demo Modal
-            </h2>
+            <h2 class="text-xl font-bold">Demo Modal</h2>
           </template>
 
           <template #content>
@@ -17,9 +13,7 @@
           </template>
 
           <template #footer>
-            <PUButton @click="hide">
-              Close Preview
-            </PUButton>
+            <PUButton @click="hide"> Close Preview </PUButton>
           </template>
         </PUModal>
       </template>
@@ -29,14 +23,10 @@
     </CodeBlock>
     <CodeBlock v-else>
       <template #preview>
-        <PUButton @click="show">
-          show
-        </PUButton>
+        <PUButton @click="show"> show </PUButton>
         <PUModal v-if="isVisible">
           <template #header>
-            <h2 class="text-2xl">
-              Custom Header
-            </h2>
+            <h2 class="text-2xl">Custom Header</h2>
           </template>
 
           <template #content>
@@ -48,15 +38,8 @@
 
           <template #footer>
             <div class="flex gap-2">
-              <PUButton @click="hide">
-                Confirm
-              </PUButton>
-              <PUButton
-                flavor="ghost"
-                @click="hide"
-              >
-                Cancel
-              </PUButton>
+              <PUButton @click="hide"> Confirm </PUButton>
+              <PUButton flavor="ghost" @click="hide"> Cancel </PUButton>
             </div>
           </template>
         </PUModal>
@@ -70,8 +53,8 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'custom'
-}>()
+  type: "default" | "custom";
+}>();
 
-const { show, hide, isVisible } = useModal()
+const { show, hide, isVisible } = useModal();
 </script>

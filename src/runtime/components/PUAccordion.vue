@@ -1,19 +1,8 @@
 <template>
   <div class="accordion font-patrick">
-    <div
-      v-for="(item, index) in items"
-      :key="index"
-      class="accordion-section"
-    >
-      <div
-        class="accordion-header"
-        @click="toggle(index)"
-      >
-        <slot
-          name="header"
-          :item="item"
-          :is-open="isOpen(index)"
-        >
+    <div v-for="(item, index) in items" :key="index" class="accordion-section">
+      <div class="accordion-header" @click="toggle(index)">
+        <slot name="header" :item="item" :is-open="isOpen(index)">
           <h3 class="default-header">
             {{ item.title }}
           </h3>
@@ -27,40 +16,31 @@
 
       <!-- Content -->
       <transition name="accordion">
-        <div
-          v-if="isOpen(index)"
-          class="accordion-content"
-        >
-          <slot
-            name="content"
-            :item="item"
-          >
+        <div v-if="isOpen(index)" class="accordion-content">
+          <slot name="content" :item="item">
             <p>{{ item.content }}</p>
           </slot>
         </div>
       </transition>
 
-      <hr
-        v-if="index !== items.length - 1"
-        class="divider"
-      >
+      <hr v-if="index !== items.length - 1" class="divider" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useAccordion } from '../composables/useAccordion'
-import PUIcon from './PUIcon.vue'
+import { useAccordion } from "../composables/useAccordion";
+import PUIcon from "./PUIcon.vue";
 
 defineProps<{
-  items: { title: string, content: string }[]
-}>()
+  items: { title: string; content: string }[];
+}>();
 
-const { isOpen, toggleSection } = useAccordion()
+const { isOpen, toggleSection } = useAccordion();
 
 const toggle = (index: number) => {
-  toggleSection(index)
-}
+  toggleSection(index);
+};
 </script>
 
 <style scoped>

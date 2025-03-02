@@ -83,6 +83,6 @@
 
 <script lang="ts" setup>
 defineProps<{
-  type: 'default' | 'sorting' | 'filtering' | 'pagination'
-}>()
+  type: "default" | "sorting" | "filtering" | "pagination";
+}>();
 </script>

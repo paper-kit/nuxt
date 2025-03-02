@@ -9,7 +9,7 @@
         readonly
         class="datepicker-input w-full border-2 border-primary-light-500 rounded-lg pl-10 py-2"
         @focus="isOpen = true"
-      >
+      />
       <PUIcon
         v-if="!alwaysOpen"
         name="calender"
@@ -20,7 +20,7 @@
     <PUTooltip
       v-if="isOpen || alwaysOpen"
       :positions="alwaysOpen ? [] : ['top-left']"
-      class="datepicker-container w-full p-4 "
+      class="datepicker-container w-full p-4"
     >
       <div class="datepicker-header min-w-full">
         <button @click="prevMonth">
@@ -31,12 +31,10 @@
           <PUIcon name="chevron-right" />
         </button>
       </div>
-      <div class="datepicker-weekdays ">
-        <span
-          v-for="day in weekDays[locale]"
-          :key="day"
-          class=""
-        >{{ day }}</span>
+      <div class="datepicker-weekdays">
+        <span v-for="day in weekDays[locale]" :key="day" class="">{{
+          day
+        }}</span>
       </div>
       <div class="datepicker-days">
         <span
@@ -59,114 +57,146 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed } from "vue";
 
-type Locale = 'en-US' | 'pt-BR'
+type Locale = "en-US" | "pt-BR";
 
 const props = defineProps<{
-  modelValue: string | null
-  alwaysOpen?: boolean
-  locale?: Locale
-  disabledDates?: string[]
-  disabledRange?: { start: string, end: string }
-  disabled?: boolean
-}>()
-const emit = defineEmits(['update:modelValue'])
+  modelValue: string | null;
+  alwaysOpen?: boolean;
+  locale?: Locale;
+  disabledDates?: string[];
+  disabledRange?: { start: string; end: string };
+  disabled?: boolean;
+}>();
+const emit = defineEmits(["update:modelValue"]);
 
-const locale = computed(() => props.locale || 'en-US')
-const isOpen = ref(false)
-const today = new Date()
-const currentMonth = ref(props.modelValue ? new Date(props.modelValue).getMonth() : today.getMonth())
-const currentYear = ref(props.modelValue ? new Date(props.modelValue).getFullYear() : today.getFullYear())
+const locale = computed(() => props.locale || "en-US");
+const isOpen = ref(false);
+const today = new Date();
+const currentMonth = ref(
+  props.modelValue ? new Date(props.modelValue).getMonth() : today.getMonth(),
+);
+const currentYear = ref(
+  props.modelValue
+    ? new Date(props.modelValue).getFullYear()
+    : today.getFullYear(),
+);
 
 const monthNames = {
-  'en-US': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  'pt-BR': ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-}
+  "en-US": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ],
+  "pt-BR": [
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
+  ],
+};
 
 const weekDays = {
-  'en-US': ['M', 'T', 'W', 'Th', 'F', 'S', 'Su'],
-  'pt-BR': ['S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-}
+  "en-US": ["M", "T", "W", "Th", "F", "S", "Su"],
+  "pt-BR": ["S", "T", "Q", "Q", "S", "S", "D"],
+};
 
 const daysInMonth = computed(() => {
-  return new Date(currentYear.value, currentMonth.value + 1, 0).getDate()
-})
+  return new Date(currentYear.value, currentMonth.value + 1, 0).getDate();
+});
 
 const startOffset = computed(() => {
-  return new Date(currentYear.value, currentMonth.value, 1).getDay()
-})
+  return new Date(currentYear.value, currentMonth.value, 1).getDay();
+});
 
 const formattedDate = computed(() => {
-  if (!props.modelValue) return ''
+  if (!props.modelValue) return "";
 
-  const [year, month, day] = props.modelValue.split('-')
+  const [year, month, day] = props.modelValue.split("-");
 
-  const date = new Date(Number(year), Number(month) - 1, Number(day))
+  const date = new Date(Number(year), Number(month) - 1, Number(day));
 
-  return `${date.getDate()} ${monthNames[locale.value][date.getMonth()]} ${date.getFullYear()}`
-})
+  return `${date.getDate()} ${monthNames[locale.value][date.getMonth()]} ${date.getFullYear()}`;
+});
 
 const isSelected = (day: number) => {
-  if (!props.modelValue) return false
+  if (!props.modelValue) return false;
 
-  const [year, month, dayOfMonth] = props.modelValue.split('-')
+  const [year, month, dayOfMonth] = props.modelValue.split("-");
 
-  const date = new Date(Number(year), Number(month) - 1, Number(dayOfMonth))
+  const date = new Date(Number(year), Number(month) - 1, Number(dayOfMonth));
 
   return (
-    date.getDate() === day
-    && date.getMonth() === currentMonth.value
-    && date.getFullYear() === currentYear.value
-  )
-}
+    date.getDate() === day &&
+    date.getMonth() === currentMonth.value &&
+    date.getFullYear() === currentYear.value
+  );
+};
 
 const isDisabled = (day: number) => {
-  const dateStr = `${currentYear.value}-${String(currentMonth.value + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`
-  if (props.disabledDates?.includes(dateStr)) return true
+  const dateStr = `${currentYear.value}-${String(currentMonth.value + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  if (props.disabledDates?.includes(dateStr)) return true;
   if (props.disabledRange) {
-    const date = new Date(`${currentYear.value}-${currentMonth.value + 1}-${day}`)
-    const start = new Date(props.disabledRange.start)
-    const end = new Date(props.disabledRange.end)
-    return date >= start && date <= end
+    const date = new Date(
+      `${currentYear.value}-${currentMonth.value + 1}-${day}`,
+    );
+    const start = new Date(props.disabledRange.start);
+    const end = new Date(props.disabledRange.end);
+    return date >= start && date <= end;
   }
-  return false
-}
+  return false;
+};
 
 const selectDate = (day: number) => {
-  console.log('selectDate', day)
-  if (isDisabled(day)) return
+  console.log("selectDate", day);
+  if (isDisabled(day)) return;
 
-  const selectedDate = new Date(currentYear.value, currentMonth.value, day)
+  const selectedDate = new Date(currentYear.value, currentMonth.value, day);
 
-  const formatted = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`
+  const formatted = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, "0")}-${String(selectedDate.getDate()).padStart(2, "0")}`;
 
-  emit('update:modelValue', formatted)
+  emit("update:modelValue", formatted);
 
-  if (!props.alwaysOpen) isOpen.value = false
+  if (!props.alwaysOpen) isOpen.value = false;
 
-  console.log('formatted', formatted)
-}
+  console.log("formatted", formatted);
+};
 
 const prevMonth = () => {
   if (currentMonth.value === 0) {
-    currentMonth.value = 11
-    currentYear.value--
+    currentMonth.value = 11;
+    currentYear.value--;
+  } else {
+    currentMonth.value--;
   }
-  else {
-    currentMonth.value--
-  }
-}
+};
 
 const nextMonth = () => {
   if (currentMonth.value === 11) {
-    currentMonth.value = 0
-    currentYear.value++
+    currentMonth.value = 0;
+    currentYear.value++;
+  } else {
+    currentMonth.value++;
   }
-  else {
-    currentMonth.value++
-  }
-}
+};
 </script>
 
 <style scoped>

@@ -15,7 +15,8 @@ Installation
 First, install the `paper-ui` module in your project:
 ::
 
-::code-box{header="bash" type="cmd" copy=""}                                          
+::code-box{header="bash" type="cmd" copy=""}
+
 ```bash
 npm install @paper-ui/nuxt
 
@@ -23,9 +24,8 @@ npm install @paper-ui/nuxt
 
 # yarn add @paper-ui/nuxt
 ```
+
 ::
-
-
 
 ::doc-topic
 #title
@@ -33,14 +33,16 @@ Configuration
 #description
 To use Paper-UI in your Nuxt project, add the module to your `nuxt.config.ts` file:
 
-  ::code-box{header="Nuxt.config.ts" type="nuxt" copy=""}   
-  ```ts
-  export default defineNuxtConfig({
-    modules: ['paper-ui']
-  })
-  ```
-  ::
-  
+::code-box{header="Nuxt.config.ts" type="nuxt" copy=""}
+
+```ts
+export default defineNuxtConfig({
+  modules: ["paper-ui"],
+});
+```
+
+::
+
 ::
 This step ensures that all components and styles from Paper-UI are globally available in your project.
 
@@ -58,6 +60,7 @@ Import and use a Paper-UI component:
 ::
 
 ::code-box{header="app.vue" type="nuxt" copy=""}
+
 ```vue
 <template>
   <div>
@@ -77,28 +80,30 @@ Import and use a Paper-UI component:
 
 <script setup lang="ts">
 const tabs = [
-  { label: 'Tab 1', content: 'This is the content for Tab 1.' },
-  { label: 'Tab 2', content: 'This is the content for Tab 2.' },
-  { label: 'Tab 3', content: 'This is the content for Tab 3.' }
-]
+  { label: "Tab 1", content: "This is the content for Tab 1." },
+  { label: "Tab 2", content: "This is the content for Tab 2." },
+  { label: "Tab 3", content: "This is the content for Tab 3." },
+];
 </script>
 ```
+
 ::
 
 ::doc-topic
 #title
 Start your development server:
 #description
-  ::code-box{header="bash" type="cmd" copy=""}
-  ```bash
-  npm run dev
-  # yarn dev
-  # pnpm dev
-  ```
-  ::
-::
-  Visit your app in the browser, and you'll see the Paper-UI component in action.
+::code-box{header="bash" type="cmd" copy=""}
 
+```bash
+npm run dev
+# yarn dev
+# pnpm dev
+```
+
+::
+::
+Visit your app in the browser, and you'll see the Paper-UI component in action.
 
 ---
 
@@ -110,6 +115,7 @@ Paper-UI is designed to be easily customizable. You can override styles using Ta
 ::
 
 ---
+
 ::doc-topic
 #title
 Contributing
@@ -118,6 +124,7 @@ We welcome contributions to Paper-UI!
 ::
 
 ---
+
 ::doc-topic
 #description
 Happy building with **Paper-UI**! 🎉
