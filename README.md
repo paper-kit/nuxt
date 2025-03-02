@@ -16,6 +16,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 
 ![paper-ui-home](https://github.com/user-attachments/assets/c5b4f83a-d052-475d-ad0b-596c9621b5a0)
 
+
 `@paper-ui/nuxt` is a component library for Nuxt.js that aims to create a "hand-drawn" aesthetic for your UI. With this library, you can build interfaces using components with a unique and artistically crafted style.
 
 
@@ -25,6 +26,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 - [📖 Documentation](https://paper-docs.nuxt.space/)
 - [📦 NPM Package](https://www.npmjs.com/package/@paper-ui/nuxt)
 - [🌍 Nuxt Module Page](https://nuxt.com/modules/paper-ui)
+
 
 ## Installation
 

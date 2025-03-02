@@ -68,12 +68,12 @@ const handleBlur = () => {
 <style scoped>
 .pu-input {
   @apply relative  flex items-center  gap-2 w-full p-2;
-  @apply border-2 border-primary-light-500 rounded-lg;
+  @apply border-2 border-primary-light-500 dark:border-white rounded-lg bg-transparent dark:text-white;
   @apply transition-all duration-150 ease-in-out;
 }
 
 .pu-input--default {
-  @apply text-gray-800 text-base w-full;
+  @apply text-primary-light-500 dark:text-white text-base w-full bg-transparent;
   @apply focus:outline-none;
 }
 

@@ -15,12 +15,23 @@
         {{ tab.label }}
       </PUButton>
     </div>
-    <div class="p-6 bg-gradient-to-b from-white to-gray-50 rounded-xl shadow-lg h-auto">
+    <div class="p-6  rounded-xl shadow-lg h-auto">
       <div
         v-if="activeTab === 'Preview'"
-        class="w-full h-full flex justify-center items-center gap-2"
+        class="w-full h-full flex justify-center flex-wrap items-center gap-2 p-4 "
       >
         <slot name="preview" />
+        <div
+          v-if="compare"
+          class="flex gap-4 flex-wrap justify-between mx-4 min-h-[200px] w-full lg:w-1/2"
+        >
+          <PUCompare
+            with-dark-mode
+            with-icon
+          >
+            <slot name="preview" />
+          </PUCompare>
+        </div>
       </div>
       <div v-else>
         <CodeBox
@@ -37,6 +48,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+defineProps(
+  {
+    compare: {
+      type: Boolean,
+      default: true,
+    },
+  },
+)
 const tabs = [
   { label: 'Preview' },
   { label: 'Code' },
