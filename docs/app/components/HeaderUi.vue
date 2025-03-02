@@ -18,8 +18,18 @@
         id="nav-mobile"
         class="right hide-on-med-and-down flex gap-4 mt-4"
       >
-        <li><a href="/docs"><PUButton flavor="outlined">Docs</PUButton></a></li>
-        <li><a href="https://github.com/paper-kit/nuxt"><PUButton flavor="outlined">Github</PUButton></a></li>
+        <li>
+          <a href="/docs"><PUButton
+            flavor="outlined"
+            icon-right="file-alt"
+          >docs</PUButton></a>
+        </li>
+        <li>
+          <a href="https://github.com/paper-kit/nuxt"><PUButton
+            flavor="outlined"
+            icon-right="github-alt"
+          >github</PUButton></a>
+        </li>
       </ul>
     </div>
   </div>

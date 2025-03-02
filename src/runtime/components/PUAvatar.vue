@@ -67,6 +67,6 @@ const shapeClass = computed(() => {
 
 <style scoped>
 div {
-  border: 2px solid black;
+  @apply border-2 border-primary-light-500 dark:border-primary-dark-500
 }
 </style>

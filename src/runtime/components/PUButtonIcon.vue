@@ -58,15 +58,15 @@ buttonIconClass.push(
 }
 
 .pu-button-icon.pu-button-icon--normal {
-  @apply bg-primary-light-500 border-2 rounded-lg  text-primary-light-50;
+  @apply bg-primary-light-500 border-2 rounded-lg  text-primary-light-50 dark:bg-primary-light-50 dark:text-primary-light-500;
 }
 
 .pu-button-icon.pu-button-icon--outlined {
-  @apply bg-transparent border-2 border-primary-light-500 text-primary-light-500;
+  @apply bg-transparent border-2 border-primary-light-500 text-primary-light-500 dark:border-primary-light-50 dark:text-primary-light-50;
 }
 
 .pu-button-icon.pu-button-icon--ghost {
-  @apply bg-transparent border-2 text-primary-light-500 border-transparent;
+  @apply bg-transparent border-2 text-primary-light-500 border-transparent dark:text-primary-light-50 dark:border-transparent dark:shadow-white/20;
 }
 
 .pu-button-icon.pu-button-icon--small {
