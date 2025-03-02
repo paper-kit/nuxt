@@ -77,14 +77,14 @@ const setSort = (key: string) => {
       </div>
     </div>
 
-    <table class="w-full border-collapse border-2 border-primary-light-500 font-patrick dark:bg-primary-light-800 dark:text-primary-dark-500">
+    <table class="w-full border-collapse border-2 border-primary-light-500 font-patrick">
       <thead>
-        <tr class="bg-primary-light-500/10 text-primary-light-500 text-left dark:bg-primary-light-400 dark:text-primary-light-50">
+        <tr class="bg-primary-light-500/10 text-primary-light-500 text-left">
           <th
             v-for="header in headers"
             v-show="!hiddenColumns?.includes(header.key)"
             :key="header.key"
-            class="border p-2 border-primary-light-500 cursor-pointer "
+            class="border p-2 border-primary-light-500 cursor-pointer"
             @click="sortable ? setSort(header.key) : null"
           >
             {{ header.label }}
@@ -112,7 +112,7 @@ const setSort = (key: string) => {
             v-for="header in headers"
             v-show="!hiddenColumns?.includes(header.key)"
             :key="header.key"
-            class="border p-2 border-primary-light-500 dark:text-primary-light-50"
+            class="border p-2 border-primary-light-500"
           >
             <slot
               :name="`cell-${header.key}`"
@@ -138,7 +138,7 @@ const setSort = (key: string) => {
       >
         Previous
       </PUButton>
-      <span class="text-primary-light-500 dark:text-primary-light-50">Page {{ currentPage }} of {{ totalPages }}</span>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
       <PUButton
         key="table-next"
         flavor="outlined"

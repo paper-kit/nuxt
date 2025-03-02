@@ -32,13 +32,13 @@ const toggleState = () => {
 
 const currentState = computed(() => {
   return props.modelValue
-    ? { icon: 'check', style: 'bg-primary-light-500 dark:bg-white dark:text-primary-light-500 text-white' }
+    ? { icon: 'check', style: 'bg-primary-light-500 text-white' }
     : { icon: '', style: 'border-primary-light-500' }
 })
 
 const checkboxStyle = computed(() => {
   if (props.flavor === 'outlined') {
-    return 'bg-transparent border-primary-light-500 text-primary-light-500 dark:text-white'
+    return 'bg-transparent border-primary-light-500'
   }
   return props.disabled
     ? 'bg-primary-light-100 border-primary-light-300 text-primary-light-400'
@@ -55,7 +55,7 @@ const checkboxStyle = computed(() => {
       @click="toggleState"
     >
       <div
-        class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500 dark:border-white  rounded transition-all"
+        class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500  rounded transition-all"
         :class="[checkboxStyle, { 'active:animate-bounce': !disabled, 'border-primary-light-300': disabled }]"
       >
         <PUIcon
@@ -64,7 +64,7 @@ const checkboxStyle = computed(() => {
         />
       </div>
       <span
-        class="transition-opacity text-primary-light-500 dark:text-white select-none"
+        class="transition-opacity text-primary-light-500 select-none"
         :class="{
           'text-primary-light-400': disabled,
           'line-through': strikeOnFalse && !modelValue,
@@ -77,7 +77,7 @@ const checkboxStyle = computed(() => {
     </div>
     <div
       v-else
-      class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500 dark:border-white rounded transition-all"
+      class="flex items-center justify-center w-5 h-5 border-2 border-primary-light-500 rounded transition-all"
       :class="[checkboxStyle, { 'cursor-pointer active:animate-bounce': !disabled, 'cursor-not-allowed': disabled, 'border-primary-light-300': disabled }]"
       @click="toggleState"
     >

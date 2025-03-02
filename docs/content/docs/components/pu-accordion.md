@@ -58,7 +58,7 @@ Basic Usage
 <template>
   <PUAccordion :items="items">
     <template #content="{ item }">
-      <div class="p-4 bg-gray-50 rounded dark:text-primary-light-500">
+      <div class="custom-content">
         <PUIcon name="info" />
         {{ item.content }}
       </div>

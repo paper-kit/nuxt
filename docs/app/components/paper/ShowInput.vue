@@ -17,7 +17,7 @@
         <PUInput
           v-model="searchValue"
           icon-left="search"
-          icon-right="close-x-exit"
+          icon-right="cancel"
           placeholder="Search..."
         />
       </template>

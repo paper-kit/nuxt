@@ -42,18 +42,18 @@ const positionClass = ref({
 
 <style scoped>
 .pu-tooltip {
-  @apply relative border-2 border-primary-light-500 dark:border-white bg-white dark:bg-primary-light-500 rounded-lg text-primary-light-500 dark:text-white text-center p-6 w-full h-full shadow-lg shadow-primary-light-500/20;
+  @apply relative border-2 border-primary-light-500 bg-white rounded-lg text-center p-6 w-full h-full shadow-lg shadow-primary-light-500/20;
 }
 
 .tooltip-arrow {
-  @apply absolute  w-6 h-6 bg-white dark:bg-primary-light-500 transform  z-10 rounded-sm;
+  @apply absolute  w-6 h-6 bg-white transform  z-10 rounded-sm;
   border: 2px solid black;
   border-color: inherit;
 }
 
 .tooltip-arrow::before {
   content: '';
-  @apply absolute -mt-[22px] -ml-[22px] w-[39px] h-[39px] transform rotate-[135deg] bg-white dark:bg-primary-light-500; ;
+  @apply absolute -mt-[22px] -ml-[22px] w-[39px] h-[39px] transform rotate-[135deg] bg-white ;
   inset: 0;
   clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
   z-index: 1;

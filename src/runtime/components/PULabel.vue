@@ -12,6 +12,6 @@ defineProps<{ id: string }>()
 
 <style scoped>
 .pu-label {
-  @apply text-primary-light-500 dark:text-white text-base uppercase w-full;
+  @apply text-primary-light-500 text-base uppercase w-full;
 }
 </style>

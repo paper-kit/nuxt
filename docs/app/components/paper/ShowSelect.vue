@@ -27,7 +27,7 @@
 
     <CodeBlock v-if="type === 'sizes'">
       <template #preview>
-        <div class="flex gap-2 w-1/2">
+        <div class="flex gap-2">
           <PUSelect
             v-model="smallValue"
             size="small"
@@ -59,7 +59,7 @@
     </CodeBlock>
     <CodeBlock v-if="type === 'with-label'">
       <template #preview>
-        <div class="flex flex-col w-1/3">
+        <div class="flex flex-col">
           <PULabel id="label">
             with label
           </PULabel>

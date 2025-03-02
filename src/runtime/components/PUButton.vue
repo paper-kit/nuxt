@@ -74,15 +74,15 @@ buttonClass.value.push(
 }
 
 .pu-button.pu-button--normal {
-  @apply bg-primary-light-500 rounded-lg  text-primary-light-50 dark:bg-primary-light-50 dark:text-primary-light-500;
+  @apply bg-primary-light-500 rounded-lg  text-primary-light-50;
 }
 
 .pu-button.pu-button--outlined {
-  @apply bg-transparent border-2 border-primary-light-500 text-primary-light-500 dark:border-primary-light-50 dark:text-primary-light-50;
+  @apply bg-transparent border-2 border-primary-light-500 text-primary-light-500;
 }
 
 .pu-button.pu-button--ghost {
-  @apply bg-transparent text-primary-light-500 border-transparent shadow-none dark:text-primary-light-50 dark:border-transparent dark:shadow-white/20;
+  @apply bg-transparent text-primary-light-500 border-transparent shadow-none;
 }
 
 .pu-button.pu-button--small {

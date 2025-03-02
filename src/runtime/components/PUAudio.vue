@@ -66,7 +66,7 @@ watch(isMuted, (newVal) => {
 </script>
 
 <template>
-  <div class="relative w-full max-w-lg border-2 border-primary-light-500 dark:border-white rounded-lg shadow-lg p-4 flex items-center gap-3 bg-white dark:bg-primary-light-500">
+  <div class="relative w-full max-w-lg border-2 border-primary-light-500 rounded-lg shadow-lg p-4 flex items-center gap-3 bg-white">
     <audio
       ref="audioRef"
       :src="src"
@@ -76,32 +76,32 @@ watch(isMuted, (newVal) => {
     <button @click="togglePlay">
       <PUIcon
         :name="isPlaying ? 'pause' : 'play'"
-        class="w-8 h-8 text-primary-light-500 dark:text-white"
+        class="w-8 h-8 text-primary-light-500"
       />
     </button>
 
     <input
       type="range"
-      class="flex-1 accent-primary-light-500 dark:accent-white"
+      class="flex-1 accent-primary-light-500"
       min="0"
       :max="duration"
       :value="currentTime"
       @input="seek"
     >
 
-    <span class="text-md font-bold text-primary-light-600 dark:text-gray-50 font-patrick">
+    <span class="text-md font-bold text-primary-light-600 font-patrick">
       {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
     </span>
 
     <button @click="toggleMute">
       <PUIcon
         :name="isMuted ? 'volume-mute' : 'volume'"
-        class="w-6 h-6 text-primary-light-500 dark:text-white"
+        class="w-6 h-6 text-primary-light-500"
       />
     </button>
     <input
       type="range"
-      class="w-16 accent-primary-light-500 dark:accent-white"
+      class="w-16 accent-primary-light-500"
       min="0"
       max="1"
       step="0.1"

@@ -1,8 +1,6 @@
 <template>
   <div class="datepicker-demo">
-    <CodeBlock
-      v-if="type === 'default'"
-    >
+    <CodeBlock v-if="type === 'default'">
       <template #preview>
         <PUDatePicker v-model="selectedDate" />
       </template>
@@ -11,9 +9,7 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock
-      v-if="type === 'always-open'"
-    >
+    <CodeBlock v-if="type === 'always-open'">
       <template #preview>
         <PUDatePicker
           v-model="selectedDate"
@@ -25,10 +21,7 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock
-      v-if="type === 'disabled-dates'"
-      :compare="false"
-    >
+    <CodeBlock v-if="type === 'disabled-dates'">
       <template #preview>
         <PUDatePicker
           v-model="selectedDate"
@@ -40,10 +33,7 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock
-      v-if="type === 'disabled-range'"
-      :compare="false"
-    >
+    <CodeBlock v-if="type === 'disabled-range'">
       <template #preview>
         <PUDatePicker
           v-model="selectedDate"

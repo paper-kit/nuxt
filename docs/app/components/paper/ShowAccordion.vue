@@ -20,7 +20,7 @@
         <div class="w-72">
           <PUAccordion :items="demoItems">
             <template #content>
-              <div class="p-4 bg-gray-50 rounded dark:text-primary-light-500">
+              <div class="p-4 bg-gray-50 rounded">
                 Custom content area with additional styling
               </div>
             </template>
@@ -39,7 +39,7 @@
             class="w-full"
           >
             <template #header="{ item, isOpen }">
-              <h3 :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800 dark:text-white': !isOpen }">
+              <h3 :class="{ 'text-[#E12B56]': isOpen, 'text-gray-800': !isOpen }">
                 {{ item.title }}
               </h3>
             </template>

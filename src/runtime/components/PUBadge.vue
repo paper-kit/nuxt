@@ -22,9 +22,9 @@ const props = defineProps<{
 }>()
 
 const severityColors = {
-  primary: 'border-primary-light-500 dark:bg-gray-50 dark:text-primary-light-500 dark:border-white bg-primary-light-500 text-primary-dark-50',
-  secondary: 'border-primary-light-200 dark:text-white dark:bg-primary-light-400 dark:border-primary-light-400 bg-primary-light-200 text-primary-light-500',
-  ghost: 'bg-transparent text-primary-light-500 dark:text-white',
+  primary: 'border-primary-light-500 bg-primary-light-500 text-primary-dark-50',
+  secondary: 'border-primary-light-200 bg-primary-light-200 text-primary-light-500',
+  ghost: 'bg-transparent text-primary-light-500',
 }
 
 const badgeClass = severityColors[props.severity || 'primary']
