@@ -5,28 +5,18 @@
         <div class="flex w-48 relative">
           <div class="flex gap-4 flex-wrap mx-4 w-full h-24">
             <PUCompare with-dark-mode>
-              <template #left>
-                <PUButton
-                  flavor="normal"
-                  shape="rounded"
-                >
-                  Click me!
-                </PUButton>
-              </template>
-              <template #right>
-                <PUButton
-                  flavor="normal"
-                  shape="rounded"
-                >
-                  Click me!
-                </PUButton>
-              </template>
+              <PUButton
+                flavor="normal"
+                shape="rounded"
+              >
+                Click me!
+              </PUButton>
             </PUCompare>
           </div>
         </div>
       </template>
       <template #component-name>
-        <a href="/docs/components/pu-audio">PUCompare</a>
+        <a href="/docs/components/pu-compare">PUCompare</a>
       </template>
     </ShowComponent>
 

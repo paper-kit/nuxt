@@ -44,6 +44,7 @@ const items: Items[] = [
       { name: 'PUButtonIcon', link: '/docs/components/pu-button-icon' },
       { name: 'PUButton', link: '/docs/components/pu-button' },
       { name: 'PUCheckbox', link: '/docs/components/pu-checkbox' },
+      { name: 'PUCompare', link: '/docs/components/pu-compare', new: true },
       { name: 'PUDatePicker', link: '/docs/components/pu-datepicker', new: true },
       { name: 'PUInput', link: '/docs/components/pu-input' },
       { name: 'PUModal', link: '/docs/components/pu-modal' },
