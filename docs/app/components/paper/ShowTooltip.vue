@@ -1,6 +1,5 @@
 <template>
   <div class="pu-tooltip-demo font-patrick">
-    <!-- Top Variations -->
     <CodeBlock v-if="type === 'top'">
       <template #preview>
         <PUTooltip :positions="['top']">
@@ -34,7 +33,6 @@
       </template>
     </CodeBlock>
 
-    <!-- Bottom Variations -->
     <CodeBlock v-if="type === 'bottom'">
       <template #preview>
         <PUTooltip :positions="['bottom']">
@@ -68,7 +66,6 @@
       </template>
     </CodeBlock>
 
-    <!-- Left Variations -->
     <CodeBlock v-if="type === 'left'">
       <template #preview>
         <PUTooltip :positions="['left']">
@@ -102,7 +99,6 @@
       </template>
     </CodeBlock>
 
-    <!-- Right Variations -->
     <CodeBlock v-if="type === 'right'">
       <template #preview>
         <PUTooltip :positions="['right']">

@@ -1,6 +1,5 @@
 <template>
   <div class="tabs relative font-patrick">
-    <!-- Tabs Navigation -->
     <div class="tabs-nav relative">
       <div
         v-for="(tab, index) in tabs"

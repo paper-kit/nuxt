@@ -3,18 +3,25 @@
     class="pu-card font-patrick"
     :class="[cardClass, customClass]"
   >
-    <!-- Card Image -->
-    <div v-if="image" class="pu-card__image">
-      <img :src="image" :alt="imageAlt" class="w-full h-full object-cover" />
+    <div
+      v-if="image"
+      class="pu-card__image"
+    >
+      <img
+        :src="image"
+        :alt="imageAlt"
+        class="w-full h-full object-cover"
+      >
     </div>
 
-    <!-- Card Content -->
     <div class="pu-card__content">
       <slot />
     </div>
 
-    <!-- Card Actions -->
-    <div v-if="$slots.actions" class="pu-card__actions">
+    <div
+      v-if="$slots.actions"
+      class="pu-card__actions"
+    >
       <slot name="actions" />
     </div>
   </div>

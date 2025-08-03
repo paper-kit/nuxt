@@ -1,8 +1,14 @@
 <template>
   <div class="grid-demo">
-    <CodeBlock v-if="type === 'basic'" :compare="false">
+    <CodeBlock
+      v-if="type === 'basic'"
+      :compare="false"
+    >
       <template #preview>
-        <PUGrid :cols="3" gap="medium">
+        <PUGrid
+          :cols="3"
+          gap="medium"
+        >
           <PUGridItem>
             Item 1
           </PUGridItem>
@@ -19,10 +25,19 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock v-if="type === 'responsive'" :compare="false">
+    <CodeBlock
+      v-if="type === 'responsive'"
+      :compare="false"
+    >
       <template #preview>
-        <PUGrid :responsive="true" gap="large">
-          <PUGridItem v-for="i in 4" :key="i">
+        <PUGrid
+          :responsive="true"
+          gap="large"
+        >
+          <PUGridItem
+            v-for="i in 4"
+            :key="i"
+          >
             Item {{ i }}
           </PUGridItem>
         </PUGrid>
@@ -32,9 +47,15 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock v-if="type === 'span'" :compare="false">
+    <CodeBlock
+      v-if="type === 'span'"
+      :compare="false"
+    >
       <template #preview>
-        <PUGrid :cols="4" gap="medium">
+        <PUGrid
+          :cols="4"
+          gap="medium"
+        >
           <PUGridItem :col-span="2">
             Large item (2 columns)
           </PUGridItem>
@@ -54,9 +75,17 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock v-if="type === 'alignment'" :compare="false">
+    <CodeBlock
+      v-if="type === 'alignment'"
+      :compare="false"
+    >
       <template #preview>
-        <PUGrid :cols="3" gap="medium" alignment="center" justify="space-between">
+        <PUGrid
+          :cols="3"
+          gap="medium"
+          alignment="center"
+          justify="space-between"
+        >
           <PUGridItem alignment="start">
             Top aligned
           </PUGridItem>
@@ -73,10 +102,20 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock v-if="type === 'complex'" :compare="false">
+    <CodeBlock
+      v-if="type === 'complex'"
+      :compare="false"
+    >
       <template #preview>
-        <PUGrid :cols="6" :rows="4" gap="large">
-          <PUGridItem :col-span="2" :row-span="2">
+        <PUGrid
+          :cols="6"
+          :rows="4"
+          gap="large"
+        >
+          <PUGridItem
+            :col-span="2"
+            :row-span="2"
+          >
             Header
           </PUGridItem>
           <PUGridItem :col-span="4">
@@ -101,9 +140,15 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock v-if="type === 'masonry'" :compare="false">
+    <CodeBlock
+      v-if="type === 'masonry'"
+      :compare="false"
+    >
       <template #preview>
-        <PUGrid cols="repeat(auto-fill, minmax(250px, 1fr))" gap="medium">
+        <PUGrid
+          cols="repeat(auto-fill, minmax(250px, 1fr))"
+          gap="medium"
+        >
           <PUGridItem
             v-for="i in 6"
             :key="i"
@@ -118,21 +163,42 @@
       </template>
     </CodeBlock>
 
-    <CodeBlock v-if="type === 'gaps'" :compare="false">
+    <CodeBlock
+      v-if="type === 'gaps'"
+      :compare="false"
+    >
       <template #preview>
         <div class="space-y-4">
-          <PUGrid :cols="4" gap="small">
-            <PUGridItem v-for="i in 4" :key="'small-' + i">
+          <PUGrid
+            :cols="4"
+            gap="small"
+          >
+            <PUGridItem
+              v-for="i in 4"
+              :key="'small-' + i"
+            >
               Item {{ i }}
             </PUGridItem>
           </PUGrid>
-          <PUGrid :cols="4" gap="medium">
-            <PUGridItem v-for="i in 4" :key="'medium-' + i">
+          <PUGrid
+            :cols="4"
+            gap="medium"
+          >
+            <PUGridItem
+              v-for="i in 4"
+              :key="'medium-' + i"
+            >
               Item {{ i }}
             </PUGridItem>
           </PUGrid>
-          <PUGrid :cols="4" gap="large">
-            <PUGridItem v-for="i in 4" :key="'large-' + i">
+          <PUGrid
+            :cols="4"
+            gap="large"
+          >
+            <PUGridItem
+              v-for="i in 4"
+              :key="'large-' + i"
+            >
               Item {{ i }}
             </PUGridItem>
           </PUGrid>

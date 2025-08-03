@@ -35,10 +35,12 @@
       :compare="false"
     >
       <template #preview>
-        <PULoading
-          type="skeleton"
-          size="medium"
-        />
+        <div class="w-20 h-10">
+          <PULoading
+            type="skeleton"
+            size="medium"
+          />
+        </div>
       </template>
       <template #code>
         <slot name="code" />

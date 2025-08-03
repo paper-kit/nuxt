@@ -25,7 +25,6 @@
         />
       </div>
 
-      <!-- Content -->
       <transition name="accordion">
         <div
           v-if="isOpen(index)"

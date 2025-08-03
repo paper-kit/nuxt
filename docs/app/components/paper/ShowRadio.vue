@@ -32,7 +32,6 @@
     <CodeBlock v-if="type === 'all-variants'">
       <template #preview>
         <div class="flex flex-col gap-4">
-          <!-- Flavors -->
           <div class="flex flex-col gap-2">
             <PURadio
               v-model="selectedValue"
@@ -54,7 +53,6 @@
             />
           </div>
 
-          <!-- Disabled State -->
           <div class="flex flex-col gap-2">
             <PURadio
               v-model="selectedValue"

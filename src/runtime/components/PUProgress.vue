@@ -1,6 +1,5 @@
 <template>
   <div class="flex justify-center items-center">
-    <!-- Modo Radial -->
     <svg
       v-if="mode === 'radial'"
       :width="sizeMap.radial"
