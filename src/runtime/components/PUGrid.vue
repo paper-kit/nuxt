@@ -47,17 +47,17 @@ const gridStyles = computed(() => {
     display: 'grid',
   }
 
-  // Definir colunas
   if (typeof props.cols === 'number') {
     styles['grid-template-columns'] = `repeat(${props.cols}, 1fr)`
-  } else {
+  }
+  else {
     styles['grid-template-columns'] = props.cols
   }
 
-  // Definir linhas
   if (typeof props.rows === 'number') {
     styles['grid-template-rows'] = `repeat(${props.rows}, 1fr)`
-  } else {
+  }
+  else {
     styles['grid-template-rows'] = props.rows
   }
 

@@ -45,7 +45,6 @@ const itemClass = computed(() => [
 const itemStyles = computed(() => {
   const styles: Record<string, string> = {}
 
-  // Grid positioning
   if (props.colStart) {
     styles['grid-column-start'] = props.colStart.toString()
   }
@@ -59,7 +58,6 @@ const itemStyles = computed(() => {
     styles['grid-row-end'] = props.rowEnd.toString()
   }
 
-  // Grid span
   if (props.colSpan) {
     styles['grid-column'] = `span ${props.colSpan}`
   }

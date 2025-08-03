@@ -34,7 +34,7 @@ const updateValue = (value: string | number | boolean) => {
 const getRadioClasses = (active: boolean) => {
   const classes = [
     'flex items-center gap-2 group transition-all',
-    'dark:bg-transparent', // Background para o modo dark
+    'dark:bg-transparent',
   ]
 
   if (props.disabled) {
