@@ -33,7 +33,7 @@
           v-for="marker in markers"
           :key="marker"
           class="pu-slider__marker"
-          :style="{ left: `${((marker - min) / (max - min)) * 100}%` }"
+          :style="getMarkerStyle(marker)"
         >
           <div class="pu-slider__marker-dot" />
           <div class="pu-slider__marker-label">
@@ -102,13 +102,30 @@ const percentage = computed(() => {
   return ((props.modelValue - props.min) / (props.max - props.min)) * 100
 })
 
-const trackFillStyle = computed(() => ({
-  width: `${percentage.value}%`,
-}))
+const trackFillStyle = computed(() => {
+  if (props.orientation === 'vertical') {
+    return {
+      height: `${percentage.value}%`,
+      width: '100%',
+      top: 'auto',
+      bottom: '0',
+    }
+  }
+  return {
+    width: `${percentage.value}%`,
+  }
+})
 
-const thumbStyle = computed(() => ({
-  left: `${percentage.value}%`,
-}))
+const thumbStyle = computed(() => {
+  if (props.orientation === 'vertical') {
+    return {
+      top: `${100 - percentage.value}%`,
+    }
+  }
+  return {
+    left: `${percentage.value}%`,
+  }
+})
 
 const markers = computed(() => {
   const steps = []
@@ -117,6 +134,18 @@ const markers = computed(() => {
   }
   return steps
 })
+
+const getMarkerStyle = (marker: number) => {
+  const markerPercentage = ((marker - props.min) / (props.max - props.min)) * 100
+  if (props.orientation === 'vertical') {
+    return {
+      top: `${markerPercentage}%`,
+    }
+  }
+  return {
+    left: `${markerPercentage}%`,
+  }
+}
 
 const startDragging = (event: MouseEvent | TouchEvent) => {
   if (props.disabled) return
@@ -141,8 +170,7 @@ const handleDragging = (event: MouseEvent | TouchEvent) => {
 
   if (props.orientation === 'horizontal') {
     percentage = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
-  }
-  else {
+  } else {
     percentage = Math.max(0, Math.min(1, (rect.bottom - clientY) / rect.height))
   }
 
@@ -167,7 +195,14 @@ const handleTrackClick = (event: MouseEvent) => {
   const rect = trackRef.value?.getBoundingClientRect()
   if (!rect) return
 
-  const percentage = (event.clientX - rect.left) / rect.width
+  let percentage = 0
+
+  if (props.orientation === 'horizontal') {
+    percentage = (event.clientX - rect.left) / rect.width
+  } else {
+    percentage = (rect.bottom - event.clientY) / rect.height
+  }
+
   const value = props.min + (percentage * (props.max - props.min))
   const steppedValue = Math.round(value / props.step) * props.step
 
@@ -189,7 +224,6 @@ onUnmounted(() => {
   @apply relative;
 }
 
-
 .pu-slider__track {
   @apply relative bg-gray-200 dark:bg-primary-light-400 rounded-full cursor-pointer;
   height: 8px;
@@ -200,7 +234,6 @@ onUnmounted(() => {
   height: 100%;
   transition: width 0.1s ease-out;
 }
-
 
 .pu-slider__thumb {
   @apply absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 cursor-pointer;
@@ -223,7 +256,6 @@ onUnmounted(() => {
     0 2px 4px rgba(28, 28, 28, 0.1);
 }
 
-
 .pu-slider__markers {
   @apply absolute top-0 left-0 w-full h-full pointer-events-none;
 }
@@ -240,7 +272,6 @@ onUnmounted(() => {
   @apply absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 dark:text-primary-light-300;
 }
 
-
 .pu-slider__labels {
   @apply flex justify-between mt-2 text-sm text-gray-500 dark:text-primary-light-300;
 }
@@ -248,7 +279,6 @@ onUnmounted(() => {
 .pu-slider__label {
   @apply font-medium;
 }
-
 
 .pu-slider--disabled {
   @apply opacity-50 cursor-not-allowed;
@@ -261,7 +291,6 @@ onUnmounted(() => {
 .pu-slider--disabled .pu-slider__thumb {
   @apply cursor-not-allowed;
 }
-
 
 .pu-slider__track {
   box-shadow:
@@ -293,15 +322,20 @@ onUnmounted(() => {
       transparent 70%);
 }
 
-
 .pu-slider--vertical {
   @apply w-8 h-full;
+}
+
+.pu-slider--vertical .pu-slider__container {
+  @apply h-full;
 }
 
 .pu-slider--vertical .pu-slider__track {
   @apply w-8 h-full;
   height: 100%;
   width: 8px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .pu-slider--vertical .pu-slider__track-fill {
@@ -309,17 +343,29 @@ onUnmounted(() => {
   width: 100%;
   height: 0%;
   transition: height 0.1s ease-out;
+  top: auto;
+  left: 0;
 }
 
 .pu-slider--vertical .pu-slider__thumb {
   @apply left-1/2 transform -translate-x-1/2 -translate-y-1/2;
-  left: 50%;
+}
+
+.pu-slider--vertical .pu-slider__markers {
+  @apply w-full h-full;
+}
+
+.pu-slider--vertical .pu-slider__marker {
+  @apply left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.pu-slider--vertical .pu-slider__marker-label {
+  @apply absolute left-4 top-1/2 transform -translate-y-1/2 text-xs;
 }
 
 .pu-slider--vertical .pu-slider__labels {
   @apply flex-col justify-between mt-0 ml-2;
 }
-
 
 @media (max-width: 640px) {
   .pu-slider__thumb {
@@ -329,6 +375,10 @@ onUnmounted(() => {
 
   .pu-slider__track {
     height: 10px;
+  }
+
+  .pu-slider--vertical .pu-slider__track {
+    width: 10px;
   }
 }
 </style>
