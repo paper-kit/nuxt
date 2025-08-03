@@ -21,37 +21,40 @@
       </svg>
     </button>
 
-    <Transition name="dropdown">
-      <div
-        v-if="isOpen"
-        ref="menuRef"
-        class="pu-dropdown__menu"
-        :style="menuStyle"
-      >
-        <div class="pu-dropdown__menu-content">
-          <div
-            v-for="option in options"
-            :key="option.value"
-            class="pu-dropdown__option"
-            :class="{ 'pu-dropdown__option--selected': option.value === modelValue }"
-            @click="selectOption(option)"
-          >
+    <Teleport to="body">
+      <Transition name="dropdown">
+        <div
+          v-if="isOpen"
+          ref="menuRef"
+          class="pu-dropdown__menu"
+          :style="menuStyle"
+          @click.stop
+        >
+          <div class="pu-dropdown__menu-content">
             <div
-              v-if="option.icon"
-              class="pu-dropdown__option-icon"
+              v-for="option in options"
+              :key="option.value"
+              class="pu-dropdown__option"
+              :class="{ 'pu-dropdown__option--selected': option.value === modelValue }"
+              @click="selectOption(option)"
             >
-              <component :is="option.icon" />
+              <div
+                v-if="option.icon"
+                class="pu-dropdown__option-icon"
+              >
+                <component :is="option.icon" />
+              </div>
+              <span class="pu-dropdown__option-label">{{ option.label }}</span>
             </div>
-            <span class="pu-dropdown__option-label">{{ option.label }}</span>
           </div>
         </div>
-      </div>
-    </Transition>
+      </Transition>
+    </Teleport>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, defineEmits, ref, onMounted, onUnmounted } from 'vue'
+import { computed, defineProps, defineEmits, ref, onMounted, onUnmounted, nextTick, watch } from 'vue'
 
 interface DropdownOption {
   value: string | number
@@ -105,16 +108,49 @@ const menuStyle = computed(() => {
   if (!triggerRef.value) return {}
 
   const rect = triggerRef.value.getBoundingClientRect()
+  const viewportHeight = window.innerHeight
+  const viewportWidth = window.innerWidth
+
+  const spaceBelow = viewportHeight - rect.bottom
+  const spaceAbove = rect.top
+
+  const shouldOpenAbove = spaceBelow < 200 && spaceAbove > spaceBelow
+
+  let top: string
+  if (shouldOpenAbove) {
+    top = `${rect.top - 4}px`
+  } else {
+    top = `${rect.bottom + 4}px`
+  }
+
+  let left = rect.left
+  const menuWidth = Math.max(rect.width, 200)
+
+  if (left + menuWidth > viewportWidth) {
+    left = Math.max(0, viewportWidth - menuWidth - 8)
+  }
+
   return {
-    top: `${rect.bottom + 4}px`,
-    left: `${rect.left}px`,
+    top,
+    left: `${left}px`,
     minWidth: `${rect.width}px`,
+    maxWidth: `${Math.min(menuWidth, viewportWidth - 16)}px`,
+    position: 'fixed' as const,
+    zIndex: 9999,
   }
 })
 
-const toggleDropdown = () => {
+const toggleDropdown = async () => {
   if (props.disabled) return
+
   isOpen.value = !isOpen.value
+
+  if (isOpen.value) {
+    await nextTick()
+    if (menuRef.value) {
+      menuRef.value.style.display = 'block'
+    }
+  }
 }
 
 const selectOption = (option: DropdownOption) => {
@@ -134,12 +170,26 @@ const handleClickOutside = (event: MouseEvent) => {
   }
 }
 
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === 'Escape' && isOpen.value) {
+    isOpen.value = false
+  }
+}
+
+watch(() => props.options, () => {
+  if (isOpen.value) {
+    isOpen.value = false
+  }
+})
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
+  document.addEventListener('keydown', handleKeydown)
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
+  document.removeEventListener('keydown', handleKeydown)
 })
 </script>
 
@@ -174,20 +224,19 @@ onUnmounted(() => {
   @apply transform rotate-180;
 }
 
-/* Menu */
 .pu-dropdown__menu {
-  @apply absolute z-50 bg-white dark:bg-primary-light-600 border border-gray-300 dark:border-primary-light-400 rounded-lg shadow-lg;
+  @apply fixed z-[9999] bg-white dark:bg-primary-light-600 border border-gray-300 dark:border-primary-light-400 rounded-lg shadow-lg;
   box-shadow:
     0 8px 16px rgba(28, 28, 28, 0.15),
     0 4px 8px rgba(28, 28, 28, 0.1);
 }
 
 .pu-dropdown__menu-content {
-  @apply py-1;
+  @apply py-1 max-h-60 overflow-y-auto;
 }
 
 .pu-dropdown__option {
-  @apply flex items-center gap-2 px-3 py-2 cursor-pointer transition-colors duration-150;
+  @apply flex items-center gap-2 px-3 py-2 cursor-pointer transition-colors duration-150 text-sm text-gray-700 dark:text-primary-light-50;
 }
 
 .pu-dropdown__option:hover {
@@ -206,7 +255,6 @@ onUnmounted(() => {
   @apply text-sm;
 }
 
-/* Sizes */
 .pu-dropdown--small .pu-dropdown__trigger {
   @apply px-2 py-1.5;
 }
@@ -243,7 +291,6 @@ onUnmounted(() => {
   @apply w-5 h-5;
 }
 
-/* Disabled state */
 .pu-dropdown--disabled .pu-dropdown__trigger {
   @apply opacity-50 cursor-not-allowed;
 }
@@ -255,7 +302,6 @@ onUnmounted(() => {
     0 1px 2px rgba(28, 28, 28, 0.05);
 }
 
-/* Hand-drawn effects */
 .pu-dropdown__trigger::before {
   content: '';
   @apply absolute inset-0 rounded-lg pointer-events-none;
@@ -274,7 +320,6 @@ onUnmounted(() => {
       transparent 70%);
 }
 
-/* Animations */
 .dropdown-enter-active,
 .dropdown-leave-active {
   transition: all 0.2s ease-out;
@@ -286,19 +331,34 @@ onUnmounted(() => {
   transform: translateY(-8px) scale(0.95);
 }
 
-/* Dark mode adjustments */
 .dark .pu-dropdown__menu {
   box-shadow:
     0 8px 16px rgba(0, 0, 0, 0.3),
     0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 640px) {
   .pu-dropdown__menu {
     @apply w-full;
     left: 0 !important;
     min-width: 100% !important;
+    max-width: 100% !important;
   }
+}
+
+.pu-dropdown__menu-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pu-dropdown__menu-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-primary-light-500 rounded;
+}
+
+.pu-dropdown__menu-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-primary-light-400 rounded;
+}
+
+.pu-dropdown__menu-content::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-primary-light-300;
 }
 </style>
