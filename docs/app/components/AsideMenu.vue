@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-// do all items for aside menu, separated by category, getting started, layout and components
+
 import AsideMenuItems from './AsideMenuItems.vue'
 
 interface Items {
@@ -30,6 +30,15 @@ const items: Items[] = [
       { name: 'PUAudio', link: '/docs/components/pu-audio', new: true },
       { name: 'PUGrid', link: '/docs/components/pu-grid', new: true },
       { name: 'PUCard', link: '/docs/components/pu-card', new: true },
+      { name: 'PUDivider', link: '/docs/components/pu-divider', new: true },
+      { name: 'PULoading', link: '/docs/components/pu-loading', new: true },
+      { name: 'PUSlider', link: '/docs/components/pu-slider', new: true },
+      { name: 'PURating', link: '/docs/components/pu-rating', new: true },
+      { name: 'PUCounter', link: '/docs/components/pu-counter', new: true },
+      { name: 'PUDropdown', link: '/docs/components/pu-dropdown', new: true },
+      { name: 'PUCopyToClipboard', link: '/docs/components/pu-copy', new: true },
+      { name: 'PUSearch', link: '/docs/components/pu-search', new: true },
+      { name: 'PUConfetti', link: '/docs/components/pu-confetti', new: true },
       // { name: 'PUChip', link: '/docs/components/pu-chip' },
       // { name: 'PUCollapsible', link: '/docs/components/pu-collapsible' },
       // { name: 'PUDataTable', link: '/docs/components/pu-data-table', new: true },

@@ -3,7 +3,10 @@
     <ShowComponent is-new>
       <template #component>
         <div class="w-64 h-32">
-          <PUGrid :cols="2" gap="small">
+          <PUGrid
+            :cols="2"
+            gap="small"
+          >
             <PUGridItem>
               <div class="p-2 text-center text-xs bg-blue-50 dark:bg-blue-900/20 rounded">
                 Item 1
@@ -35,14 +38,139 @@
     <ShowComponent is-new>
       <template #component>
         <div class="w-64">
-          <PUCard variant="simple" size="small">
-            <h3 class="text-md font-bold mb-1">Card</h3>
-            <p class="text-xs text-gray-600">Hand-drawn style</p>
+          <PUCard
+            variant="simple"
+            size="small"
+          >
+            <h3 class="text-md font-bold mb-1">
+              Card
+            </h3>
+            <p class="text-xs text-gray-600">
+              Hand-drawn style
+            </p>
           </PUCard>
         </div>
       </template>
-      <template #component-name">
+      <template #component-name>
         <a href="/docs/components/pu-card">PUCard</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUDivider
+            text="Section"
+            style="dashed"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-divider">PUDivider</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PULoading
+            type="circular"
+            size="medium"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-loading">PULoading</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUSlider
+            v-model="sliderValue"
+            :min="0"
+            :max="100"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-slider">PUSlider</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PURating v-model="ratingValue" />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-rating">PURating</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUCounter v-model="counterValue" />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-counter">PUCounter</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUDropdown
+            v-model="dropdownValue"
+            :options="dropdownOptions"
+            placeholder="Select..."
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-dropdown">PUDropdown</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUCopyToClipboard value="Copy this text" />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-copy">PUCopyToClipboard</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUSearch placeholder="Search..." />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-search">PUSearch</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64 h-32 relative">
+          <PUConfetti
+            :active="true"
+            :width="256"
+            :height="128"
+            class="absolute inset-0"
+          />
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-confetti">PUConfetti</a>
       </template>
     </ShowComponent>
 
@@ -307,7 +435,6 @@
               </div>
             </template>
 
-            <!-- Content Customization -->
             <template #content="{ tab }">
               <p class="my-4">
                 {{ tab.content }}
@@ -407,6 +534,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const { add } = useToast()
 
 const options = ref([
@@ -454,6 +583,16 @@ const handleModelValueUpdate = (value: string | number | null) => {
 }
 
 const checked = ref<boolean>(false)
+
+const sliderValue = ref(50)
+const ratingValue = ref(3)
+const counterValue = ref(5)
+const dropdownValue = ref('')
+const dropdownOptions = ref([
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+  { value: 'option3', label: 'Option 3' },
+])
 
 const openToast = () => {
   add({
