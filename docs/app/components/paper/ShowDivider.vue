@@ -64,10 +64,14 @@
       :compare="false"
     >
       <template #preview>
-        <PUDivider
-          text="Section Title"
-          divider-style="solid"
-        />
+        <div class="space-y-4">
+          <div>content</div>
+          <PUDivider
+            text="Section Title"
+            divider-style="solid"
+          />
+          <div>content</div>
+        </div>
       </template>
       <template #code>
         <slot name="code" />
