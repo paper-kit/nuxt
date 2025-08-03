@@ -28,6 +28,8 @@ const items: Items[] = [
       { name: 'PUAccordion', link: '/docs/components/pu-accordion' },
       { name: 'PUAvatar', link: '/docs/components/pu-avatar', new: true },
       { name: 'PUAudio', link: '/docs/components/pu-audio', new: true },
+      { name: 'PUGrid', link: '/docs/components/pu-grid', new: true },
+      { name: 'PUCard', link: '/docs/components/pu-card', new: true },
       // { name: 'PUChip', link: '/docs/components/pu-chip' },
       // { name: 'PUCollapsible', link: '/docs/components/pu-collapsible' },
       // { name: 'PUDataTable', link: '/docs/components/pu-data-table', new: true },

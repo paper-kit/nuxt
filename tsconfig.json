@@ -1,8 +1,37 @@
 {
-  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "#app": ["./node_modules/nuxt/dist/app"],
+      "#app/*": ["./node_modules/nuxt/dist/app/*"],
+      "~": ["."],
+      "~/*": ["./*"],
+      "@": ["."],
+      "@/*": ["./*"]
+    }
+  },
   "exclude": [
     "dist",
     "node_modules",
     "playground",
+    "docs",
+    "test"
+  ],
+  "include": [
+    "src/**/*",
+    "docs/**/*"
   ]
 }

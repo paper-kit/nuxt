@@ -2,6 +2,52 @@
   <div class="flex gap-4 flex-wrap mx-4">
     <ShowComponent is-new>
       <template #component>
+        <div class="w-64 h-32">
+          <PUGrid :cols="2" gap="small">
+            <PUGridItem>
+              <div class="p-2 text-center text-xs bg-blue-50 dark:bg-blue-900/20 rounded">
+                Item 1
+              </div>
+            </PUGridItem>
+            <PUGridItem>
+              <div class="p-2 text-center text-xs bg-green-50 dark:bg-green-900/20 rounded">
+                Item 2
+              </div>
+            </PUGridItem>
+            <PUGridItem>
+              <div class="p-2 text-center text-xs bg-yellow-50 dark:bg-yellow-900/20 rounded">
+                Item 3
+              </div>
+            </PUGridItem>
+            <PUGridItem>
+              <div class="p-2 text-center text-xs bg-purple-50 dark:bg-purple-900/20 rounded">
+                Item 4
+              </div>
+            </PUGridItem>
+          </PUGrid>
+        </div>
+      </template>
+      <template #component-name>
+        <a href="/docs/components/pu-grid">PUGrid</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
+        <div class="w-64">
+          <PUCard variant="simple" size="small">
+            <h3 class="text-md font-bold mb-1">Card</h3>
+            <p class="text-xs text-gray-600">Hand-drawn style</p>
+          </PUCard>
+        </div>
+      </template>
+      <template #component-name">
+        <a href="/docs/components/pu-card">PUCard</a>
+      </template>
+    </ShowComponent>
+
+    <ShowComponent is-new>
+      <template #component>
         <div class="flex w-48 relative">
           <div class="flex gap-4 flex-wrap mx-4 w-full h-24">
             <PUCompare with-dark-mode>

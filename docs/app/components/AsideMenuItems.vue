@@ -35,7 +35,7 @@
 defineProps<{
   items: {
     title: string
-    links: { name: string, link: string, new: boolean }[]
+    links: { name: string, link: string, new?: boolean }[]
   }[]
 }>()
 </script>
