@@ -72,13 +72,13 @@ const itemStyles = computed(() => {
 <style lang="css" scoped>
 .pu-grid-item {
   @apply relative p-4 bg-white dark:bg-primary-light-600 rounded-lg border border-gray-200 dark:border-primary-light-400;
-  /* Estilo hand-drawn */
+  
   box-shadow:
     0 2px 4px rgba(28, 28, 28, 0.1),
     0 1px 2px rgba(28, 28, 28, 0.05);
 }
 
-/* Bordas hand-drawn */
+
 .pu-grid-item::before {
   content: '';
   @apply absolute inset-0 pointer-events-none;
@@ -97,7 +97,7 @@ const itemStyles = computed(() => {
   mask-composite: xor;
 }
 
-/* Cantos irregulares */
+
 .pu-grid-item::after {
   content: '';
   @apply absolute top-0 right-0 w-3 h-3 pointer-events-none;
@@ -106,7 +106,7 @@ const itemStyles = computed(() => {
   border-radius: 0 12px 0 0;
 }
 
-/* Alignment */
+
 .pu-grid-item--align-start {
   align-self: start;
 }
@@ -123,7 +123,7 @@ const itemStyles = computed(() => {
   align-self: stretch;
 }
 
-/* Justify */
+
 .pu-grid-item--justify-start {
   justify-self: start;
 }
@@ -140,7 +140,7 @@ const itemStyles = computed(() => {
   justify-self: stretch;
 }
 
-/* Hover effects */
+
 .pu-grid-item:hover {
   @apply transform scale-[1.02] shadow-lg;
   box-shadow:
@@ -149,7 +149,7 @@ const itemStyles = computed(() => {
   filter: drop-shadow(0 4px 8px rgba(28, 28, 28, 0.1));
 }
 
-/* Animações de entrada */
+
 .pu-grid-item {
   animation: gridItemEnter 0.4s ease-out;
 }
@@ -165,7 +165,7 @@ const itemStyles = computed(() => {
   }
 }
 
-/* Dark mode */
+
 .dark .pu-grid-item {
   @apply bg-primary-light-600 border-primary-light-400;
   box-shadow:
@@ -185,7 +185,7 @@ const itemStyles = computed(() => {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Responsive padding */
+
 @media (max-width: 640px) {
   .pu-grid-item {
     @apply p-3;

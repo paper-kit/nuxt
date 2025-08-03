@@ -57,13 +57,11 @@ const cardClass = computed(() => [
 <style lang="css" scoped>
 .pu-card {
   @apply relative bg-white dark:bg-primary-light-600 rounded-lg border border-gray-200 dark:border-primary-light-400 overflow-hidden;
-  /* Estilo hand-drawn */
   box-shadow:
     0 4px 8px rgba(28, 28, 28, 0.1),
     0 2px 4px rgba(28, 28, 28, 0.05);
 }
 
-/* Bordas hand-drawn */
 .pu-card::before {
   content: '';
   @apply absolute inset-0 pointer-events-none;
@@ -82,7 +80,6 @@ const cardClass = computed(() => [
   mask-composite: xor;
 }
 
-/* Cantos irregulares */
 .pu-card::after {
   content: '';
   @apply absolute top-0 right-0 w-4 h-4 pointer-events-none;
@@ -91,7 +88,6 @@ const cardClass = computed(() => [
   border-radius: 0 12px 0 0;
 }
 
-/* Card Image */
 .pu-card__image {
   @apply relative overflow-hidden;
   border-radius: 12px 12px 0 0;
@@ -107,17 +103,14 @@ const cardClass = computed(() => [
       transparent 70%);
 }
 
-/* Card Content */
 .pu-card__content {
   @apply p-4;
 }
 
-/* Card Actions */
 .pu-card__actions {
   @apply p-4 pt-0 flex gap-2 justify-end;
 }
 
-/* Variants */
 .pu-card--simple {
   @apply p-4;
 }
@@ -130,7 +123,6 @@ const cardClass = computed(() => [
   @apply p-4 pb-2;
 }
 
-/* Sizes */
 .pu-card--small {
   @apply max-w-sm;
 }
@@ -143,7 +135,6 @@ const cardClass = computed(() => [
   @apply max-w-lg;
 }
 
-/* Hover effects */
 .pu-card:hover {
   @apply transform scale-[1.02] shadow-lg;
   box-shadow:
@@ -152,7 +143,6 @@ const cardClass = computed(() => [
   filter: drop-shadow(0 4px 8px rgba(28, 28, 28, 0.1));
 }
 
-/* Animações de entrada */
 .pu-card {
   animation: cardEnter 0.4s ease-out;
 }
@@ -168,7 +158,6 @@ const cardClass = computed(() => [
   }
 }
 
-/* Dark mode */
 .dark .pu-card {
   @apply bg-primary-light-600 border-primary-light-400;
   box-shadow:
@@ -188,7 +177,6 @@ const cardClass = computed(() => [
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
-/* Responsive */
 @media (max-width: 640px) {
   .pu-card__content {
     @apply p-3;
@@ -196,16 +184,6 @@ const cardClass = computed(() => [
 
   .pu-card__actions {
     @apply p-3 pt-0;
-  }
-}
-
-@media (min-width: 1024px) {
-  .pu-card__content {
-    @apply p-6;
-  }
-
-  .pu-card__actions {
-    @apply p-6 pt-0;
   }
 }
 </style>

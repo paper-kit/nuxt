@@ -189,7 +189,7 @@ onUnmounted(() => {
   @apply relative;
 }
 
-/* Track */
+
 .pu-slider__track {
   @apply relative bg-gray-200 dark:bg-primary-light-400 rounded-full cursor-pointer;
   height: 8px;
@@ -201,7 +201,7 @@ onUnmounted(() => {
   transition: width 0.1s ease-out;
 }
 
-/* Thumb */
+
 .pu-slider__thumb {
   @apply absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 cursor-pointer;
   width: 20px;
@@ -223,7 +223,7 @@ onUnmounted(() => {
     0 2px 4px rgba(28, 28, 28, 0.1);
 }
 
-/* Markers */
+
 .pu-slider__markers {
   @apply absolute top-0 left-0 w-full h-full pointer-events-none;
 }
@@ -240,7 +240,7 @@ onUnmounted(() => {
   @apply absolute top-4 left-1/2 transform -translate-x-1/2 text-xs text-gray-500 dark:text-primary-light-300;
 }
 
-/* Labels */
+
 .pu-slider__labels {
   @apply flex justify-between mt-2 text-sm text-gray-500 dark:text-primary-light-300;
 }
@@ -249,7 +249,7 @@ onUnmounted(() => {
   @apply font-medium;
 }
 
-/* Disabled state */
+
 .pu-slider--disabled {
   @apply opacity-50 cursor-not-allowed;
 }
@@ -262,7 +262,7 @@ onUnmounted(() => {
   @apply cursor-not-allowed;
 }
 
-/* Hand-drawn effects */
+
 .pu-slider__track {
   box-shadow:
     inset 0 1px 2px rgba(28, 28, 28, 0.1),
@@ -293,7 +293,7 @@ onUnmounted(() => {
       transparent 70%);
 }
 
-/* Vertical orientation */
+
 .pu-slider--vertical {
   @apply w-8 h-full;
 }
@@ -320,7 +320,7 @@ onUnmounted(() => {
   @apply flex-col justify-between mt-0 ml-2;
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
   .pu-slider__thumb {
     width: 24px;

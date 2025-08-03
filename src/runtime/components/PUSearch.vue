@@ -213,7 +213,7 @@ watch(() => props.modelValue, (newValue) => {
   @apply w-5 h-5 border-2 border-gray-300 dark:border-primary-light-400 border-t-primary-light-500 dark:border-t-primary-light-50 rounded-full animate-spin;
 }
 
-/* Suggestions */
+
 .pu-search__suggestions {
   @apply absolute top-full left-0 right-0 mt-1 bg-white dark:bg-primary-light-600 border border-gray-300 dark:border-primary-light-400 rounded-lg shadow-lg z-50;
   box-shadow:
@@ -238,7 +238,7 @@ watch(() => props.modelValue, (newValue) => {
   @apply text-sm text-gray-700 dark:text-primary-light-50;
 }
 
-/* Sizes */
+
 .pu-search--small .pu-search__input {
   @apply py-1.5 text-xs;
 }
@@ -281,12 +281,12 @@ watch(() => props.modelValue, (newValue) => {
   @apply pl-12 pr-12;
 }
 
-/* Disabled state */
+
 .pu-search--disabled .pu-search__input {
   @apply opacity-50 cursor-not-allowed;
 }
 
-/* Hand-drawn effects */
+
 .pu-search__input::before {
   content: '';
   @apply absolute inset-0 rounded-lg pointer-events-none;
@@ -305,7 +305,7 @@ watch(() => props.modelValue, (newValue) => {
       transparent 70%);
 }
 
-/* Animations */
+
 .suggestions-enter-active,
 .suggestions-leave-active {
   transition: all 0.2s ease-out;
@@ -317,14 +317,14 @@ watch(() => props.modelValue, (newValue) => {
   transform: translateY(-8px) scale(0.95);
 }
 
-/* Dark mode adjustments */
+
 .dark .pu-search__suggestions {
   box-shadow:
     0 8px 16px rgba(0, 0, 0, 0.3),
     0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
   .pu-search--large .pu-search__input {
     @apply py-2 text-sm;

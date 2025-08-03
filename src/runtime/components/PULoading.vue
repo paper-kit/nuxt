@@ -87,7 +87,7 @@ const loadingClass = computed(() => [
   @apply flex flex-col items-center justify-center;
 }
 
-/* Circular Spinner */
+
 .pu-loading__circular {
   @apply relative;
 }
@@ -122,7 +122,7 @@ const loadingClass = computed(() => [
   }
 }
 
-/* Dots Spinner */
+
 .pu-loading__dots {
   @apply flex gap-2;
 }
@@ -149,7 +149,7 @@ const loadingClass = computed(() => [
   }
 }
 
-/* Skeleton */
+
 .pu-loading__skeleton {
   @apply space-y-2 w-full;
 }
@@ -180,12 +180,12 @@ const loadingClass = computed(() => [
   }
 }
 
-/* Text */
+
 .pu-loading__text {
   @apply mt-2 text-sm text-gray-600 dark:text-primary-light-300;
 }
 
-/* Sizes */
+
 .pu-loading--small .pu-loading__spinner {
   @apply w-6 h-6;
 }
@@ -222,7 +222,7 @@ const loadingClass = computed(() => [
   @apply h-6;
 }
 
-/* Hand-drawn effects */
+
 .pu-loading__spinner {
   filter: drop-shadow(0 2px 4px rgba(28, 28, 28, 0.1));
 }

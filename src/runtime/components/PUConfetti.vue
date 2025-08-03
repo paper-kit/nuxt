@@ -198,7 +198,7 @@ onUnmounted(() => {
   @apply block;
 }
 
-/* Hand-drawn effects */
+
 .pu-confetti::before {
   content: '';
   @apply absolute inset-0 pointer-events-none;

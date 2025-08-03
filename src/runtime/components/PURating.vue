@@ -119,13 +119,13 @@ const getStarIcon = (star: number) => {
   filter: drop-shadow(0 1px 2px rgba(28, 28, 28, 0.1));
 }
 
-/* Hover effects */
+
 .pu-rating__star:hover .pu-rating__star-icon {
   @apply transform scale-110;
   filter: drop-shadow(0 2px 4px rgba(28, 28, 28, 0.15));
 }
 
-/* Star colors - using default icon colors */
+
 .pu-rating__star-icon {
   @apply text-gray-600 dark:text-gray-300;
 }
@@ -134,7 +134,7 @@ const getStarIcon = (star: number) => {
   @apply text-gray-800 dark:text-gray-100;
 }
 
-/* Sizes */
+
 .pu-rating--small .pu-rating__stars {
   @apply gap-0.5;
 }
@@ -159,7 +159,7 @@ const getStarIcon = (star: number) => {
   @apply w-8 h-8;
 }
 
-/* Value display */
+
 .pu-rating__value {
   @apply text-gray-600 dark:text-primary-light-300 font-medium;
 }
@@ -176,7 +176,7 @@ const getStarIcon = (star: number) => {
   @apply text-base;
 }
 
-/* Disabled state */
+
 .pu-rating--disabled .pu-rating__star {
   @apply cursor-not-allowed;
 }
@@ -185,7 +185,7 @@ const getStarIcon = (star: number) => {
   @apply transform-none;
 }
 
-/* Readonly state */
+
 .pu-rating--readonly .pu-rating__star {
   @apply cursor-default;
 }
@@ -194,7 +194,7 @@ const getStarIcon = (star: number) => {
   @apply transform-none;
 }
 
-/* Dark mode adjustments */
+
 .dark .pu-rating__star-icon {
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
@@ -203,7 +203,7 @@ const getStarIcon = (star: number) => {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
   .pu-rating--large .pu-rating__star-icon {
     @apply w-6 h-6;

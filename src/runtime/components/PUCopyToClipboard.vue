@@ -123,7 +123,7 @@ const copyToClipboard = async () => {
   @apply text-sm text-gray-700 dark:text-primary-light-50 font-medium;
 }
 
-/* Sizes */
+
 .pu-copy--small .pu-copy__button {
   @apply px-2 py-1.5;
 }
@@ -160,7 +160,7 @@ const copyToClipboard = async () => {
   @apply text-base;
 }
 
-/* Disabled state */
+
 .pu-copy--disabled .pu-copy__button {
   @apply opacity-50 cursor-not-allowed;
 }
@@ -172,7 +172,7 @@ const copyToClipboard = async () => {
     0 1px 2px rgba(28, 28, 28, 0.05);
 }
 
-/* Hand-drawn effects */
+
 .pu-copy__button::before {
   content: '';
   @apply absolute inset-0 rounded-lg pointer-events-none;
@@ -191,7 +191,7 @@ const copyToClipboard = async () => {
       transparent 70%);
 }
 
-/* Animation for success state */
+
 .pu-copy--copied .pu-copy__icon {
   animation: copySuccess 0.3s ease-out;
 }
@@ -210,7 +210,7 @@ const copyToClipboard = async () => {
   }
 }
 
-/* Dark mode adjustments */
+
 .dark .pu-copy__button {
   box-shadow:
     0 2px 4px rgba(0, 0, 0, 0.2),
@@ -223,7 +223,7 @@ const copyToClipboard = async () => {
     0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive */
+
 @media (max-width: 640px) {
   .pu-copy--large .pu-copy__button {
     @apply px-3 py-2;

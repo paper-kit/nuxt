@@ -59,7 +59,7 @@ const dividerClass = computed(() => {
   @apply relative flex items-center;
 }
 
-/* Horizontal divider */
+
 .pu-divider--horizontal {
   @apply w-full my-4;
 }
@@ -76,7 +76,7 @@ const dividerClass = computed(() => {
     );
 }
 
-/* Vertical divider */
+
 .pu-divider--vertical {
   @apply h-full mx-4 w-px;
 }
@@ -93,7 +93,7 @@ const dividerClass = computed(() => {
     );
 }
 
-/* Styles */
+
 .pu-divider--solid .pu-divider__line {
   background-image: none;
 }
@@ -132,7 +132,7 @@ const dividerClass = computed(() => {
   filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 2'%3E%3Cpath d='M0,1 Q2.5,0 5,1 T10,1' stroke='currentColor' fill='none' stroke-width='1'/%3E%3C/svg%3E");
 }
 
-/* Vertical styles */
+
 .pu-divider--vertical.pu-divider--dashed .pu-divider__line {
   background-image:
     repeating-linear-gradient(
@@ -166,7 +166,7 @@ const dividerClass = computed(() => {
     );
 }
 
-/* Text */
+
 .pu-divider__text {
   @apply px-4 text-sm text-gray-500 dark:text-primary-light-300 font-medium;
   background:
@@ -188,7 +188,7 @@ const dividerClass = computed(() => {
   @apply flex-1;
 }
 
-/* Sizes */
+
 .pu-divider--small .pu-divider__line {
   height: 1px;
 }
@@ -216,7 +216,7 @@ const dividerClass = computed(() => {
   height: 100%;
 }
 
-/* Hand-drawn effect */
+
 .pu-divider__line {
   position: relative;
 }
