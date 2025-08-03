@@ -35,7 +35,7 @@
       :compare="false"
     >
       <template #preview>
-        <div class="space-y-2">
+        <div class=" flex flex-col gap-2">
           <PURating
             v-model="value3"
             size="small"

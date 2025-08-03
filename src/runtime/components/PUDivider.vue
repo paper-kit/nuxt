@@ -18,31 +18,40 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 
-const props = withDefaults(
-  defineProps<{
-    orientation?: 'horizontal' | 'vertical'
-    style?: 'solid' | 'dashed' | 'dotted' | 'wavy'
-    text?: string
-    size?: 'small' | 'medium' | 'large'
-    customClass?: string
-  }>(),
-  {
-    orientation: 'horizontal',
-    style: 'solid',
-    text: '',
-    size: 'medium',
-    customClass: '',
-  },
-)
+interface Props {
+  orientation?: 'horizontal' | 'vertical'
+  dividerStyle?: 'solid' | 'dashed' | 'dotted' | 'wavy'
+  text?: string
+  size?: 'small' | 'medium' | 'large'
+  customClass?: string
+}
 
-const dividerClass = computed(() => [
-  'pu-divider',
-  `pu-divider--${props.orientation}`,
-  `pu-divider--${props.style}`,
-  `pu-divider--${props.size}`,
-])
+const props = withDefaults(defineProps<Props>(), {
+  orientation: 'horizontal',
+  dividerStyle: 'solid',
+  text: '',
+  size: 'medium',
+  customClass: '',
+})
+
+const dividerClass = computed(() => {
+  const validStyles = ['solid', 'dashed', 'dotted', 'wavy']
+  const validOrientations = ['horizontal', 'vertical']
+  const validSizes = ['small', 'medium', 'large']
+
+  const style = typeof props.dividerStyle === 'string' && validStyles.includes(props.dividerStyle) ? props.dividerStyle : 'solid'
+  const orientation = typeof props.orientation === 'string' && validOrientations.includes(props.orientation) ? props.orientation : 'horizontal'
+  const size = typeof props.size === 'string' && validSizes.includes(props.size) ? props.size : 'medium'
+
+  return [
+    'pu-divider',
+    `pu-divider--${orientation}`,
+    `pu-divider--${style}`,
+    `pu-divider--${size}`,
+  ]
+})
 </script>
 
 <style lang="css" scoped>
@@ -55,8 +64,7 @@ const dividerClass = computed(() => [
   @apply w-full my-4;
 }
 
-.pu-divider--horizontal::before {
-  content: '';
+.pu-divider--horizontal .pu-divider__line {
   @apply flex-1 h-px bg-gray-300 dark:bg-primary-light-400;
   background-image:
     repeating-linear-gradient(
@@ -73,8 +81,7 @@ const dividerClass = computed(() => [
   @apply h-full mx-4 w-px;
 }
 
-.pu-divider--vertical::before {
-  content: '';
+.pu-divider--vertical .pu-divider__line {
   @apply w-px h-full bg-gray-300 dark:bg-primary-light-400;
   background-image:
     repeating-linear-gradient(
@@ -87,11 +94,11 @@ const dividerClass = computed(() => [
 }
 
 /* Styles */
-.pu-divider--solid::before {
+.pu-divider--solid .pu-divider__line {
   background-image: none;
 }
 
-.pu-divider--dashed::before {
+.pu-divider--dashed .pu-divider__line {
   background-image:
     repeating-linear-gradient(
       90deg,
@@ -102,7 +109,7 @@ const dividerClass = computed(() => [
     );
 }
 
-.pu-divider--dotted::before {
+.pu-divider--dotted .pu-divider__line {
   background-image:
     repeating-linear-gradient(
       90deg,
@@ -113,7 +120,7 @@ const dividerClass = computed(() => [
     );
 }
 
-.pu-divider--wavy::before {
+.pu-divider--wavy .pu-divider__line {
   background-image:
     repeating-linear-gradient(
       90deg,
@@ -126,7 +133,7 @@ const dividerClass = computed(() => [
 }
 
 /* Vertical styles */
-.pu-divider--vertical.pu-divider--dashed::before {
+.pu-divider--vertical.pu-divider--dashed .pu-divider__line {
   background-image:
     repeating-linear-gradient(
       180deg,
@@ -137,7 +144,7 @@ const dividerClass = computed(() => [
     );
 }
 
-.pu-divider--vertical.pu-divider--dotted::before {
+.pu-divider--vertical.pu-divider--dotted .pu-divider__line {
   background-image:
     repeating-linear-gradient(
       180deg,
@@ -148,7 +155,7 @@ const dividerClass = computed(() => [
     );
 }
 
-.pu-divider--vertical.pu-divider--wavy::before {
+.pu-divider--vertical.pu-divider--wavy .pu-divider__line {
   background-image:
     repeating-linear-gradient(
       180deg,
@@ -182,35 +189,39 @@ const dividerClass = computed(() => [
 }
 
 /* Sizes */
-.pu-divider--small::before {
+.pu-divider--small .pu-divider__line {
   height: 1px;
 }
 
-.pu-divider--medium::before {
+.pu-divider--medium .pu-divider__line {
   height: 2px;
 }
 
-.pu-divider--large::before {
+.pu-divider--large .pu-divider__line {
   height: 3px;
 }
 
-.pu-divider--vertical.pu-divider--small::before {
+.pu-divider--vertical.pu-divider--small .pu-divider__line {
   width: 1px;
   height: 100%;
 }
 
-.pu-divider--vertical.pu-divider--medium::before {
+.pu-divider--vertical.pu-divider--medium .pu-divider__line {
   width: 2px;
   height: 100%;
 }
 
-.pu-divider--vertical.pu-divider--large::before {
+.pu-divider--vertical.pu-divider--large .pu-divider__line {
   width: 3px;
   height: 100%;
 }
 
 /* Hand-drawn effect */
-.pu-divider::after {
+.pu-divider__line {
+  position: relative;
+}
+
+.pu-divider__line::after {
   content: '';
   @apply absolute inset-0 pointer-events-none;
   background:
@@ -218,7 +229,7 @@ const dividerClass = computed(() => [
     radial-gradient(circle at 80% 50%, rgba(28, 28, 28, 0.1) 0%, transparent 50%);
 }
 
-.dark .pu-divider::after {
+.dark .pu-divider__line::after {
   background:
     radial-gradient(circle at 20% 50%, rgba(193, 193, 193, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 50%, rgba(193, 193, 193, 0.1) 0%, transparent 50%);

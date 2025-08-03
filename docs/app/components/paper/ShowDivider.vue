@@ -9,7 +9,7 @@
           <div>Content above</div>
           <PUDivider
             orientation="horizontal"
-            style="solid"
+            divider-style="solid"
           />
           <div>Content below</div>
         </div>
@@ -28,7 +28,7 @@
           <div>Left content</div>
           <PUDivider
             orientation="vertical"
-            style="solid"
+            divider-style="solid"
           />
           <div>Right content</div>
         </div>
@@ -44,10 +44,14 @@
     >
       <template #preview>
         <div class="space-y-4">
-          <PUDivider style="solid" />
-          <PUDivider style="dashed" />
-          <PUDivider style="dotted" />
-          <PUDivider style="wavy" />
+          <div>content</div>
+          <PUDivider divider-style="solid" />
+          <div>content</div>
+          <PUDivider divider-style="dashed" />
+          <div>content</div>
+          <PUDivider divider-style="dotted" />
+          <div>content</div>
+          <PUDivider divider-style="wavy" />
         </div>
       </template>
       <template #code>
@@ -62,7 +66,7 @@
       <template #preview>
         <PUDivider
           text="Section Title"
-          style="solid"
+          divider-style="solid"
         />
       </template>
       <template #code>
@@ -76,8 +80,11 @@
     >
       <template #preview>
         <div class="space-y-4">
+          <div>content</div>
           <PUDivider size="small" />
+          <div>content</div>
           <PUDivider size="medium" />
+          <div>content</div>
           <PUDivider size="large" />
         </div>
       </template>

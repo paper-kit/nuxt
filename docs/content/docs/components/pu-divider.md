@@ -16,7 +16,7 @@ Basic Usage
 ```html
 <template>
   <div>Content above</div>
-  <PUDivider orientation="horizontal" style="solid" />
+  <PUDivider orientation="horizontal" divider-style="solid" />
   <div>Content below</div>
 </template>
 ```
@@ -32,7 +32,7 @@ Vertical Divider
 <template>
   <div class="flex items-center">
     <div>Left content</div>
-    <PUDivider orientation="vertical" style="solid" />
+    <PUDivider orientation="vertical" divider-style="solid" />
     <div>Right content</div>
   </div>
 </template>
@@ -47,10 +47,10 @@ Different Styles
 #code
 ```html
 <template>
-  <PUDivider style="solid" />
-  <PUDivider style="dashed" />
-  <PUDivider style="dotted" />
-  <PUDivider style="wavy" />
+  <PUDivider divider-style="solid" />
+  <PUDivider divider-style="dashed" />
+  <PUDivider divider-style="dotted" />
+  <PUDivider divider-style="wavy" />
 </template>
 ```
 ::
@@ -63,7 +63,7 @@ With Text
 #code
 ```html
 <template>
-  <PUDivider text="Section Title" style="solid" />
+  <PUDivider text="Section Title" divider-style="solid" />
 </template>
 ```
 ::
@@ -96,7 +96,7 @@ rows:
     - 'No'
     - 'horizontal'
     - 'Divider orientation'
-  - - 'style'
+  - - 'dividerStyle'
     - 'solid | dashed | dotted | wavy'
     - 'No'
     - 'solid'

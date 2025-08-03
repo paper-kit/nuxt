@@ -17,16 +17,6 @@
                 Item 2
               </div>
             </PUGridItem>
-            <PUGridItem>
-              <div class="p-2 text-center text-xs bg-yellow-50 dark:bg-yellow-900/20 rounded">
-                Item 3
-              </div>
-            </PUGridItem>
-            <PUGridItem>
-              <div class="p-2 text-center text-xs bg-purple-50 dark:bg-purple-900/20 rounded">
-                Item 4
-              </div>
-            </PUGridItem>
           </PUGrid>
         </div>
       </template>
