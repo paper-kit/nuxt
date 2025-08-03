@@ -217,7 +217,7 @@ Advanced Examples
 #description
 12-column grid
 ::
-#code
+::code-box{header="App.vue" type="vue" copy=""}
 ```html
 <PUGrid cols="repeat(12, 1fr)" gap="medium">
   <PUGridItem :col-span="8">Main content</PUGridItem>
@@ -230,7 +230,7 @@ Advanced Examples
 #description
 Fixed size columns
 ::
-#code
+::code-box{header="App.vue" type="vue" copy=""}
 ```html
 <PUGrid cols="200px 1fr 200px" gap="large">
   <PUGridItem>Left sidebar</PUGridItem>
@@ -244,7 +244,7 @@ Fixed size columns
 #description
 Masonry grid
 ::
-#code
+::code-box{header="App.vue" type="vue" copy=""}
 ```html
 <PUGrid cols="repeat(auto-fill, minmax(250px, 1fr))" gap="medium">
   <PUGridItem v-for="i in 6" :key="i" :row-span="i % 2 === 0 ? 2 : 1">
