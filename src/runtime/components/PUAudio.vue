@@ -72,7 +72,7 @@ watch(isMuted, (newVal) => {
       :src="src"
     />
 
-          <button @click="togglePlay">
+    <button @click="togglePlay">
       <PUIcon
         :name="isPlaying ? 'pause' : 'play'"
         class="w-8 h-8 text-primary-light-500 dark:text-white"

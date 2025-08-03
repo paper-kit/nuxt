@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts" setup>
-
 import AsideMenuItems from './AsideMenuItems.vue'
 
 interface Items {
