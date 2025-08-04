@@ -45,7 +45,7 @@ jobs:
         run: pnpm install
 
       - name: Playground prepare
-        run: npm dev:prepare
+        run: pnpm dev:prepare
 
       - name: Test
-        run: npm test
+        run: pnpm test
