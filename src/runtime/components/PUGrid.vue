@@ -68,7 +68,7 @@ const gridStyles = computed(() => {
 <style lang="css" scoped>
 .pu-grid {
   @apply relative;
-  
+
   background:
     radial-gradient(circle at 20% 20%, rgba(28, 28, 28, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(28, 28, 28, 0.05) 0%, transparent 50%);
@@ -82,7 +82,6 @@ const gridStyles = computed(() => {
   opacity: 0.3;
   z-index: -1;
 }
-
 
 .pu-grid--gap-none {
   gap: 0;
@@ -100,7 +99,6 @@ const gridStyles = computed(() => {
   gap: 2rem;
 }
 
-
 .pu-grid--align-start {
   align-items: start;
 }
@@ -116,7 +114,6 @@ const gridStyles = computed(() => {
 .pu-grid--align-stretch {
   align-items: stretch;
 }
-
 
 .pu-grid--justify-start {
   justify-items: start;
@@ -142,17 +139,14 @@ const gridStyles = computed(() => {
   justify-content: space-evenly;
 }
 
-
 .pu-grid--responsive {
   @apply grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6;
 }
-
 
 .dark .pu-grid::before {
   background-image:
     url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none' stroke='%23464646' stroke-width='0.5' stroke-dasharray='2,2'/%3E%3C/svg%3E");
 }
-
 
 .pu-grid > * {
   @apply transition-all duration-200 ease-in-out;
@@ -163,11 +157,9 @@ const gridStyles = computed(() => {
   filter: drop-shadow(0 4px 8px rgba(28, 28, 28, 0.1));
 }
 
-
 .dark .pu-grid > *:hover {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
-
 
 .pu-grid > * {
   animation: gridItemEnter 0.3s ease-out;
@@ -183,7 +175,6 @@ const gridStyles = computed(() => {
     transform: translateY(0) scale(1);
   }
 }
-
 
 .pu-grid > * {
   @apply relative;

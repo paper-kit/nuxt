@@ -119,7 +119,8 @@ const menuStyle = computed(() => {
   let top: string
   if (shouldOpenAbove) {
     top = `${rect.top - 4}px`
-  } else {
+  }
+  else {
     top = `${rect.bottom + 4}px`
   }
 

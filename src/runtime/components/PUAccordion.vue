@@ -93,7 +93,6 @@ const toggle = (index: number) => {
   @apply border-t border-primary-light-500/10 dark:border-white/50 my-2;
 }
 
-
 .accordion-enter-active,
 .accordion-leave-active {
   @apply transition-all duration-300;

@@ -170,7 +170,8 @@ const handleDragging = (event: MouseEvent | TouchEvent) => {
 
   if (props.orientation === 'horizontal') {
     percentage = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
-  } else {
+  }
+  else {
     percentage = Math.max(0, Math.min(1, (rect.bottom - clientY) / rect.height))
   }
 
@@ -199,7 +200,8 @@ const handleTrackClick = (event: MouseEvent) => {
 
   if (props.orientation === 'horizontal') {
     percentage = (event.clientX - rect.left) / rect.width
-  } else {
+  }
+  else {
     percentage = (rect.bottom - event.clientY) / rect.height
   }
 

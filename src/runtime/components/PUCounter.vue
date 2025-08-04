@@ -162,7 +162,6 @@ watch(() => props.modelValue, (newValue) => {
   @apply text-primary-light-500 dark:text-primary-light-50;
 }
 
-
 .pu-counter__button:disabled {
   @apply opacity-50 cursor-not-allowed;
 }
@@ -173,7 +172,6 @@ watch(() => props.modelValue, (newValue) => {
     0 2px 4px rgba(28, 28, 28, 0.1),
     0 1px 2px rgba(28, 28, 28, 0.05);
 }
-
 
 .pu-counter--small .pu-counter__value {
   @apply text-lg;
@@ -223,7 +221,6 @@ watch(() => props.modelValue, (newValue) => {
   @apply w-5 h-5;
 }
 
-
 .pu-counter__button::before {
   content: '';
   @apply absolute inset-0 rounded-full pointer-events-none;
@@ -237,7 +234,6 @@ watch(() => props.modelValue, (newValue) => {
     radial-gradient(circle at 30% 30%, rgba(193, 193, 193, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 70% 70%, rgba(193, 193, 193, 0.05) 0%, transparent 50%);
 }
-
 
 .pu-counter__value {
   animation: counterUpdate 0.3s ease-out;
@@ -254,7 +250,6 @@ watch(() => props.modelValue, (newValue) => {
   }
 }
 
-
 .dark .pu-counter__value {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -270,7 +265,6 @@ watch(() => props.modelValue, (newValue) => {
     0 4px 8px rgba(0, 0, 0, 0.3),
     0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 
 @media (max-width: 640px) {
   .pu-counter--large .pu-counter__value {

@@ -87,7 +87,6 @@ const loadingClass = computed(() => [
   @apply flex flex-col items-center justify-center;
 }
 
-
 .pu-loading__circular {
   @apply relative;
 }
@@ -122,7 +121,6 @@ const loadingClass = computed(() => [
   }
 }
 
-
 .pu-loading__dots {
   @apply flex gap-2;
 }
@@ -148,7 +146,6 @@ const loadingClass = computed(() => [
     transform: scale(1);
   }
 }
-
 
 .pu-loading__skeleton {
   @apply space-y-2 w-full;
@@ -180,11 +177,9 @@ const loadingClass = computed(() => [
   }
 }
 
-
 .pu-loading__text {
   @apply mt-2 text-sm text-gray-600 dark:text-primary-light-300;
 }
-
 
 .pu-loading--small .pu-loading__spinner {
   @apply w-6 h-6;
@@ -221,7 +216,6 @@ const loadingClass = computed(() => [
 .pu-loading--large .pu-loading__skeleton-line {
   @apply h-6;
 }
-
 
 .pu-loading__spinner {
   filter: drop-shadow(0 2px 4px rgba(28, 28, 28, 0.1));

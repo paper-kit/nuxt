@@ -59,7 +59,6 @@ const dividerClass = computed(() => {
   @apply relative flex items-center;
 }
 
-
 .pu-divider--horizontal {
   @apply w-full my-4;
 }
@@ -76,7 +75,6 @@ const dividerClass = computed(() => {
     );
 }
 
-
 .pu-divider--vertical {
   @apply h-full mx-4 w-px;
 }
@@ -92,7 +90,6 @@ const dividerClass = computed(() => {
       transparent 4px
     );
 }
-
 
 .pu-divider--solid .pu-divider__line {
   background-image: none;
@@ -132,7 +129,6 @@ const dividerClass = computed(() => {
   filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 2'%3E%3Cpath d='M0,1 Q2.5,0 5,1 T10,1' stroke='currentColor' fill='none' stroke-width='1'/%3E%3C/svg%3E");
 }
 
-
 .pu-divider--vertical.pu-divider--dashed .pu-divider__line {
   background-image:
     repeating-linear-gradient(
@@ -166,7 +162,6 @@ const dividerClass = computed(() => {
     );
 }
 
-
 .pu-divider__text {
   @apply px-4 text-sm text-gray-500 dark:text-primary-light-300 font-medium;
   background:
@@ -187,7 +182,6 @@ const dividerClass = computed(() => {
 .pu-divider__line {
   @apply flex-1;
 }
-
 
 .pu-divider--small .pu-divider__line {
   height: 1px;
@@ -215,7 +209,6 @@ const dividerClass = computed(() => {
   width: 3px;
   height: 100%;
 }
-
 
 .pu-divider__line {
   position: relative;

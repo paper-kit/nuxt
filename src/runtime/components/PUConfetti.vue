@@ -198,7 +198,6 @@ onUnmounted(() => {
   @apply block;
 }
 
-
 .pu-confetti::before {
   content: '';
   @apply absolute inset-0 pointer-events-none;
