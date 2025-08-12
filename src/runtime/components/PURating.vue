@@ -125,11 +125,11 @@ const getStarIcon = (star: number) => {
 }
 
 .pu-rating__star-icon {
-  @apply text-gray-600 dark:text-gray-300;
+  @apply text-primary-light-600 dark:text-primary-light-300;
 }
 
 .pu-rating__star:hover .pu-rating__star-icon {
-  @apply text-gray-800 dark:text-gray-100;
+  @apply text-primary-light-800 dark:text-primary-light-100;
 }
 
 .pu-rating--small .pu-rating__stars {
@@ -157,7 +157,7 @@ const getStarIcon = (star: number) => {
 }
 
 .pu-rating__value {
-  @apply text-gray-600 dark:text-primary-light-300 font-medium;
+  @apply text-primary-light-600 dark:text-primary-light-300 font-medium;
 }
 
 .pu-rating--small .pu-rating__value {

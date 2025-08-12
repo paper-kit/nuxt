@@ -116,7 +116,7 @@ const copyToClipboard = async () => {
 }
 
 .pu-copy__icon--success {
-  @apply text-green-500 dark:text-green-400;
+  @apply text-primary-light-500;
 }
 
 .pu-copy__text {
