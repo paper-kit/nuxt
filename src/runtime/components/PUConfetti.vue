@@ -40,7 +40,7 @@ const props = withDefaults(
   }>(),
   {
     active: false,
-    colors: () => ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD'],
+    colors: () => ['#1c1c1c'],
     particleCount: 50,
     duration: 3000,
     width: 400,
