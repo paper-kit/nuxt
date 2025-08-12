@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="nav-wrapper flex justify-between px-4">
+  <div class="w-full">
+    <div class="nav-wrapper flex justify-between px-4 w-full">
       <div class=" flex justify-center items-center gap-2 mt-5">
         <img
           src="/logo.svg"

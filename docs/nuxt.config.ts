@@ -4,6 +4,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '../src/module',
     '@nuxtjs/tailwindcss',
+    'vue3-carousel-nuxt',
+    '@nuxt/image',
   ],
   devtools: { enabled: true },
   content: { nitro: {
