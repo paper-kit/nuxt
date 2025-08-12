@@ -1,12 +1,12 @@
 <template>
   <div class="flex h-full relative font-patrick overflow-hidden">
     <div
-      class="text-5xl h-full font-bold md:py-0 py-16 md:text-7xl text-primary-light-500 text-center w-1/2 items-center flex justify-center tracking-wider leading-loose uppercase relative z-10"
+      class="text-5xl h-full font-bold md:py-0 py-16 md:text-7xl text-primary-light-500 text-center w-full md:w-1/2 items-center flex justify-center tracking-wider leading-loose uppercase relative z-10"
     >
       <div
-        class="w-full md:w-1/2 flex items-end justify-end h-auto flex-col leading-loose"
+        class="w-full flex items-end justify-end h-auto flex-col leading-loose"
       >
-        <div class="text-3xl h-[80vh] mb-8">
+        <div class="text-4xl h-[80vh] mb-8">
           <div class=" h-1/2 mb-8">
             <NuxtImg
               src="/paper.svg"
@@ -20,7 +20,7 @@
           <a href="/docs/getting-started">
             <PUButton flavor="outlined">Get Started</PUButton>
           </a>
-          <div class="">
+          <div class="hidden md:block">
             <NuxtImg
               src="/arrow-up.svg"
               alt="arrow-up"
