@@ -56,7 +56,7 @@
         v-if="index !== items.length - 1"
         class="section-separator"
       >
-        <div class="separator-line"></div>
+        <div class="separator-line" />
       </div>
     </div>
   </div>
@@ -131,7 +131,6 @@ const onLeave = (el: Element) => {
   transform: rotate(-0.5deg);
   position: relative;
 }
-
 
 .section-toggle {
   @apply flex items-center justify-center w-6 h-6;

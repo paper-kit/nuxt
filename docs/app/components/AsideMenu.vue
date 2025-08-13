@@ -8,8 +8,8 @@
         <div class="menu-controls">
           <button
             class="expand-all-btn"
-            @click="toggleAllSections"
             :title="isAllExpanded ? 'Colapsar tudo' : 'Expandir tudo'"
+            @click="toggleAllSections"
           >
             {{ isAllExpanded ? '⊖' : '⊕' }}
           </button>
