@@ -35,8 +35,8 @@
           <img
             v-for="i in 7"
             :key="`pet-${i}`"
-            :src="`/mobile/pet/${i}.png`"
-            :alt="`Pet ${i}`"
+            :src="`/mobile/weather/${i}.png`"
+            :alt="`weather ${i}`"
             class="slide-image"
           >
         </div>
@@ -53,8 +53,8 @@
           <img
             v-for="i in 9"
             :key="`home-${i}`"
-            :src="`/mobile/add-spot/${i}.png`"
-            :alt="`Home ${i}`"
+            :src="`/mobile/lost-pets/${i}.png`"
+            :alt="`Pet ${i}`"
             class="slide-image"
           >
         </div>

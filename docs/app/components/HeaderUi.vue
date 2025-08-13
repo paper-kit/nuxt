@@ -12,6 +12,11 @@
           href="/"
           class="brand-logo flex"
         ><div class="text-2xlfont-patrick ">Paper Ui</div></a>
+        <PUBadge
+          label="v2.0"
+          size="large"
+          severity="ghost"
+        />
       </div>
 
       <ul

@@ -1,22 +1,35 @@
 import { ref } from 'vue'
 
 export const useAccordion = () => {
-  const openSections = ref<Set<number>>(new Set())
+  const openSections = ref<Set<string>>(new Set(['Introduction']))
 
-  const toggleSection = (index: number) => {
-    if (openSections.value.has(index)) {
-      openSections.value.delete(index)
+  const toggleSection = (sectionTitle: string) => {
+    if (openSections.value.has(sectionTitle)) {
+      openSections.value.delete(sectionTitle)
     }
     else {
-      openSections.value.add(index)
+      openSections.value.add(sectionTitle)
     }
   }
 
-  const isOpen = (index: number) => openSections.value.has(index)
+  const isSectionOpen = (sectionTitle: string) => {
+    return openSections.value.has(sectionTitle)
+  }
+
+  const openAllSections = () => {
+    openSections.value = new Set(['Introduction', 'Layout & Structure', 'Form Controls', 'Actions & Feedback', 'Data Display', 'Media & Content', 'Navigation & Search', 'Examples'])
+  }
+
+  const closeAllSections = () => {
+    openSections.value.clear()
+  }
 
   return {
     openSections,
     toggleSection,
-    isOpen,
+    isSectionOpen,
+    openAllSections,
+    closeAllSections,
   }
 }
+
