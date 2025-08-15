@@ -22,9 +22,16 @@
               <PUButton flavor="outlined">Get Started</PUButton>
             </a>
             <a href="/docs/v2">
-              <PUButton flavor="ghost" size="small">
+              <PUButton
+                flavor="ghost"
+                size="small"
+              >
                 <span class="mr-2">What's New in v2.0</span>
-                <PUBadge label="NEW" size="small" severity="warning" />
+                <PUBadge
+                  label="NEW"
+                  size="small"
+                  severity="warning"
+                />
               </PUButton>
             </a>
           </div>

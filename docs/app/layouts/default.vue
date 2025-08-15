@@ -5,21 +5,30 @@
     :style="{ background: route.path == '/' ? 'url(/bg.svg) no-repeat' : '' }"
   >
     <!-- Banner v2.0 no topo absoluto -->
-    <div v-if="isDocsPage" class="v2-banner-top">
+    <div
+      v-if="isDocsPage"
+      class="v2-banner-top"
+    >
       <div class="v2-banner-content">
         <div class="v2-banner-left">
           <span class="v2-banner-icon">🎉</span>
           <span class="v2-banner-text">Paper UI v2.0 is here!</span>
           <span class="v2-banner-badge">NEW</span>
         </div>
-        <a href="/docs/v2" class="v2-banner-link">
+        <a
+          href="/docs/v2"
+          class="v2-banner-link"
+        >
           <span>See what's new</span>
           <span class="v2-banner-arrow">→</span>
         </a>
       </div>
     </div>
 
-    <div class="container h-full text-xl" :class="{ 'pt-12': isDocsPage }">
+    <div
+      class="container h-full text-xl"
+      :class="{ 'pt-12': isDocsPage }"
+    >
       <HeaderUi />
       <NuxtPage />
     </div>
@@ -110,7 +119,7 @@ const isDocsPage = computed(() => {
   .v2-banner-content {
     @apply flex-col gap-3 text-center;
   }
-  
+
   .v2-banner-left {
     @apply justify-center;
   }

@@ -5,9 +5,11 @@
         <span class="version-number">v2.0</span>
         <span class="version-label">Major Release</span>
       </div>
-      <h1 class="page-title">Changelog v2.0</h1>
+      <h1 class="page-title">
+        Changelog v2.0
+      </h1>
       <p class="page-description">
-        Welcome to Paper UI v2.0! This major release brings significant improvements to the documentation experience, 
+        Welcome to Paper UI v2.0! This major release brings significant improvements to the documentation experience,
         enhanced component styling, and a completely redesigned sidebar navigation system.
       </p>
     </div>
@@ -15,13 +17,17 @@
     <div class="changelog-content">
       <div class="section">
         <div class="section-header">
-          <h2 class="section-title">🎉 Major Features</h2>
-          <div class="section-decoration"></div>
+          <h2 class="section-title">
+            🎉 Major Features
+          </h2>
+          <div class="section-decoration" />
         </div>
-        
+
         <div class="feature-grid">
           <div class="feature-card">
-            <div class="feature-icon">✨</div>
+            <div class="feature-icon">
+              ✨
+            </div>
             <h3>New Accordion Sidebar Menu</h3>
             <p>The documentation now features a completely redesigned sidebar with accordion functionality</p>
             <ul>
@@ -31,9 +37,11 @@
               <li>Visual Indicators</li>
             </ul>
           </div>
-          
+
           <div class="feature-card">
-            <div class="feature-icon">🎨</div>
+            <div class="feature-icon">
+              🎨
+            </div>
             <h3>Enhanced Visual Design</h3>
             <p>Maintains the unique "drawn by hand" aesthetic with improved styling</p>
             <ul>
@@ -48,10 +56,12 @@
 
       <div class="section">
         <div class="section-header">
-          <h2 class="section-title">🚀 New Components</h2>
-          <div class="section-decoration"></div>
+          <h2 class="section-title">
+            🚀 New Components
+          </h2>
+          <div class="section-decoration" />
         </div>
-        
+
         <div class="components-grid">
           <div class="component-category">
             <h3>Layout & Structure</h3>
@@ -62,7 +72,7 @@
               <span class="component-tag">PUDivider</span>
             </div>
           </div>
-          
+
           <div class="component-category">
             <h3>Form Controls</h3>
             <div class="component-list">
@@ -73,7 +83,7 @@
               <span class="component-tag">PUCounter</span>
             </div>
           </div>
-          
+
           <div class="component-category">
             <h3>Actions & Feedback</h3>
             <div class="component-list">
@@ -83,7 +93,7 @@
               <span class="component-tag">PUProgress</span>
             </div>
           </div>
-          
+
           <div class="component-category">
             <h3>Data Display</h3>
             <div class="component-list">
@@ -92,7 +102,7 @@
               <span class="component-tag">PUCompare</span>
             </div>
           </div>
-          
+
           <div class="component-category">
             <h3>Media & Content</h3>
             <div class="component-list">
@@ -100,7 +110,7 @@
               <span class="component-tag">PUVideo</span>
             </div>
           </div>
-          
+
           <div class="component-category">
             <h3>Navigation & Search</h3>
             <div class="component-list">
@@ -112,37 +122,47 @@
 
       <div class="section">
         <div class="section-header">
-          <h2 class="section-title">🔧 Technical Improvements</h2>
-          <div class="section-decoration"></div>
+          <h2 class="section-title">
+            🔧 Technical Improvements
+          </h2>
+          <div class="section-decoration" />
         </div>
-        
+
         <div class="improvements-list">
           <div class="improvement-item">
-            <div class="improvement-icon">⚡</div>
+            <div class="improvement-icon">
+              ⚡
+            </div>
             <div class="improvement-content">
               <h4>Performance Optimization</h4>
               <p>Faster rendering and better memory usage across all components</p>
             </div>
           </div>
-          
+
           <div class="improvement-item">
-            <div class="improvement-icon">🎯</div>
+            <div class="improvement-icon">
+              🎯
+            </div>
             <div class="improvement-content">
               <h4>TypeScript Support</h4>
               <p>Enhanced type safety and better developer experience</p>
             </div>
           </div>
-          
+
           <div class="improvement-item">
-            <div class="improvement-icon">♿</div>
+            <div class="improvement-icon">
+              ♿
+            </div>
             <div class="improvement-content">
               <h4>Accessibility</h4>
               <p>Better ARIA labels and keyboard navigation support</p>
             </div>
           </div>
-          
+
           <div class="improvement-item">
-            <div class="improvement-icon">📱</div>
+            <div class="improvement-icon">
+              📱
+            </div>
             <div class="improvement-content">
               <h4>Responsive Design</h4>
               <p>Optimized for all screen sizes and devices</p>
@@ -153,26 +173,28 @@
 
       <div class="section">
         <div class="section-header">
-          <h2 class="section-title">🎯 Future Roadmap</h2>
-          <div class="section-decoration"></div>
+          <h2 class="section-title">
+            🎯 Future Roadmap
+          </h2>
+          <div class="section-decoration" />
         </div>
-        
+
         <div class="roadmap-grid">
           <div class="roadmap-item">
             <h4>Theme Customization</h4>
             <p>Advanced theming options for complete customization</p>
           </div>
-          
+
           <div class="roadmap-item">
             <h4>Animation Library</h4>
             <p>Pre-built animation components for enhanced UX</p>
           </div>
-          
+
           <div class="roadmap-item">
             <h4>Form Builder</h4>
             <p>Visual form creation tool for rapid development</p>
           </div>
-          
+
           <div class="roadmap-item">
             <h4>Component Playground</h4>
             <p>Interactive component testing environment</p>
@@ -383,13 +405,13 @@
     background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(147, 197, 253, 0.2) 100%);
     border-color: rgba(59, 130, 246, 0.3);
   }
-  
+
   .page-title {
     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
   }
-  
+
   .section-title {
     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
   }
 }
-</style> 
+</style>
