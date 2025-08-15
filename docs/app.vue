@@ -1,7 +1,7 @@
 <template>
   <div
     class="main h-screen w-screen flex justify-center"
-    :style="{ background: route.path == '/' ? 'url(/bg.svg) no-repeat' : '' }"
+    :style="{ background: route.path === '/' ? 'url(/bg.svg) no-repeat' : '' }"
   >
     <div class="container h-full text-xl">
       <HeaderUi />
@@ -11,8 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import { _backgroundImage } from '#tailwind-config/theme'
-
 const route = useRoute()
 </script>
 

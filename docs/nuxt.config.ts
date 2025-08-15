@@ -2,9 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
-    '../src/module',
+    '@paper-ui/nuxt',
     '@nuxtjs/tailwindcss',
-    'vue3-carousel-nuxt',
     '@nuxt/image',
   ],
   devtools: { enabled: true },

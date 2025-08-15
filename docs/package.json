@@ -14,9 +14,8 @@
     "@nuxt/image": "1.11.0",
     "@nuxtjs/mdc": "^0.13.2",
     "@nuxtjs/tailwindcss": "^6.13.1",
-    "@paper-ui/nuxt": "^1.1.6",
+    "@paper-ui/nuxt": "^2.0.2",
     "better-sqlite3": "^12.2.0",
-    "nuxt": "^3.15.2",
-    "vue3-carousel-nuxt": "1.1.6"
+    "nuxt": "^3.15.2"
   }
 }
