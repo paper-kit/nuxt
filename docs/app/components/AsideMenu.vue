@@ -44,7 +44,6 @@ const items: Items[] = [
     title: 'Layout & Structure',
     links: [
       { name: 'PUGrid', link: '/docs/components/pu-grid', new: true },
-      { name: 'PUGridItem', link: '/docs/components/pu-grid-item', new: true },
       { name: 'PUCard', link: '/docs/components/pu-card', new: true },
       { name: 'PUDivider', link: '/docs/components/pu-divider', new: true },
       { name: 'PUTabs', link: '/docs/components/pu-tabs' },
