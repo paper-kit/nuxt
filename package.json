@@ -1,10 +1,10 @@
 {
   "name": "@paper-ui/nuxt",
-  "version": "2.1.0",
+  "version": "2.0.0",
   "description": "A ui kit for nuxt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paper-kit/nuxt"
+    "url": "git+https://github.com/paper-kit/nuxt.git"
   },
   "license": "MIT",
   "type": "module",
