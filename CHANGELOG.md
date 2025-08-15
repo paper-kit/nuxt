@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.0.1
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v2.1.0...v2.0.1)
+
+### 🏡 Chore
+
+- Fix repository url on package.json ([e394680](https://github.com/paper-kit/nuxt/commit/e394680))
+
+### ❤️ Contributors
+
+- FelipeO16 <felipe16.12.1998@gmail.com>
+
 ## v2.1.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.7.0...v2.1.0)
