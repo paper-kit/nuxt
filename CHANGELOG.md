@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v2.0.2
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v2.0.1...v2.0.2)
+
 ## v2.0.1
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v2.1.0...v2.0.1)
