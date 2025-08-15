@@ -1,6 +1,5 @@
 <template>
   <div class="flex justify-center items-center">
-    <!-- Modo Radial -->
     <svg
       v-if="mode === 'radial'"
       :width="sizeMap.radial"
@@ -9,7 +8,7 @@
       class="transform -rotate-90"
     >
       <circle
-        class="text-gray-300 stroke-current"
+        class="text-gray-300 stroke-current dark:text-gray-600"
         cx="50"
         cy="50"
         r="45"
@@ -17,7 +16,7 @@
         fill="none"
       />
       <circle
-        class="text-primary-light-500 stroke-current transition-all duration-300"
+        class="text-primary-light-500 stroke-current transition-all duration-300 dark:text-primary-light-50"
         cx="50"
         cy="50"
         r="45"
@@ -30,22 +29,22 @@
 
     <div
       v-else-if="mode === 'horizontal'"
-      class="w-full bg-gray-200 rounded-lg overflow-hidden"
+      class="w-full bg-gray-200 rounded-lg overflow-hidden dark:bg-gray-600"
       :style="{ height: sizeMap.horizontal + 'px' }"
     >
       <div
-        class="h-full bg-primary-light-500 transition-all duration-300"
+        class="h-full bg-primary-light-500 dark:bg-primary-light-50 transition-all duration-300"
         :style="{ width: `${progress}%` }"
       />
     </div>
 
     <div
       v-else
-      class="bg-gray-200 rounded-lg overflow-hidden rotate-180"
+      class="bg-gray-200 rounded-lg overflow-hidden rotate-180 dark:bg-gray-600"
       :style="{ width: sizeMap.vertical + 'px', height: '100px' }"
     >
       <div
-        class="bg-primary-light-500 transition-all duration-300"
+        class="bg-primary-light-500 transition-all duration-300 dark:bg-primary-light-50"
         :style="{ height: `${progress}%` }"
       />
     </div>

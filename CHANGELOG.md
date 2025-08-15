@@ -1,6 +1,97 @@
 # Changelog
 
 
+## v2.0.2
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v2.0.1...v2.0.2)
+
+## v2.0.1
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v2.1.0...v2.0.1)
+
+### 🏡 Chore
+
+- Fix repository url on package.json ([e394680](https://github.com/paper-kit/nuxt/commit/e394680))
+
+### ❤️ Contributors
+
+- FelipeO16 <felipe16.12.1998@gmail.com>
+
+## v2.1.0
+
+[compare changes](https://github.com/paper-kit/nuxt/compare/v1.7.0...v2.1.0)
+
+### 🚀 Enhancements
+
+- Initial tests with darkmode ([9d07ea9](https://github.com/paper-kit/nuxt/commit/9d07ea9))
+- **components:** Initial darkmode ([809d6cf](https://github.com/paper-kit/nuxt/commit/809d6cf))
+- **docs:** Add compare on codeblock ([d4c6961](https://github.com/paper-kit/nuxt/commit/d4c6961))
+- **docs:** Add docs page for compare ([ae3f2b7](https://github.com/paper-kit/nuxt/commit/ae3f2b7))
+- **docs:** Add darkmode on tailwind ([fbe600a](https://github.com/paper-kit/nuxt/commit/fbe600a))
+- **docs:** Add compare page on menu ([938fdcc](https://github.com/paper-kit/nuxt/commit/938fdcc))
+- **docs:** Add PUCard and PUGrid components with documentation ([29df465](https://github.com/paper-kit/nuxt/commit/29df465))
+- Add PUDivider component with hand-drawn style separators ([80eee44](https://github.com/paper-kit/nuxt/commit/80eee44))
+- Add PULoading component with multiple animation types ([c8739db](https://github.com/paper-kit/nuxt/commit/c8739db))
+- Add PUSlider component with drag interactions and markers ([badb5b1](https://github.com/paper-kit/nuxt/commit/badb5b1))
+- Add PURating component with interactive star system ([ddeccfe](https://github.com/paper-kit/nuxt/commit/ddeccfe))
+- Add PUCounter component with increment/decrement controls ([d33b801](https://github.com/paper-kit/nuxt/commit/d33b801))
+- Add PUDropdown component with smooth animations ([320daf1](https://github.com/paper-kit/nuxt/commit/320daf1))
+- Add PUCopyToClipboard component with success feedback ([c12f4cd](https://github.com/paper-kit/nuxt/commit/c12f4cd))
+- Add PUSearch component with suggestions and loading states ([b652e22](https://github.com/paper-kit/nuxt/commit/b652e22))
+- Add PUConfetti component with canvas-based particle animation ([2cca59e](https://github.com/paper-kit/nuxt/commit/2cca59e))
+- Enhance PUDropdown component with teleport for menu rendering and improved positioning logic ([4b22aad](https://github.com/paper-kit/nuxt/commit/4b22aad))
+- **docs:** Add new components and images to the project, including carousel support and layout optimization on the welcome page ([045ae3f](https://github.com/paper-kit/nuxt/commit/045ae3f))
+- Implement new sidebar menu with expand and collapse functionality, plus improvements in component styling and layout ([b43ae04](https://github.com/paper-kit/nuxt/commit/b43ae04))
+- Adicionar página de changelog para a versão 2.0, incluindo novas funcionalidades e melhorias, além de atualizar o menu lateral e a página de boas-vindas com links para as novidades ([a83a985](https://github.com/paper-kit/nuxt/commit/a83a985))
+
+### 🩹 Fixes
+
+- **component:** Add new props to PUCompare ([9f5f235](https://github.com/paper-kit/nuxt/commit/9f5f235))
+- Disabled state keeps normal colors in PURating ([9e5ca46](https://github.com/paper-kit/nuxt/commit/9e5ca46))
+- Update default colors in PUConfetti component to a single color for improved visual consistency ([07eedf3](https://github.com/paper-kit/nuxt/commit/07eedf3))
+- Eslint warnings ([bfbdf37](https://github.com/paper-kit/nuxt/commit/bfbdf37))
+
+### 💅 Refactors
+
+- Remove unnecessary comments from existing components ([401c80b](https://github.com/paper-kit/nuxt/commit/401c80b))
+- Remove HTML comments from all components and pages ([1073333](https://github.com/paper-kit/nuxt/commit/1073333))
+- Clean up whitespace and improve button alignment in components ([a13d8c8](https://github.com/paper-kit/nuxt/commit/a13d8c8))
+- Update PUDivider component to use 'divider-style' prop instead of 'style' and adjust related documentation ([7273b5f](https://github.com/paper-kit/nuxt/commit/7273b5f))
+- Remove hand-drawn effect comments from multiple components for cleaner code ([e7a6841](https://github.com/paper-kit/nuxt/commit/e7a6841))
+- Enhance PUSlider component to support vertical orientation with updated marker and thumb positioning ([c2bbc6d](https://github.com/paper-kit/nuxt/commit/c2bbc6d))
+- Reorganize AsideMenu component structure and update component links for better categorization ([501c0ca](https://github.com/paper-kit/nuxt/commit/501c0ca))
+- Clean up whitespace and improve formatting across multiple components for better code readability ([bc9383f](https://github.com/paper-kit/nuxt/commit/bc9383f))
+- Update color utility classes in PUCopyToClipboard and PURating components for consistency with design system ([ef05bed](https://github.com/paper-kit/nuxt/commit/ef05bed))
+- Enhance layout and styling on WelcomePage component for improved responsiveness and visual appeal ([b97d71d](https://github.com/paper-kit/nuxt/commit/b97d71d))
+- Remove unused examples layout component and fix formatting in nuxt.config.ts ([1301fbc](https://github.com/paper-kit/nuxt/commit/1301fbc))
+- Remove PUGridItem link from sidebar menu for simplification ([16462c9](https://github.com/paper-kit/nuxt/commit/16462c9))
+
+### 📖 Documentation
+
+- Update navigation and component list with new components ([9e90957](https://github.com/paper-kit/nuxt/commit/9e90957))
+- Update code examples in pu-grid documentation to use code-box format ([ff8bc67](https://github.com/paper-kit/nuxt/commit/ff8bc67))
+- Enhance ShowDivider component example with additional content structure ([aedb752](https://github.com/paper-kit/nuxt/commit/aedb752))
+
+### 🏡 Chore
+
+- **lint:** Fix lint warnings ([f235d70](https://github.com/paper-kit/nuxt/commit/f235d70))
+- **component:** Change slot name ([e553dd3](https://github.com/paper-kit/nuxt/commit/e553dd3))
+- **docs:** Remove compare from preview ([8de45c6](https://github.com/paper-kit/nuxt/commit/8de45c6))
+- **docs:** Fix eslint warning ([6c75310](https://github.com/paper-kit/nuxt/commit/6c75310))
+- **config:** Update readme ([fb2107f](https://github.com/paper-kit/nuxt/commit/fb2107f))
+- Disable eslint rule for multi-word component names in multiple Vue files ([73cb9c1](https://github.com/paper-kit/nuxt/commit/73cb9c1))
+- Update version to 2.0.0 in package.json, remove incremental configuration from tsconfig.json and adjust formatting across multiple documentation pages for better readability ([f56e88e](https://github.com/paper-kit/nuxt/commit/f56e88e))
+
+### 🎨 Styles
+
+- **component:** Update icon and style props ([b40f45c](https://github.com/paper-kit/nuxt/commit/b40f45c))
+
+### ❤️ Contributors
+
+- FelipeO16 <felipe16.12.1998@gmail.com>
+- Felipe <felipe16.12.1998@gmail.com>
+- Felipe Oliveira <felipe16.12.1998@gmail.com>
+
 ## v1.7.0
 
 [compare changes](https://github.com/paper-kit/nuxt/compare/v1.6.0...v1.7.0)

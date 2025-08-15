@@ -26,7 +26,6 @@
     <CodeBlock v-if="type === 'all-variants'">
       <template #preview>
         <div class="flex flex-col gap-4">
-          <!-- Flavors -->
           <div class="flex gap-2">
             <PUButton flavor="normal">
               Normal
@@ -39,7 +38,6 @@
             </PUButton>
           </div>
 
-          <!-- Sizes -->
           <div class="flex gap-2 items-center">
             <PUButton size="small">
               Small
@@ -52,7 +50,6 @@
             </PUButton>
           </div>
 
-          <!-- Shapes -->
           <div class="flex gap-2">
             <PUButton shape="rounded">
               Rounded

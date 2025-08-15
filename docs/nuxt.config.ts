@@ -2,8 +2,10 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
-    '@paper-ui/nuxt',
+    '../src/module',
     '@nuxtjs/tailwindcss',
+    'vue3-carousel-nuxt',
+    '@nuxt/image',
   ],
   devtools: { enabled: true },
   content: { nitro: {
@@ -27,4 +29,9 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-04-03',
+  tailwindcss: {
+    config: {
+      darkMode: 'class',
+    },
+  },
 })
