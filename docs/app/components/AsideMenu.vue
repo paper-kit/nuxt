@@ -37,6 +37,7 @@ const items: Items[] = [
       { name: 'Getting Started', link: '/docs/getting-started' },
       { name: 'All Components', link: '/docs' },
       { name: 'Icons', link: '/docs/icons' },
+      { name: 'Changelog v2.0', link: '/docs/v2', new: true },
     ],
   },
   {

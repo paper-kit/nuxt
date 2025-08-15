@@ -17,9 +17,17 @@
           <slot />
         </div>
         <div class="text-lg absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col gap-4 w-80 items-center">
-          <a href="/docs/getting-started">
-            <PUButton flavor="outlined">Get Started</PUButton>
-          </a>
+          <div class="flex flex-col gap-3 w-full items-center">
+            <a href="/docs/getting-started">
+              <PUButton flavor="outlined">Get Started</PUButton>
+            </a>
+            <a href="/docs/v2">
+              <PUButton flavor="ghost" size="small">
+                <span class="mr-2">What's New in v2.0</span>
+                <PUBadge label="NEW" size="small" severity="warning" />
+              </PUButton>
+            </a>
+          </div>
           <div class="hidden md:block">
             <NuxtImg
               src="/arrow-up.svg"
@@ -105,7 +113,6 @@
 }
 
 .slide-image {
-
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
