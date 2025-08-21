@@ -1,0 +1,1 @@
+import{_ as o,f as c,g as i,j as t,X as e}from"./CCq7b5KU.js";const n={},a={class:"my-4 space-y-2"},r={class:"topic-title text-xl font-bold"},l={class:"topic-description text-lg"};function _(s,d){return i(),c("div",a,[t("div",r,[e(s.$slots,"title")]),t("div",l,[e(s.$slots,"description")])])}const f=Object.assign(o(n,[["render",_]]),{__name:"DocTopic"});export{f as default};
