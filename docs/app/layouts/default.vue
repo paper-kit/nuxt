@@ -27,7 +27,7 @@
 
     <div
       class="container h-full text-xl"
-      :class="{ 'pt-12': isDocsPage }"
+      :class="{ 'pt-12 md:pt-12 pt-32': isDocsPage }"
     >
       <HeaderUi />
       <NuxtPage />
@@ -116,6 +116,11 @@ const isDocsPage = computed(() => {
 }
 
 @media (max-width: 768px) {
+  .v2-banner-top {
+    @apply py-5;
+    min-height: 80px;
+  }
+
   .v2-banner-content {
     @apply flex-col gap-3 text-center;
   }
