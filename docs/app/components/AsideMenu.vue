@@ -127,7 +127,7 @@ const toggleAllSections = () => {
 }
 
 .aside-menu-content {
-  @apply relative h-full bg-white dark:bg-primary-light-800 rounded-2xl border-2 border-primary-light-500 shadow-lg;
+  @apply relative h-full bg-white rounded-2xl border-2 border-primary-light-500 shadow-lg;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
@@ -152,7 +152,7 @@ const toggleAllSections = () => {
 }
 
 .menu-title {
-  @apply text-2xl font-bold text-primary-light-600 dark:text-primary-dark-400;
+  @apply text-2xl font-bold text-primary-light-600;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8);
   transform: rotate(-1deg);
 }
@@ -173,17 +173,5 @@ const toggleAllSections = () => {
   transform: scale(1.1) rotate(5deg);
 }
 
-@media (prefers-color-scheme: dark) {
-  .aside-menu-content {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      0 4px 16px rgba(0, 0, 0, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
 
-  .menu-title {
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-  }
-}
 </style>
