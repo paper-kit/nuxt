@@ -172,6 +172,4 @@ const toggleAllSections = () => {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
   transform: scale(1.1) rotate(5deg);
 }
-
-
 </style>

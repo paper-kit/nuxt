@@ -35,7 +35,11 @@
           </NuxtLink>
         </li>
         <li>
-          <a href="https://github.com/paper-kit/nuxt" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/paper-kit/nuxt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <PUButton
               flavor="outlined"
               icon-right="github-alt"
