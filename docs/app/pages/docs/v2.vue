@@ -97,7 +97,7 @@
         :tabs="componentTabs"
         class="components-tabs"
       >
-        <template #tab="{ tab, isActive }">
+        <template #tab="{ tab }">
           <div class="tab-content">
             <span class="tab-icon">{{ tab.icon }}</span>
             <span class="tab-label">{{ tab.label }}</span>
