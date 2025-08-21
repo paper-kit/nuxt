@@ -1,1 +1,0 @@
-import{_ as s,f as r,g as n,X as o}from"./ChkN1n_K.js";const t={};function a(e,c){return n(),r("em",null,[o(e.$slots,"default")])}const l=Object.assign(s(t,[["render",a]]),{__name:"ProseEm"});export{l as default};
