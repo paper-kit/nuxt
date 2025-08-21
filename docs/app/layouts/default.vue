@@ -4,7 +4,6 @@
     class="main h-screen flex justify-center"
     :style="{ background: route.path == '/' ? 'url(/bg.svg) no-repeat' : '' }"
   >
-    <!-- Banner v2.0 no topo absoluto -->
     <div
       v-if="isDocsPage"
       class="v2-banner-top"
@@ -12,15 +11,12 @@
       <div class="v2-banner-content">
         <div class="v2-banner-left">
           <span class="v2-banner-icon">🎉</span>
-          <span class="v2-banner-text">Paper UI v2.0 is here!</span>
-          <span class="v2-banner-badge">NEW</span>
+          <span class="v2-banner-text text-3xl">Paper UI v2.0 is here!</span>
         </div>
         <a
           href="/docs/v2"
-          class="v2-banner-link"
         >
-          <span>See what's new</span>
-          <span class="v2-banner-arrow">→</span>
+          <span class="border-b border-white hover:text-[#f21f51] transition-all duration-300 hover:border-[#f21f51]">See what's new</span>
         </a>
       </div>
     </div>
@@ -47,8 +43,9 @@ const isDocsPage = computed(() => {
 
 <style scoped>
 .v2-banner-top {
-  @apply fixed top-0 left-0 right-0 z-50 bg-black text-white py-3 px-4;
+  @apply fixed top-0 left-0 right-0 z-50 bg-[#1c1c1c] text-white py-3 px-4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: "Patrick Hand", serif;
 }
 
 .v2-banner-content {
@@ -65,7 +62,7 @@ const isDocsPage = computed(() => {
 }
 
 .v2-banner-text {
-  @apply text-sm font-bold;
+  @apply text-lg;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
 }
 
